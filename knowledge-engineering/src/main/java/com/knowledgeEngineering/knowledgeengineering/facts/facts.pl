@@ -1,37 +1,121 @@
 %napadi i simptomi i ucestalost njihovog koriscenja-----------------------------
 
-%cross-site-flashing
-attack(cross-site-flashing, update, 23).
-attack(cross-site-flashing, suspicious-conversation-phone-call, 54).
-attack(cross-site-flashing, suspicious-conversation-phone-message, 75).
-attack(cross-site-flashing, suspicious-conversation-email, 12).
-attack(cross-site-flashing, suspicious-conversation-visit, 33).
-attack(cross-site-flashing, app-download, 87).
-attack(cross-site-flashing, ad-click, 12).
-attack(cross-site-flashing, ad-blocker-deactivation, 3).
-attack(cross-site-flashing, suspicious-link, 54).
-attack(cross-site-flashing, pop-up-windows, 58).
-attack(cross-site-flashing, credential-re-entering, 95).
-attack(cross-site-flashing, services-fail, 12).
-attack(cross-site-flashing, credentials-theft, 45).
-attack(cross-site-flashing, suspicious-code-modifications, 86).
-attack(cross-site-flashing, frequents-spams, 86).
-attack(cross-site-flashing, company-size-1-250,42).
-attack(cross-site-flashing, company-size-250-500,76).
-attack(cross-site-flashing, company-size-500-1000,24).
-attack(cross-site-flashing, company-size-1000+,89).
-attack(cross-site-flashing, company-sector-hospital,12).
-attack(cross-site-flashing, company-sector-finance,66).
-attack(cross-site-flashing, company-sector-technology,43).
-attack(cross-site-flashing, company-sector-business-and-professional-service,6).
-attack(cross-site-flashing, company-sector-retail-and-manifacturing,62).
-attack(cross-site-flashing, company-sector-logistics-and-transportation,85).
-attack(cross-site-flashing, europe, 35).
-attack(cross-site-flashing, north-america, 87).
-attack(cross-site-flashing, south-america, 12).
-attack(cross-site-flashing, australia, 93).
-attack(cross-site-flashing, asia, 75).
-attack(cross-site-flashing, africa, 7).
+%counterfeit-websites
+attack(counterfeit-websites, update, 12).
+attack(counterfeit-websites, suspicious-conversation-email, 89).
+attack(counterfeit-websites, app-download, 17).
+attack(counterfeit-websites, ad-click, 11).
+attack(counterfeit-websites, ad-blocker-deactivation, 3).
+attack(counterfeit-websites, suspicious-link, 96).
+attack(counterfeit-websites, suspicious-website, 100).
+attack(counterfeit-websites, pop-up-windows, 23).
+attack(counterfeit-websites, credential-re-entering, 22).
+attack(cross-site-flashing, services-fail, 25).
+attack(counterfeit-websites, credentials-theft, 92).
+attack(counterfeit-websites, frequents-spams, 57).
+attack(counterfeit-websites, company-size-1-250,78).
+attack(counterfeit-websites, company-size-250-500,85).
+attack(counterfeit-websites, company-size-500-1000,80).
+attack(counterfeit-websites, company-size-1000+,70).
+attack(counterfeit-websites, company-sector-hospital, 46).
+attack(counterfeit-websites, company-sector-finance, 89).
+attack(counterfeit-websites, company-sector-technology,83).
+attack(counterfeit-websites, company-sector-business-and-professional-service,64).
+attack(counterfeit-websites, company-sector-retail-and-manifacturing,62).
+attack(counterfeit-websites, company-sector-logistics-and-transportation,57).
+attack(counterfeit-websites, europe, 87).
+attack(counterfeit-websites, north-america, 88).
+attack(counterfeit-websites, south-america, 74).
+attack(counterfeit-websites, australia, 86).
+attack(counterfeit-websites, asia, 85).
+attack(counterfeit-websites, africa, 22).
+
+%spear-fishing
+attack(counterfeit-websites, update, 19).
+attack(spear-fishing, suspicious-conversation-phone-call, 5).
+attack(spear-fishing, suspicious-conversation-phone-message, 5).
+attack(spear-fishing, suspicious-conversation-email, 100).
+attack(spear-fishing, suspicious-conversation-visit, 30).
+attack(spear-fishing, app-download, 23).
+attack(spear-fishing, suspicious-link, 97).
+attack(spear-fishing, suspicious-website, 89).
+attack(spear-fishing, credential-re-entering, 26).
+attack(spear-fishing, credentials-theft, 98).
+attack(spear-fishing, frequents-spams, 67).
+attack(spear-fishing, company-size-1-250,87).
+attack(spear-fishing, company-size-250-500,90).
+attack(spear-fishing, company-size-500-1000,93).
+attack(spear-fishing, company-size-1000+,86).
+attack(spear-fishing, company-sector-hospital,25).
+attack(spear-fishing, company-sector-finance,89).
+attack(spear-fishing, company-sector-technology,83).
+attack(spear-fishing, company-sector-business-and-professional-service,78).
+attack(spear-fishing, company-sector-retail-and-manifacturing,37).
+attack(spear-fishing, company-sector-logistics-and-transportation,38).
+attack(spear-fishing, europe, 79).
+attack(spear-fishing, north-america, 86).
+attack(spear-fishing, south-america, 78).
+attack(spear-fishing, australia, 89).
+attack(spear-fishing, asia, 88).
+attack(spear-fishing, africa, 29).
+
+%mobile-fishing
+attack(mobile-fishing, update, 7).
+attack(mobile-fishing, suspicious-conversation-phone-call, 100).
+attack(mobile-fishing, suspicious-conversation-phone-message, 100).
+attack(mobile-fishing, suspicious-conversation-email, 49).
+attack(mobile-fishing, app-download, 18).
+attack(mobile-fishing, ad-click, 9).
+attack(mobile-fishing, ad-blocker-deactivation, 4).
+attack(mobile-fishing, suspicious-link, 99).
+attack(mobile-fishing, pop-up-windows, 10).
+attack(mobile-fishing, credential-re-entering, 7).
+attack(mobile-fishing, credentials-theft, 99).
+attack(mobile-fishing, frequents-spams, 73).
+attack(mobile-fishing, company-size-1-250,87).
+attack(mobile-fishing, company-size-250-500,90).
+attack(mobile-fishing, company-size-500-1000,93).
+attack(mobile-fishing, company-size-1000+,84).
+attack(mobile-fishing, company-sector-hospital,44).
+attack(mobile-fishing, company-sector-finance,88).
+attack(mobile-fishing, company-sector-technology,76).
+attack(mobile-fishing, company-sector-business-and-professional-service,70).
+attack(mobile-fishing, company-sector-retail-and-manifacturing,63).
+attack(mobile-fishing, company-sector-logistics-and-transportation,49).
+attack(mobile-fishing, europe, 79).
+attack(mobile-fishing, north-america, 83).
+attack(mobile-fishing, south-america, 70).
+attack(mobile-fishing, australia, 85).
+attack(mobile-fishing, asia, 87).
+attack(mobile-fishing, africa, 28).
+
+%typo-squatting
+attack(typo-squatting, update, 14).
+attack(typo-squatting, suspicious-conversation-email, 87).
+attack(typo-squatting, ad-click, 16).
+attack(typo-squatting, ad-blocker-deactivation, 3).
+attack(typo-squatting, suspicious-link, 100).
+attack(typo-squatting, pop-up-windows, 23).
+attack(typo-squatting, suspicious-website, 90).
+attack(typo-squatting, credential-re-entering, 7).
+attack(typo-squatting, credentials-theft, 90).
+attack(typo-squatting, frequents-spams, 84).
+attack(typo-squatting, company-size-1-250,89).
+attack(typo-squatting, company-size-250-500,95).
+attack(typo-squatting, company-size-500-1000,93).
+attack(typo-squatting, company-size-1000+,89).
+attack(typo-squatting, company-sector-hospital, 61).
+attack(typo-squatting, company-sector-finance, 79).
+attack(typo-squatting, company-sector-technology, 85).
+attack(typo-squatting, company-sector-business-and-professional-service, 77).
+attack(typo-squatting, company-sector-retail-and-manifacturing,62).
+attack(typo-squatting, company-sector-logistics-and-transportation,53).
+attack(typo-squatting, europe, 78).
+attack(typo-squatting, north-america, 92).
+attack(typo-squatting, south-america, 67).
+attack(typo-squatting, australia, 89).
+attack(typo-squatting, asia, 81).
+attack(typo-squatting, africa, 30).
 
 
 %pretexting-via-customer-service
@@ -174,9 +258,34 @@ attack(harvesting-information-via-api-event-monitoring, africa, 98).
 %mere zastite----------------------------------------------------------------------
 
 
-%cross-site-flashing
-countermeasure(cross-site-flashing, only-click-on-familiar-links,89).
-countermeasure(cross-site-flashing, cross-domain-xml-configuration,75).
+%counterfeit-websites
+countermeasure(counterfeit-websites, only-click-on-familiar-links,96).
+countermeasure(counterfeit-websites, employee-education, 82).
+countermeasure(counterfeit-websites, antivirus, 76).
+countermeasure(typo-squatting, authenticate-all-servers, 87).
+
+%spear-fishing
+countermeasure(spear-fishing, only-click-on-familiar-links,95).
+countermeasure(spear-fishing, employee-education, 89).
+countermeasure(spear-fishing, turn-on-spam-filter, 94).
+countermeasure(spear-fishing, bad-grammar-check, 83).
+countermeasure(spear-fishing, two-way-authentification, 80).
+countermeasure(spear-fishing, antivirus, 81).
+
+%mobile-fishing
+countermeasure(mobile-fishing, only-click-on-familiar-links,49).
+countermeasure(mobile-fishing, employee-education, 85).
+countermeasure(mobile-fishing, bad-grammar-check, 73).
+countermeasure(mobile-fishing, antivirus, 80).
+countermeasure(mobile-fishing, not-responding-to-unknown-number, 89).
+countermeasure(mobile-fishing, give-only-required-information, 92).
+
+%typo-squatting
+countermeasure(typo-squatting, only-click-on-familiar-links,97).
+countermeasure(typo-squatting, employee-education, 85).
+countermeasure(typo-squatting, antivirus, 79).
+countermeasure(typo-squatting, authenticate-all-servers, 93).
+countermeasure(typo-squatting, DNS-hostnames-check, 92).
 
 %pretexting-via-customer-service
 countermeasure(pretexting-via-customer-service, validate-phone-number, 95).
