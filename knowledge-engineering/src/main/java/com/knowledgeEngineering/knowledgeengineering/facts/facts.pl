@@ -253,7 +253,101 @@ attack(harvesting-information-via-api-event-monitoring, australia, 72).
 attack(harvesting-information-via-api-event-monitoring, asia, 15).
 attack(harvesting-information-via-api-event-monitoring, africa, 98).
 
+%iFrame Overlay
+attack(iframe-overlay, update, 3).
+attack(iframe-overlay, suspicious-conversation-phone-call, 0).
+attack(iframe-overlay, suspicious-conversation-phone-message, 18).
+attack(iframe-overlay, suspicious-conversation-email, 98).
+attack(iframe-overlay, suspicious-conversation-visit, 0).
+attack(iframe-overlay, app-download, 4).
+attack(iframe-overlay, ad-click, 89).
+attack(iframe-overlay, ad-blocker-deactivation, 56).
+attack(iframe-overlay, suspicious-link, 95).
+attack(iframe-overlay, pop-up-windows, 85).
+attack(iframe-overlay, credential-re-entering, 38).
+attack(iframe-overlay, credentials-theft, 83).
+attack(iframe-overlay, suspicious-code-modifications, 3).
+attack(iframe-overlay, frequents-spams, 73).
+attack(iframe-overlay, company-size-1-250,82).
+attack(iframe-overlay, company-size-250-500,91).
+attack(iframe-overlay, company-size-500-1000,77).
+attack(iframe-overlay, company-size-1000+,78).
+attack(iframe-overlay, company-sector-hospital,41).
+attack(iframe-overlay, company-sector-finance,75).
+attack(iframe-overlay, company-sector-technology,85).
+attack(iframe-overlay, company-sector-business-and-professional-service,88).
+attack(iframe-overlay, company-sector-retail-and-manifacturing,30).
+attack(iframe-overlay, company-sector-logistics-and-transportation,54).
+attack(iframe-overlay, europe, 75).
+attack(iframe-overlay, north-america, 87).
+attack(iframe-overlay, south-america, 42).
+attack(iframe-overlay, australia, 79).
+attack(iframe-overlay, asia, 95).
+attack(iframe-overlay, africa, 17).
 
+
+%credential_prompt_impersonation
+attack(credential-prompt-impersonation, update, 3).
+attack(credential-prompt-impersonation, suspicious-conversation-phone-call, 12).
+attack(credential-prompt-impersonation, suspicious-conversation-phone-message, 8).
+attack(credential-prompt-impersonation, suspicious-conversation-email, 11).
+attack(credential-prompt-impersonation, suspicious-conversation-visit, 0).
+attack(credential-prompt-impersonation, app-download, 84).
+attack(credential-prompt-impersonation, ad-click, 19).
+attack(credential-prompt-impersonation, ad-blocker-deactivation, 16).
+attack(credential-prompt-impersonation, suspicious-link, 15).
+attack(credential-prompt-impersonation, pop-up-windows, 89).
+attack(credential-prompt-impersonation, credential-re-entering, 99).
+attack(credential-prompt-impersonation, credentials-theft, 100).
+attack(credential-prompt-impersonation, suspicious-code-modifications, 3).
+attack(credential-prompt-impersonation, frequents-spams, 73).
+attack(credential-prompt-impersonation, company-size-1-250,84).
+attack(credential-prompt-impersonation, company-size-250-500,89).
+attack(credential-prompt-impersonation, company-size-500-1000,79).
+attack(credential-prompt-impersonation, company-size-1000+,80).
+attack(credential-prompt-impersonation, company-sector-hospital,65).
+attack(credential-prompt-impersonation, company-sector-finance,84).
+attack(credential-prompt-impersonation, company-sector-technology,80).
+attack(credential-prompt-impersonation, company-sector-business-and-professional-service,76).
+attack(credential-prompt-impersonation, company-sector-retail-and-manifacturing,55).
+attack(credential-prompt-impersonation, company-sector-logistics-and-transportation,73).
+attack(credential-prompt-impersonation, europe, 85).
+attack(credential-prompt-impersonation, north-america, 94).
+attack(credential-prompt-impersonation, south-america, 52).
+attack(credential-prompt-impersonation, australia, 84).
+attack(credential-prompt-impersonation, asia, 75).
+attack(credential-prompt-impersonation, africa, 47).
+
+%malicious_manual_software_update
+attack(malicious-manual-software-update, update, 100).
+attack(malicious-manual-software-update, suspicious-conversation-phone-call, 5).
+attack(malicious-manual-software-update, suspicious-conversation-phone-message, 4).
+attack(malicious-manual-software-update, suspicious-conversation-email, 72).
+attack(malicious-manual-software-update, suspicious-conversation-visit, 0).
+attack(malicious-manual-software-update, app-download, 87).
+attack(malicious-manual-software-update, ad-click, 12).
+attack(malicious-manual-software-update, ad-blocker-deactivation, 16).
+attack(malicious-manual-software-update, suspicious-link, 75).
+attack(malicious-manual-software-update, pop-up-windows, 19).
+attack(malicious-manual-software-update, credentials-theft, 20).
+attack(malicious-manual-software-update, suspicious-code-modifications, 68).
+attack(malicious-manual-software-update, frequents-spams, 73).
+attack(malicious-manual-software-update, company-size-1-250,78).
+attack(malicious-manual-software-update, company-size-250-500,85).
+attack(malicious-manual-software-update, company-size-500-1000,73).
+attack(malicious-manual-software-update, company-size-1000+,83).
+attack(malicious-manual-software-update, company-sector-hospital,65).
+attack(malicious-manual-software-update, company-sector-finance,88).
+attack(malicious-manual-software-update, company-sector-technology,81).
+attack(malicious-manual-software-update, company-sector-business-and-professional-service,66).
+attack(malicious-manual-software-update, company-sector-retail-and-manifacturing,58).
+attack(malicious-manual-software-update, company-sector-logistics-and-transportation,73).
+attack(malicious-manual-software-update, europe, 85).
+attack(malicious-manual-software-update, north-america, 89).
+attack(malicious-manual-software-update, south-america, 47).
+attack(malicious-manual-software-update, australia, 84).
+attack(malicious-manual-software-update, asia, 86).
+attack(malicious-manual-software-update, africa, 33).
 
 %mere zastite----------------------------------------------------------------------
 
@@ -301,4 +395,20 @@ countermeasure(influence-via-incentives, give-only-required-information, 59).
 
 %harvesting-information-via-api-event-monitoring
 countermeasure(harvesting-information-via-api-event-monitoring, encrypt-data-transmission,93).
+
+%iframe-overlay
+countermeasure(iframe-overlay, disable-iframes, 95).
+countermeasure(iframe-overlay, evaluate-email-protection , 92).
+countermeasure(iframe-overlay, add-csp , 88).
+countermeasure(iframe-overlay, employee-education,77).
+
+%credential-prompt-impersonation
+countermeasure(credential-prompt-impersonation, avoid-installing-malicious-applications, 88).
+countermeasure(credential-prompt-impersonation, avoid-suspicious-applications-with-GET-TASKS-permission, 79).
+countermeasure(credential-prompt-impersonation, employee-education,72).
+
+%malicious-manual-software-update
+countermeasure(malicious-manual-software-update, validate-software-updates, 88).
+countermeasure(malicious-manual-software-update, install-MSRT , 70).
+countermeasure(malicious-manual-software-update, employee-education, 65).
 
