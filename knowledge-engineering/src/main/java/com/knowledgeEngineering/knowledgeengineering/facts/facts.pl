@@ -10,13 +10,13 @@ attack(counterfeit-websites, suspicious-link, 96).
 attack(counterfeit-websites, suspicious-website, 100).
 attack(counterfeit-websites, pop-up-windows, 23).
 attack(counterfeit-websites, credential-re-entering, 22).
-attack(cross-site-flashing, services-fail, 25).
+attack(counterfeit-websites, services-fail, 25).
 attack(counterfeit-websites, credentials-theft, 92).
 attack(counterfeit-websites, frequents-spams, 57).
 attack(counterfeit-websites, company-size-1-250,78).
 attack(counterfeit-websites, company-size-250-500,85).
 attack(counterfeit-websites, company-size-500-1000,80).
-attack(counterfeit-websites, company-size-1000+,70).
+attack(counterfeit-websites, company-size-1000,70).
 attack(counterfeit-websites, company-sector-hospital, 46).
 attack(counterfeit-websites, company-sector-finance, 89).
 attack(counterfeit-websites, company-sector-technology,83).
@@ -31,7 +31,7 @@ attack(counterfeit-websites, asia, 85).
 attack(counterfeit-websites, africa, 22).
 
 %spear-fishing
-attack(counterfeit-websites, update, 19).
+attack(spear-fishing, update, 19).
 attack(spear-fishing, suspicious-conversation-phone-call, 5).
 attack(spear-fishing, suspicious-conversation-phone-message, 5).
 attack(spear-fishing, suspicious-conversation-email, 100).
@@ -45,7 +45,7 @@ attack(spear-fishing, frequents-spams, 67).
 attack(spear-fishing, company-size-1-250,87).
 attack(spear-fishing, company-size-250-500,90).
 attack(spear-fishing, company-size-500-1000,93).
-attack(spear-fishing, company-size-1000+,86).
+attack(spear-fishing, company-size-1000,86).
 attack(spear-fishing, company-sector-hospital,25).
 attack(spear-fishing, company-sector-finance,89).
 attack(spear-fishing, company-sector-technology,83).
@@ -75,7 +75,7 @@ attack(mobile-fishing, frequents-spams, 73).
 attack(mobile-fishing, company-size-1-250,87).
 attack(mobile-fishing, company-size-250-500,90).
 attack(mobile-fishing, company-size-500-1000,93).
-attack(mobile-fishing, company-size-1000+,84).
+attack(mobile-fishing, company-size-1000,84).
 attack(mobile-fishing, company-sector-hospital,44).
 attack(mobile-fishing, company-sector-finance,88).
 attack(mobile-fishing, company-sector-technology,76).
@@ -103,7 +103,7 @@ attack(typo-squatting, frequents-spams, 84).
 attack(typo-squatting, company-size-1-250,89).
 attack(typo-squatting, company-size-250-500,95).
 attack(typo-squatting, company-size-500-1000,93).
-attack(typo-squatting, company-size-1000+,89).
+attack(typo-squatting, company-size-1000,89).
 attack(typo-squatting, company-sector-hospital, 61).
 attack(typo-squatting, company-sector-finance, 79).
 attack(typo-squatting, company-sector-technology, 85).
@@ -137,7 +137,7 @@ attack(pretexting-via-customer-service, frequents-spams, 43).
 attack(pretexting-via-customer-service, company-size-1-250,92).
 attack(pretexting-via-customer-service, company-size-250-500,87).
 attack(pretexting-via-customer-service, company-size-500-1000,57).
-attack(pretexting-via-customer-service, company-size-1000+,75).
+attack(pretexting-via-customer-service, company-size-1000,75).
 attack(pretexting-via-customer-service, company-sector-hospital,52).
 attack(pretexting-via-customer-service, company-sector-finance,2).
 attack(pretexting-via-customer-service, company-sector-technology,23).
@@ -171,7 +171,7 @@ attack(dns-domain-seizure, frequents-spams, 11).
 attack(dns-domain-seizure, company-size-1-250, 11).
 attack(dns-domain-seizure, company-size-250-500, 7).
 attack(dns-domain-seizure, company-size-500-1000, 37).
-attack(dns-domain-seizure, company-size-1000+,75).
+attack(dns-domain-seizure, company-size-1000,75).
 attack(dns-domain-seizure, company-sector-hospital, 52).
 attack(dns-domain-seizure, company-sector-finance,88).
 attack(dns-domain-seizure, company-sector-technology, 23).
@@ -193,8 +193,8 @@ attack(influence-via-incentives, suspicious-conversation-phone-message, 98).
 attack(influence-via-incentives, suspicious-conversation-email, 91).
 attack(influence-via-incentives, suspicious-conversation-visit, 85).
 attack(influence-via-incentives, app-download, 6).
-attack(influence-via-incentives, ad-click, 0).
-attack(influence-via-incentives, ad-blocker-deactivation, 0).
+attack(influence-via-incentives, ad-click, 2).
+attack(influence-via-incentives, ad-blocker-deactivation, 2).
 attack(influence-via-incentives, suspicious-link, 89).
 attack(influence-via-incentives, pop-up-windows, 13).
 attack(influence-via-incentives, credential-re-entering, 56).
@@ -205,7 +205,7 @@ attack(influence-via-incentives, frequents-spams, 11).
 attack(influence-via-incentives, company-size-1-250, 65).
 attack(influence-via-incentives, company-size-250-500, 17).
 attack(influence-via-incentives, company-size-500-1000,37).
-attack(influence-via-incentives, company-size-1000+,5).
+attack(influence-via-incentives, company-size-1000,5).
 attack(influence-via-incentives, company-sector-hospital, 2).
 attack(influence-via-incentives, company-sector-finance,8).
 attack(influence-via-incentives, company-sector-technology, 43).
@@ -228,7 +228,7 @@ attack(harvesting-information-via-api-event-monitoring, suspicious-conversation-
 attack(harvesting-information-via-api-event-monitoring, suspicious-conversation-visit, 79).
 attack(harvesting-information-via-api-event-monitoring, app-download, 70).
 attack(harvesting-information-via-api-event-monitoring, ad-click, 30).
-attack(harvesting-information-via-api-event-monitoring, ad-blocker-deactivation, 0).
+attack(harvesting-information-via-api-event-monitoring, ad-blocker-deactivation, 2).
 attack(harvesting-information-via-api-event-monitoring, suspicious-link, 41).
 attack(harvesting-information-via-api-event-monitoring, pop-up-windows, 2).
 attack(harvesting-information-via-api-event-monitoring, credential-re-entering, 79).
@@ -239,7 +239,7 @@ attack(harvesting-information-via-api-event-monitoring, frequents-spams, 71).
 attack(harvesting-information-via-api-event-monitoring, company-size-1-250, 56).
 attack(harvesting-information-via-api-event-monitoring, company-size-250-500, 73).
 attack(harvesting-information-via-api-event-monitoring, company-size-500-1000,13).
-attack(harvesting-information-via-api-event-monitoring, company-size-1000+,75).
+attack(harvesting-information-via-api-event-monitoring, company-size-1000,75).
 attack(harvesting-information-via-api-event-monitoring, company-sector-hospital, 32).
 attack(harvesting-information-via-api-event-monitoring, company-sector-finance,58).
 attack(harvesting-information-via-api-event-monitoring, company-sector-technology, 73).
@@ -255,10 +255,10 @@ attack(harvesting-information-via-api-event-monitoring, africa, 98).
 
 %iFrame Overlay
 attack(iframe-overlay, update, 3).
-attack(iframe-overlay, suspicious-conversation-phone-call, 0).
+attack(iframe-overlay, suspicious-conversation-phone-call, 2).
 attack(iframe-overlay, suspicious-conversation-phone-message, 18).
 attack(iframe-overlay, suspicious-conversation-email, 98).
-attack(iframe-overlay, suspicious-conversation-visit, 0).
+attack(iframe-overlay, suspicious-conversation-visit, 2).
 attack(iframe-overlay, app-download, 4).
 attack(iframe-overlay, ad-click, 89).
 attack(iframe-overlay, ad-blocker-deactivation, 56).
@@ -271,7 +271,7 @@ attack(iframe-overlay, frequents-spams, 73).
 attack(iframe-overlay, company-size-1-250,82).
 attack(iframe-overlay, company-size-250-500,91).
 attack(iframe-overlay, company-size-500-1000,77).
-attack(iframe-overlay, company-size-1000+,78).
+attack(iframe-overlay, company-size-1000,78).
 attack(iframe-overlay, company-sector-hospital,41).
 attack(iframe-overlay, company-sector-finance,75).
 attack(iframe-overlay, company-sector-technology,85).
@@ -291,7 +291,7 @@ attack(credential-prompt-impersonation, update, 3).
 attack(credential-prompt-impersonation, suspicious-conversation-phone-call, 12).
 attack(credential-prompt-impersonation, suspicious-conversation-phone-message, 8).
 attack(credential-prompt-impersonation, suspicious-conversation-email, 11).
-attack(credential-prompt-impersonation, suspicious-conversation-visit, 0).
+attack(credential-prompt-impersonation, suspicious-conversation-visit, 2).
 attack(credential-prompt-impersonation, app-download, 84).
 attack(credential-prompt-impersonation, ad-click, 19).
 attack(credential-prompt-impersonation, ad-blocker-deactivation, 16).
@@ -304,7 +304,7 @@ attack(credential-prompt-impersonation, frequents-spams, 73).
 attack(credential-prompt-impersonation, company-size-1-250,84).
 attack(credential-prompt-impersonation, company-size-250-500,89).
 attack(credential-prompt-impersonation, company-size-500-1000,79).
-attack(credential-prompt-impersonation, company-size-1000+,80).
+attack(credential-prompt-impersonation, company-size-1000,80).
 attack(credential-prompt-impersonation, company-sector-hospital,65).
 attack(credential-prompt-impersonation, company-sector-finance,84).
 attack(credential-prompt-impersonation, company-sector-technology,80).
@@ -323,7 +323,7 @@ attack(malicious-manual-software-update, update, 100).
 attack(malicious-manual-software-update, suspicious-conversation-phone-call, 5).
 attack(malicious-manual-software-update, suspicious-conversation-phone-message, 4).
 attack(malicious-manual-software-update, suspicious-conversation-email, 72).
-attack(malicious-manual-software-update, suspicious-conversation-visit, 0).
+attack(malicious-manual-software-update, suspicious-conversation-visit, 2).
 attack(malicious-manual-software-update, app-download, 87).
 attack(malicious-manual-software-update, ad-click, 12).
 attack(malicious-manual-software-update, ad-blocker-deactivation, 16).
@@ -335,7 +335,7 @@ attack(malicious-manual-software-update, frequents-spams, 73).
 attack(malicious-manual-software-update, company-size-1-250,78).
 attack(malicious-manual-software-update, company-size-250-500,85).
 attack(malicious-manual-software-update, company-size-500-1000,73).
-attack(malicious-manual-software-update, company-size-1000+,83).
+attack(malicious-manual-software-update, company-size-1000,83).
 attack(malicious-manual-software-update, company-sector-hospital,65).
 attack(malicious-manual-software-update, company-sector-finance,88).
 attack(malicious-manual-software-update, company-sector-technology,81).
@@ -412,3 +412,5 @@ countermeasure(malicious-manual-software-update, validate-software-updates, 88).
 countermeasure(malicious-manual-software-update, install-MSRT , 70).
 countermeasure(malicious-manual-software-update, employee-education, 65).
 
+countermeasures(A,L) :- findall(X, countermeasure(A,X,V),L).
+countermeasures_sorted(A,L) :- findall([V,X], countermeasure(A,X,V), L1),sort(L1,L).
