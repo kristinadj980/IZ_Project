@@ -192,6 +192,7 @@ attack(influence-via-incentives, suspicious-conversation-phone-call, 97).
 attack(influence-via-incentives, suspicious-conversation-phone-message, 98).
 attack(influence-via-incentives, suspicious-conversation-email, 91).
 attack(influence-via-incentives, suspicious-conversation-visit, 85).
+attack(influence-via-incentives, bribery, 60).
 attack(influence-via-incentives, app-download, 6).
 attack(influence-via-incentives, ad-click, 2).
 attack(influence-via-incentives, ad-blocker-deactivation, 2).
