@@ -322,6 +322,297 @@ attack(malicious-manual-software-update, australia, 84).
 attack(malicious-manual-software-update, asia, 86).
 attack(malicious-manual-software-update, africa, 33).
 
+%pretexting-via-tech-support
+attacksymptomslist(pretexting-via-tech-support, [suspicious-conversation-phone-call,suspicious-conversation-phone-message,suspicious-conversation-email,suspicious-conversation-visit,pop-up-windows,credentials-theft]).
+
+attack(pretexting-via-tech-support, suspicious-conversation-phone-call, 99).
+attack(pretexting-via-tech-support, suspicious-conversation-phone-message, 98).
+attack(pretexting-via-tech-support, suspicious-conversation-email, 86).
+attack(pretexting-via-tech-support, suspicious-conversation-visit, 71).
+attack(pretexting-via-tech-support, pop-up-windows, 82).
+attack(pretexting-via-tech-support, credentials-theft, 83).
+attack(pretexting-via-tech-support, company-size-1-250,92).
+attack(pretexting-via-tech-support, company-size-250-500,87).
+attack(pretexting-via-tech-support, company-size-500-1000,57).
+attack(pretexting-via-tech-support, company-size-1000,75).
+attack(pretexting-via-tech-support, company-sector-hospital,52).
+attack(pretexting-via-tech-support, company-sector-finance,2).
+attack(pretexting-via-tech-support, company-sector-technology,23).
+attack(pretexting-via-tech-support, company-sector-business-and-professional-service,53).
+attack(pretexting-via-tech-support, company-sector-retail-and-manifacturing,76).
+attack(pretexting-via-tech-support, company-sector-logistics-and-transportation,23).
+attack(pretexting-via-tech-support, europe, 35).
+attack(pretexting-via-tech-support, north-america, 87).
+attack(pretexting-via-tech-support, south-america, 12).
+attack(pretexting-via-tech-support, australia, 93).
+attack(pretexting-via-tech-support, asia, 75).
+attack(pretexting-via-tech-support, africa, 7).
+
+
+
+%pretexting-via-delivery-person
+attacksymptomslist(pretexting-via-delivery-person, [suspicious-conversation-phone-call,suspicious-conversation-phone-message,suspicious-conversation-visit]).
+
+attack(pretexting-via-delivery-person, suspicious-conversation-phone-call, 87).
+attack(pretexting-via-delivery-person, suspicious-conversation-phone-message, 98).
+attack(pretexting-via-delivery-person, suspicious-conversation-visit, 96).
+attack(pretexting-via-delivery-person, company-size-1-250,92).
+attack(pretexting-via-delivery-person, company-size-250-500,7).
+attack(pretexting-via-delivery-person, company-size-500-1000,19).
+attack(pretexting-via-delivery-person, company-size-1000,34).
+attack(pretexting-via-delivery-person, company-sector-hospital,52).
+attack(pretexting-via-delivery-person, company-sector-finance,2).
+attack(pretexting-via-delivery-person, company-sector-technology,23).
+attack(pretexting-via-delivery-person, company-sector-business-and-professional-service,53).
+attack(pretexting-via-delivery-person, company-sector-retail-and-manifacturing,76).
+attack(pretexting-via-delivery-person, company-sector-logistics-and-transportation,23).
+attack(pretexting-via-delivery-person, europe, 35).
+attack(pretexting-via-delivery-person, north-america, 87).
+attack(pretexting-via-delivery-person, south-america, 12).
+attack(pretexting-via-delivery-person, australia, 93).
+attack(pretexting-via-delivery-person, asia, 75).
+attack(pretexting-via-delivery-person, africa, 7).
+
+
+%pretexting-via-phone
+attacksymptomslist(pretexting-via-phone, [suspicious-conversation-phone-call,suspicious-conversation-phone-message,credentials-theft]).
+
+attack(pretexting-via-phone, suspicious-conversation-phone-call, 87).
+attack(pretexting-via-phone, suspicious-conversation-phone-message, 98).
+attack(pretexting-via-phone, credentials-theft, 83).
+attack(pretexting-via-phone, company-size-1-250,92).
+attack(pretexting-via-phone, company-size-250-500,87).
+attack(pretexting-via-phone, company-size-500-1000,57).
+attack(pretexting-via-phone, company-size-1000,75).
+attack(pretexting-via-phone, company-sector-hospital,52).
+attack(pretexting-via-phone, company-sector-finance,2).
+attack(pretexting-via-phone, company-sector-technology,23).
+attack(pretexting-via-phone, company-sector-business-and-professional-service,53).
+attack(pretexting-via-phone, company-sector-retail-and-manifacturing,76).
+attack(pretexting-via-phone, company-sector-logistics-and-transportation,23).
+attack(pretexting-via-phone, europe, 35).
+attack(pretexting-via-phone, north-america, 87).
+attack(pretexting-via-phone, south-america, 12).
+attack(pretexting-via-phone, australia, 93).
+attack(pretexting-via-phone, asia, 75).
+attack(pretexting-via-phone, africa, 7).
+
+
+%influence-perception-of-reciprocation
+attacksymptomslist(influence-perception-of-reciprocation, [suspicious-conversation-phone-call,suspicious-conversation-phone-message,suspicious-conversation-email,ad-click,pop-up-windows,credentials-theft]).
+
+attack(influence-perception-of-reciprocation, suspicious-conversation-phone-call, 81).
+attack(influence-perception-of-reciprocation, suspicious-conversation-phone-message, 80).
+attack(influence-perception-of-reciprocation, suspicious-conversation-email, 72).
+attack(influence-perception-of-reciprocation, ad-click, 76).
+attack(influence-perception-of-reciprocation, pop-up-windows, 72).
+attack(influence-perception-of-reciprocation, credentials-theft, 71).
+attack(influence-perception-of-reciprocation, company-size-1-250,92).
+attack(influence-perception-of-reciprocation, company-size-250-500,87).
+attack(influence-perception-of-reciprocation, company-size-500-1000,57).
+attack(influence-perception-of-reciprocation, company-size-1000,75).
+attack(influence-perception-of-reciprocation, company-sector-hospital,52).
+attack(influence-perception-of-reciprocation, company-sector-finance,2).
+attack(influence-perception-of-reciprocation, company-sector-technology,23).
+attack(influence-perception-of-reciprocation, company-sector-business-and-professional-service,53).
+attack(influence-perception-of-reciprocation, company-sector-retail-and-manifacturing,76).
+attack(influence-perception-of-reciprocation, company-sector-logistics-and-transportation,23).
+attack(influence-perception-of-reciprocation, europe, 35).
+attack(influence-perception-of-reciprocation, north-america, 87).
+attack(influence-perception-of-reciprocation, south-america, 12).
+attack(influence-perception-of-reciprocation, australia, 93).
+attack(influence-perception-of-reciprocation, asia, 75).
+attack(influence-perception-of-reciprocation, africa, 7).
+
+
+%influence-perception-of-scarcity
+attacksymptomslist(influence-perception-of-scarcity, [suspicious-conversation-phone-call,suspicious-conversation-phone-message,suspicious-conversation-email,ad-click,pop-up-windows,credentials-theft]).
+
+attack(influence-perception-of-scarcity, suspicious-conversation-phone-call, 90).
+attack(influence-perception-of-scarcity, suspicious-conversation-phone-message, 98).
+attack(influence-perception-of-scarcity, suspicious-conversation-email, 76).
+attack(influence-perception-of-scarcity, ad-click, 87).
+attack(influence-perception-of-scarcity, pop-up-windows, 90).
+attack(influence-perception-of-scarcity, credentials-theft, 83).
+attack(influence-perception-of-scarcity, company-size-1-250,92).
+attack(influence-perception-of-scarcity, company-size-250-500,87).
+attack(influence-perception-of-scarcity, company-size-500-1000,57).
+attack(influence-perception-of-scarcity, company-size-1000,75).
+attack(influence-perception-of-scarcity, company-sector-hospital,52).
+attack(influence-perception-of-scarcity, company-sector-finance,2).
+attack(influence-perception-of-scarcity, company-sector-technology,23).
+attack(influence-perception-of-scarcity, company-sector-business-and-professional-service,53).
+attack(influence-perception-of-scarcity, company-sector-retail-and-manifacturing,76).
+attack(influence-perception-of-scarcity, company-sector-logistics-and-transportation,23).
+attack(influence-perception-of-scarcity, europe, 35).
+attack(influence-perception-of-scarcity, north-america, 87).
+attack(influence-perception-of-scarcity, south-america, 12).
+attack(influence-perception-of-scarcity, australia, 93).
+attack(influence-perception-of-scarcity, asia, 75).
+attack(influence-perception-of-scarcity, africa, 7).
+
+
+%influence-perception-of-authority
+attacksymptomslist(influence-perception-of-authority, [suspicious-conversation-phone-call,suspicious-conversation-phone-message,suspicious-conversation-email,ad-click,pop-up-windows,credentials-theft]).
+
+attack(influence-perception-of-authority, suspicious-conversation-phone-call, 77).
+attack(influence-perception-of-authority, suspicious-conversation-phone-message, 91).
+attack(influence-perception-of-authority, suspicious-conversation-email, 94).
+attack(influence-perception-of-authority, ad-click, 72).
+attack(influence-perception-of-authority, pop-up-windows, 83).
+attack(influence-perception-of-authority, credentials-theft, 84).
+attack(influence-perception-of-authority, company-size-1-250,92).
+attack(influence-perception-of-authority, company-size-250-500,87).
+attack(influence-perception-of-authority, company-size-500-1000,57).
+attack(influence-perception-of-authority, company-size-1000,75).
+attack(influence-perception-of-authority, company-sector-hospital,52).
+attack(influence-perception-of-authority, company-sector-finance,2).
+attack(influence-perception-of-authority, company-sector-technology,23).
+attack(influence-perception-of-authority, company-sector-business-and-professional-service,53).
+attack(influence-perception-of-authority, company-sector-retail-and-manifacturing,76).
+attack(influence-perception-of-authority, company-sector-logistics-and-transportation,23).
+attack(influence-perception-of-authority, europe, 35).
+attack(influence-perception-of-authority, north-america, 87).
+attack(influence-perception-of-authority, south-america, 12).
+attack(influence-perception-of-authority, australia, 93).
+attack(influence-perception-of-authority, asia, 75).
+attack(influence-perception-of-authority, africa, 7).
+
+
+%influence-perception-of-liking
+attacksymptomslist(influence-perception-of-liking, [suspicious-conversation-phone-call,suspicious-conversation-phone-message,suspicious-conversation-email,suspicious-conversation-visit,credentials-theft]).
+
+attack(influence-perception-of-liking, suspicious-conversation-phone-call, 89).
+attack(influence-perception-of-liking, suspicious-conversation-phone-message, 71).
+attack(influence-perception-of-liking, suspicious-conversation-email, 72).
+attack(influence-perception-of-liking, suspicious-conversation-visit, 77).
+attack(influence-perception-of-liking, credentials-theft, 70).
+attack(influence-perception-of-liking, company-size-1-250,92).
+attack(influence-perception-of-liking, company-size-250-500,87).
+attack(influence-perception-of-liking, company-size-500-1000,57).
+attack(influence-perception-of-liking, company-size-1000,75).
+attack(influence-perception-of-liking, company-sector-hospital,52).
+attack(influence-perception-of-liking, company-sector-finance,2).
+attack(influence-perception-of-liking, company-sector-technology,23).
+attack(influence-perception-of-liking, company-sector-business-and-professional-service,53).
+attack(influence-perception-of-liking, company-sector-retail-and-manifacturing,76).
+attack(influence-perception-of-liking, company-sector-logistics-and-transportation,23).
+attack(influence-perception-of-liking, europe, 35).
+attack(influence-perception-of-liking, north-america, 87).
+attack(influence-perception-of-liking, south-america, 12).
+attack(influence-perception-of-liking, australia, 93).
+attack(influence-perception-of-liking, asia, 75).
+attack(influence-perception-of-liking, africa, 7).
+
+
+%influence-perception-of-consensus-or-social-proof
+attacksymptomslist(influence-perception-of-consensus-or-social-proof, [suspicious-conversation-phone-call,suspicious-conversation-phone-message,suspicious-conversation-email,ad-click,pop-up-windows,credentials-theft]).
+
+attack(influence-perception-of-consensus-or-social-proof, suspicious-conversation-phone-call, 77).
+attack(influence-perception-of-consensus-or-social-proof, suspicious-conversation-phone-message, 78).
+attack(influence-perception-of-consensus-or-social-proof, suspicious-conversation-email, 86).
+attack(influence-perception-of-consensus-or-social-proof, ad-click, 71).
+attack(influence-perception-of-consensus-or-social-proof, pop-up-windows, 82).
+attack(influence-perception-of-consensus-or-social-proof, credentials-theft, 83).
+attack(influence-perception-of-consensus-or-social-proof, company-size-1-250,92).
+attack(influence-perception-of-consensus-or-social-proof, company-size-250-500,87).
+attack(influence-perception-of-consensus-or-social-proof, company-size-500-1000,57).
+attack(influence-perception-of-consensus-or-social-proof, company-size-1000,75).
+attack(influence-perception-of-consensus-or-social-proof, company-sector-hospital,52).
+attack(influence-perception-of-consensus-or-social-proof, company-sector-finance,2).
+attack(influence-perception-of-consensus-or-social-proof, company-sector-technology,23).
+attack(influence-perception-of-consensus-or-social-proof, company-sector-business-and-professional-service,53).
+attack(influence-perception-of-consensus-or-social-proof, company-sector-retail-and-manifacturing,76).
+attack(influence-perception-of-consensus-or-social-proof, company-sector-logistics-and-transportation,23).
+attack(influence-perception-of-consensus-or-social-proof, europe, 35).
+attack(influence-perception-of-consensus-or-social-proof, north-america, 87).
+attack(influence-perception-of-consensus-or-social-proof, south-america, 12).
+attack(influence-perception-of-consensus-or-social-proof, australia, 93).
+attack(influence-perception-of-consensus-or-social-proof, asia, 75).
+attack(influence-perception-of-consensus-or-social-proof, africa, 7).
+
+
+%target-influence-via-framing
+attacksymptomslist(target-influence-via-framing, [suspicious-conversation-phone-call,suspicious-conversation-phone-message,suspicious-conversation-email,ad-click,pop-up-windows,credentials-theft]).
+
+attack(target-influence-via-framing, suspicious-conversation-phone-call, 83).
+attack(target-influence-via-framing, suspicious-conversation-phone-message, 98).
+attack(target-influence-via-framing, suspicious-conversation-email, 72).
+attack(target-influence-via-framing, ad-click, 84).
+attack(target-influence-via-framing, pop-up-windows, 81).
+attack(target-influence-via-framing, credentials-theft, 83).
+attack(target-influence-via-framing, company-size-1-250,92).
+attack(target-influence-via-framing, company-size-250-500,87).
+attack(target-influence-via-framing, company-size-500-1000,57).
+attack(target-influence-via-framing, company-size-1000,75).
+attack(target-influence-via-framing, company-sector-hospital,52).
+attack(target-influence-via-framing, company-sector-finance,2).
+attack(target-influence-via-framing, company-sector-technology,23).
+attack(target-influence-via-framing, company-sector-business-and-professional-service,53).
+attack(target-influence-via-framing, company-sector-retail-and-manifacturing,76).
+attack(target-influence-via-framing, company-sector-logistics-and-transportation,23).
+attack(target-influence-via-framing, europe, 35).
+attack(target-influence-via-framing, north-america, 87).
+attack(target-influence-via-framing, south-america, 12).
+attack(target-influence-via-framing, australia, 93).
+attack(target-influence-via-framing, asia, 75).
+attack(target-influence-via-framing, africa, 7).
+
+
+%influence-via-modes-of-thinking
+attacksymptomslist(influence-via-modes-of-thinking, [suspicious-conversation-phone-call,suspicious-conversation-phone-message,suspicious-conversation-visit,credentials-theft]).
+
+attack(influence-via-modes-of-thinking, suspicious-conversation-phone-call, 82).
+attack(influence-via-modes-of-thinking, suspicious-conversation-phone-message, 88).
+attack(influence-via-modes-of-thinking, suspicious-conversation-visit, 74).
+attack(influence-via-modes-of-thinking, credentials-theft, 78).
+attack(influence-via-modes-of-thinking, company-size-1-250,92).
+attack(influence-via-modes-of-thinking, company-size-250-500,87).
+attack(influence-via-modes-of-thinking, company-size-500-1000,57).
+attack(influence-via-modes-of-thinking, company-size-1000,75).
+attack(influence-via-modes-of-thinking, company-sector-hospital,52).
+attack(influence-via-modes-of-thinking, company-sector-finance,2).
+attack(influence-via-modes-of-thinking, company-sector-technology,23).
+attack(influence-via-modes-of-thinking, company-sector-business-and-professional-service,53).
+attack(influence-via-modes-of-thinking, company-sector-retail-and-manifacturing,76).
+attack(influence-via-modes-of-thinking, company-sector-logistics-and-transportation,23).
+attack(influence-via-modes-of-thinking, europe, 35).
+attack(influence-via-modes-of-thinking, north-america, 87).
+attack(influence-via-modes-of-thinking, south-america, 12).
+attack(influence-via-modes-of-thinking, australia, 93).
+attack(influence-via-modes-of-thinking, asia, 75).
+attack(influence-via-modes-of-thinking, africa, 7).
+
+
+
+%target-influence-via-interview-and-interrogation
+attacksymptomslist(target-influence-via-interview-and-interrogation, [suspicious-conversation-phone-call,suspicious-conversation-phone-message,suspicious-conversation-email,ad-click,pop-up-windows]).
+
+attack(target-influence-via-interview-and-interrogation, suspicious-conversation-phone-call, 90).
+attack(target-influence-via-interview-and-interrogation, suspicious-conversation-phone-message, 73).
+attack(target-influence-via-interview-and-interrogation, suspicious-conversation-email, 78).
+attack(target-influence-via-interview-and-interrogation, ad-click, 81).
+attack(target-influence-via-interview-and-interrogation, pop-up-windows, 76).
+attack(target-influence-via-interview-and-interrogation, company-size-1-250,92).
+attack(target-influence-via-interview-and-interrogation, company-size-250-500,87).
+attack(target-influence-via-interview-and-interrogation, company-size-500-1000,57).
+attack(target-influence-via-interview-and-interrogation, company-size-1000,75).
+attack(target-influence-via-interview-and-interrogation, company-sector-hospital,52).
+attack(target-influence-via-interview-and-interrogation, company-sector-finance,2).
+attack(target-influence-via-interview-and-interrogation, company-sector-technology,23).
+attack(target-influence-via-interview-and-interrogation, company-sector-business-and-professional-service,53).
+attack(target-influence-via-interview-and-interrogation, company-sector-retail-and-manifacturing,76).
+attack(target-influence-via-interview-and-interrogation, company-sector-logistics-and-transportation,23).
+attack(target-influence-via-interview-and-interrogation, europe, 35).
+attack(target-influence-via-interview-and-interrogation, north-america, 87).
+attack(target-influence-via-interview-and-interrogation, south-america, 12).
+attack(target-influence-via-interview-and-interrogation, australia, 93).
+attack(target-influence-via-interview-and-interrogation, asia, 75).
+attack(target-influence-via-interview-and-interrogation, africa, 7).
+
+
+
+
 %mere zastite----------------------------------------------------------------------
 
 
@@ -384,6 +675,45 @@ countermeasure(credential-prompt-impersonation, employee-education,72).
 countermeasure(malicious-manual-software-update, validate-software-updates, 88).
 countermeasure(malicious-manual-software-update, install-MSRT , 70).
 countermeasure(malicious-manual-software-update, employee-education, 65).
+
+%target-influence-via-interview-and-interrogation
+countermeasure(target-influence-via-interview-and-interrogation, employee-education,84).
+
+%influence-via-modes-of-thinking
+countermeasure(influence-via-modes-of-thinking, employee-education,82).
+
+%target-influence-via-framing
+countermeasure(target-influence-via-framing, employee-education,81).
+countermeasure(target-influence-via-framing, give-only-required-information, 93).
+
+%influence-perception-of-consensus-or-social-proof
+countermeasure(influence-perception-of-consensus-or-social-proof, employee-education,90).
+
+%influence-perception-of-liking
+countermeasure(influence-perception-of-liking, employee-education,75).
+
+%influence-perception-of-authority
+countermeasure(influence-perception-of-authority, employee-education,78).
+
+%influence-perception-of-scarcity
+countermeasure(influence-perception-of-scarcity, employee-education,89).
+
+%influence-perception-of-reciprocation
+countermeasure(influence-perception-of-reciprocation, employee-education,81).
+
+%pretexting-via-phone
+countermeasure(pretexting-via-phone, employee-education,82).
+countermeasure(pretexting-via-phone, validate-phone-number,48).
+
+%pretexting-via-delivery-person
+countermeasure(pretexting-via-delivery-person, employee-education,80).
+countermeasure(pretexting-via-delivery-person, validate-phone-number,43).
+
+%pretexting-via-tech-support
+countermeasure(pretexting-via-tech-support, employee-education,70).
+countermeasure(pretexting-via-tech-support, validate-phone-number,47).
+
+
 
 %pravila-----------------------------------------------------------------------------------
 
