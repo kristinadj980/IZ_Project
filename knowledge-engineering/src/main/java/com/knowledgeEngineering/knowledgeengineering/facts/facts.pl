@@ -119,21 +119,14 @@ attack(typo-squatting, africa, 30).
 
 
 %pretexting-via-customer-service
-attack(pretexting-via-customer-service, update, 13).
+attacksymptomslist(pretexting-via-customer-service, [suspicious-conversation-phone-call,suspicious-conversation-phone-message,suspicious-conversation-email,ad-click,pop-up-windows,credentials-theft]).
+
 attack(pretexting-via-customer-service, suspicious-conversation-phone-call, 87).
 attack(pretexting-via-customer-service, suspicious-conversation-phone-message, 98).
-attack(pretexting-via-customer-service, suspicious-conversation-email, 66).
-attack(pretexting-via-customer-service, suspicious-conversation-visit, 2).
-attack(pretexting-via-customer-service, app-download, 17).
+attack(pretexting-via-customer-service, suspicious-conversation-email, 76).
 attack(pretexting-via-customer-service, ad-click, 86).
-attack(pretexting-via-customer-service, ad-blocker-deactivation, 57).
-attack(pretexting-via-customer-service, suspicious-link, 23).
 attack(pretexting-via-customer-service, pop-up-windows, 82).
-attack(pretexting-via-customer-service, credential-re-entering, 67).
-attack(pretexting-via-customer-service, services-fail, 13).
 attack(pretexting-via-customer-service, credentials-theft, 83).
-attack(pretexting-via-customer-service, suspicious-code-modifications, 53).
-attack(pretexting-via-customer-service, frequents-spams, 43).
 attack(pretexting-via-customer-service, company-size-1-250,92).
 attack(pretexting-via-customer-service, company-size-250-500,87).
 attack(pretexting-via-customer-service, company-size-500-1000,57).
@@ -153,21 +146,12 @@ attack(pretexting-via-customer-service, africa, 7).
 
 
 %dns-domain-seizure
-attack(dns-domain-seizure, update, 63).
-attack(dns-domain-seizure, suspicious-conversation-phone-call, 7).
-attack(dns-domain-seizure, suspicious-conversation-phone-message, 8).
-attack(dns-domain-seizure, suspicious-conversation-email, 6).
-attack(dns-domain-seizure, suspicious-conversation-visit, 2).
-attack(dns-domain-seizure, app-download, 6).
-attack(dns-domain-seizure, ad-click, 0).
-attack(dns-domain-seizure, ad-blocker-deactivation, 0).
-attack(dns-domain-seizure, suspicious-link, 23).
-attack(dns-domain-seizure, pop-up-windows, 21).
+attacksymptomslist(dns-domain-seizure, [credential-re-entering,services-fail,credentials-theft,suspicious-code-modifications]).
+
 attack(dns-domain-seizure, credential-re-entering, 79).
 attack(dns-domain-seizure, services-fail, 99).
 attack(dns-domain-seizure, credentials-theft, 83).
-attack(dns-domain-seizure, suspicious-code-modifications, 53).
-attack(dns-domain-seizure, frequents-spams, 11).
+attack(dns-domain-seizure, suspicious-code-modifications, 73).
 attack(dns-domain-seizure, company-size-1-250, 11).
 attack(dns-domain-seizure, company-size-250-500, 7).
 attack(dns-domain-seizure, company-size-500-1000, 37).
@@ -187,22 +171,16 @@ attack(dns-domain-seizure, africa, 17).
 
 
 %influence-via-incentives
-attack(influence-via-incentives, update, 13).
+attacksymptomslist(influence-via-incentives, [suspicious-conversation-phone-call,suspicious-conversation-phone-message,suspicious-conversation-email,suspicious-conversation-visit,bribery,suspicious-link,credentials-theft]).
+
+
 attack(influence-via-incentives, suspicious-conversation-phone-call, 97).
 attack(influence-via-incentives, suspicious-conversation-phone-message, 98).
 attack(influence-via-incentives, suspicious-conversation-email, 91).
 attack(influence-via-incentives, suspicious-conversation-visit, 85).
-attack(influence-via-incentives, bribery, 60).
-attack(influence-via-incentives, app-download, 6).
-attack(influence-via-incentives, ad-click, 2).
-attack(influence-via-incentives, ad-blocker-deactivation, 2).
+attack(influence-via-incentives, bribery, 70).
 attack(influence-via-incentives, suspicious-link, 89).
-attack(influence-via-incentives, pop-up-windows, 13).
-attack(influence-via-incentives, credential-re-entering, 56).
-attack(influence-via-incentives, services-fail, 44).
 attack(influence-via-incentives, credentials-theft, 83).
-attack(influence-via-incentives, suspicious-code-modifications, 13).
-attack(influence-via-incentives, frequents-spams, 11).
 attack(influence-via-incentives, company-size-1-250, 65).
 attack(influence-via-incentives, company-size-250-500, 17).
 attack(influence-via-incentives, company-size-500-1000,37).
@@ -222,20 +200,14 @@ attack(influence-via-incentives, africa, 17).
 
 
 %harvesting-information-via-api-event-monitoring
-attack(harvesting-information-via-api-event-monitoring, update, 3).
+attacksymptomslist(harvesting-information-via-api-event-monitoring, [suspicious-conversation-phone-call,suspicious-conversation-phone-message,suspicious-conversation-visit,app-download,credential-re-entering,credentials-theft,frequents-spams]).
+
 attack(harvesting-information-via-api-event-monitoring, suspicious-conversation-phone-call, 98).
 attack(harvesting-information-via-api-event-monitoring, suspicious-conversation-phone-message, 84).
-attack(harvesting-information-via-api-event-monitoring, suspicious-conversation-email, 63).
 attack(harvesting-information-via-api-event-monitoring, suspicious-conversation-visit, 79).
 attack(harvesting-information-via-api-event-monitoring, app-download, 70).
-attack(harvesting-information-via-api-event-monitoring, ad-click, 30).
-attack(harvesting-information-via-api-event-monitoring, ad-blocker-deactivation, 2).
-attack(harvesting-information-via-api-event-monitoring, suspicious-link, 41).
-attack(harvesting-information-via-api-event-monitoring, pop-up-windows, 2).
 attack(harvesting-information-via-api-event-monitoring, credential-re-entering, 79).
-attack(harvesting-information-via-api-event-monitoring, services-fail, 31).
 attack(harvesting-information-via-api-event-monitoring, credentials-theft, 81).
-attack(harvesting-information-via-api-event-monitoring, suspicious-code-modifications, 5).
 attack(harvesting-information-via-api-event-monitoring, frequents-spams, 71).
 attack(harvesting-information-via-api-event-monitoring, company-size-1-250, 56).
 attack(harvesting-information-via-api-event-monitoring, company-size-250-500, 73).
@@ -412,6 +384,13 @@ countermeasure(credential-prompt-impersonation, employee-education,72).
 countermeasure(malicious-manual-software-update, validate-software-updates, 88).
 countermeasure(malicious-manual-software-update, install-MSRT , 70).
 countermeasure(malicious-manual-software-update, employee-education, 65).
+
+%pravila-----------------------------------------------------------------------------------
+
+contains(S,[]).
+contains(S,[H|T]) :- member(H,S), contains(S,T).
+
+possible_attack_by_symptoms(S,J) :- attacksymptomslist(J,S2), contains(S2,S).
 
 countermeasures(A,L) :- findall(X, countermeasure(A,X,V),L).
 countermeasures_sorted(A,L) :- findall([V,X], countermeasure(A,X,V), L1),sort(L1,L).
