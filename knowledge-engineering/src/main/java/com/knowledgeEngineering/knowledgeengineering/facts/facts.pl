@@ -1,6 +1,8 @@
 %napadi i simptomi i ucestalost njihovog koriscenja-----------------------------
 
 %counterfeit-websites
+attacksymptomslist(counterfeit-websites, [suspicious-conversation-email,suspicious-link,suspicious-website,credentials-theft]).
+
 attack(counterfeit-websites, update, 12).
 attack(counterfeit-websites, suspicious-conversation-email, 89).
 attack(counterfeit-websites, app-download, 17).
@@ -30,7 +32,42 @@ attack(counterfeit-websites, australia, 86).
 attack(counterfeit-websites, asia, 85).
 attack(counterfeit-websites, africa, 22).
 
+%pharming
+attacksymptomslist(pharming, [suspicious-link,suspicious-website,credential-re-entering,credentials-theft,virus-detection]).
+
+attack(pharming, update, 16).
+attack(pharming, suspicious-conversation-email, 63).
+attack(pharming, app-download, 19).
+attack(pharming, ad-click, 15).
+attack(pharming, ad-blocker-deactivation, 3).
+attack(pharming, suspicious-link, 97).
+attack(pharming, suspicious-website, 95).
+attack(pharming, pop-up-windows, 23).
+attack(pharming, credential-re-entering, 75).
+attack(pharming, services-fail, 29).
+attack(pharming, credentials-theft, 72).
+attack(pharming, frequents-spams, 47).
+attack(pharming, virus-detection, 83).
+attack(pharming, company-size-1-250,78).
+attack(pharming, company-size-250-500,85).
+attack(pharming, company-size-500-1000,80).
+attack(pharming, company-size-1000,70).
+attack(pharming, company-sector-hospital, 46).
+attack(pharming, company-sector-finance, 98).
+attack(pharming, company-sector-technology,80).
+attack(pharming, company-sector-business-and-professional-service,68).
+attack(pharming, company-sector-retail-and-manifacturing,65).
+attack(pharming, company-sector-logistics-and-transportation,53).
+attack(pharming, europe, 89).
+attack(pharming, north-america, 87).
+attack(pharming, south-america, 73).
+attack(pharming, australia, 85).
+attack(pharming, asia, 84).
+attack(pharming, africa, 22).
+
 %spear-phishing
+attacksymptomslist(spear-phishing, [suspicious-conversation-email,suspicious-link,suspicious-website,credentials-theft,frequents-spams]).
+
 attack(spear-phishing, update, 19).
 attack(spear-phishing, suspicious-conversation-phone-call, 5).
 attack(spear-phishing, suspicious-conversation-phone-message, 5).
@@ -41,7 +78,7 @@ attack(spear-phishing, suspicious-link, 97).
 attack(spear-phishing, suspicious-website, 89).
 attack(spear-phishing, credential-re-entering, 26).
 attack(spear-phishing, credentials-theft, 98).
-attack(spear-phishing, frequents-spams, 67).
+attack(spear-phishing, frequents-spams, 72).
 attack(spear-phishing, company-size-1-250,87).
 attack(spear-phishing, company-size-250-500,90).
 attack(spear-phishing, company-size-500-1000,93).
@@ -60,6 +97,8 @@ attack(spear-phishing, asia, 88).
 attack(spear-phishing, africa, 29).
 
 %mobile-phishing
+attacksymptomslist(mobile-phishing, [suspicious-conversation-phone-call,suspicious-conversation-phone-message,suspicious-link,credentials-theft,frequents-spams]).
+
 attack(mobile-phishing, update, 7).
 attack(mobile-phishing, suspicious-conversation-phone-call, 100).
 attack(mobile-phishing, suspicious-conversation-phone-message, 100).
@@ -89,7 +128,38 @@ attack(mobile-phishing, australia, 85).
 attack(mobile-phishing, asia, 87).
 attack(mobile-phishing, africa, 28).
 
+%voice-phishing
+attacksymptomslist(voice-phishing, [suspicious-conversation-phone-call,credentials-theft,frequents-spams]).
+
+attack(voice-phishing, suspicious-conversation-phone-call, 100).
+attack(voice-phishing, app-download, 5).
+attack(voice-phishing, ad-click, 4).
+attack(voice-phishing, ad-blocker-deactivation, 4).
+attack(voice-phishing, suspicious-link, 4).
+attack(voice-phishing, pop-up-windows, 6).
+attack(voice-phishing, credential-re-entering, 7).
+attack(voice-phishing, credentials-theft, 99).
+attack(voice-phishing, frequents-spams, 79).
+attack(voice-phishing, company-size-1-250,88).
+attack(voice-phishing, company-size-250-500,90).
+attack(voice-phishing, company-size-500-1000,93).
+attack(voice-phishing, company-size-1000,84).
+attack(voice-phishing, company-sector-hospital,43).
+attack(voice-phishing, company-sector-finance,87).
+attack(voice-phishing, company-sector-technology,75).
+attack(voice-phishing, company-sector-business-and-professional-service,75).
+attack(voice-phishing, company-sector-retail-and-manifacturing,69).
+attack(voice-phishing, company-sector-logistics-and-transportation,48).
+attack(voice-phishing, europe, 79).
+attack(voice-phishing, north-america, 83).
+attack(voice-phishing, south-america, 70).
+attack(voice-phishing, australia, 85).
+attack(voice-phishing, asia, 87).
+attack(voice-phishing, africa, 28).
+
 %typo-squatting
+attacksymptomslist(typo-squatting, [suspicious-conversation-email,suspicious-link,suspicious-website,credentials-theft,frequents-spams]).
+
 attack(typo-squatting, update, 14).
 attack(typo-squatting, suspicious-conversation-email, 87).
 attack(typo-squatting, ad-click, 16).
@@ -116,6 +186,66 @@ attack(typo-squatting, south-america, 67).
 attack(typo-squatting, australia, 89).
 attack(typo-squatting, asia, 81).
 attack(typo-squatting, africa, 30).
+
+%sound-squatting
+attacksymptomslist(sound-squatting, [suspicious-conversation-email,suspicious-link,suspicious-website,credentials-theft,frequents-spams]).
+
+attack(sound-squatting, update, 13).
+attack(sound-squatting, suspicious-conversation-email, 71).
+attack(sound-squatting, ad-click, 15).
+attack(sound-squatting, ad-blocker-deactivation, 4).
+attack(sound-squatting, suspicious-link, 100).
+attack(sound-squatting, pop-up-windows, 24).
+attack(sound-squatting, suspicious-website, 95).
+attack(sound-squatting, credential-re-entering, 8).
+attack(sound-squatting, credentials-theft, 90).
+attack(sound-squatting, frequents-spams, 82).
+attack(sound-squatting, company-size-1-250,88).
+attack(sound-squatting, company-size-250-500,93).
+attack(sound-squatting, company-size-500-1000,92).
+attack(sound-squatting, company-size-1000,87).
+attack(sound-squatting, company-sector-hospital, 61).
+attack(sound-squatting, company-sector-finance, 79).
+attack(sound-squatting, company-sector-technology, 86).
+attack(sound-squatting, company-sector-business-and-professional-service, 77).
+attack(sound-squatting, company-sector-retail-and-manifacturing,62).
+attack(sound-squatting, company-sector-logistics-and-transportation,58).
+attack(sound-squatting, europe, 79).
+attack(sound-squatting, north-america, 90).
+attack(sound-squatting, south-america, 69).
+attack(sound-squatting, australia, 85).
+attack(sound-squatting, asia, 80).
+attack(sound-squatting, africa, 31).
+
+%homograph-attack-via-homoglyphs
+attacksymptomslist(homograph-attack-via-homoglyphs, [suspicious-conversation-email,suspicious-link,suspicious-website,credentials-theft,frequents-spams]).
+
+attack(homograph-attack-via-homoglyphs, update, 12).
+attack(homograph-attack-via-homoglyphs, suspicious-conversation-email, 71).
+attack(homograph-attack-via-homoglyphs, ad-click, 13).
+attack(homograph-attack-via-homoglyphs, ad-blocker-deactivation, 4).
+attack(homograph-attack-via-homoglyphs, suspicious-link, 97).
+attack(homograph-attack-via-homoglyphs, pop-up-windows, 26).
+attack(homograph-attack-via-homoglyphs, suspicious-website, 96).
+attack(homograph-attack-via-homoglyphs, credential-re-entering, 9).
+attack(homograph-attack-via-homoglyphs, credentials-theft, 92).
+attack(homograph-attack-via-homoglyphs, frequents-spams, 84).
+attack(homograph-attack-via-homoglyphs, company-size-1-250,89).
+attack(homograph-attack-via-homoglyphs, company-size-250-500,94).
+attack(homograph-attack-via-homoglyphs, company-size-500-1000,90).
+attack(homograph-attack-via-homoglyphs, company-size-1000,88).
+attack(homograph-attack-via-homoglyphs, company-sector-hospital, 62).
+attack(homograph-attack-via-homoglyphs, company-sector-finance, 78).
+attack(homograph-attack-via-homoglyphs, company-sector-technology, 88).
+attack(homograph-attack-via-homoglyphs, company-sector-business-and-professional-service, 76).
+attack(homograph-attack-via-homoglyphs, company-sector-retail-and-manifacturing,61).
+attack(homograph-attack-via-homoglyphs, company-sector-logistics-and-transportation,59).
+attack(homograph-attack-via-homoglyphs, europe, 78).
+attack(homograph-attack-via-homoglyphs, north-america, 91).
+attack(homograph-attack-via-homoglyphs, south-america, 68).
+attack(homograph-attack-via-homoglyphs, australia, 84).
+attack(homograph-attack-via-homoglyphs, asia, 81).
+attack(homograph-attack-via-homoglyphs, africa, 28).
 
 
 %pretexting-via-customer-service
@@ -622,6 +752,13 @@ countermeasure(counterfeit-websites, employee-education, 82).
 countermeasure(counterfeit-websites, antivirus, 76).
 countermeasure(typo-squatting, authenticate-all-servers, 87).
 
+%pharming
+countermeasure(pharming, only-click-on-familiar-links,92).
+countermeasure(pharming, employee-education, 92).
+countermeasure(pharming, turn-on-spam-filter, 74).
+countermeasure(pharming, bad-grammar-check, 90).
+countermeasure(pharming, antivirus, 91).
+
 %spear-phishing
 countermeasure(spear-phishing, only-click-on-familiar-links,95).
 countermeasure(spear-phishing, employee-education, 89).
@@ -635,15 +772,35 @@ countermeasure(mobile-phishing, only-click-on-familiar-links,49).
 countermeasure(mobile-phishing, employee-education, 85).
 countermeasure(mobile-phishing, bad-grammar-check, 73).
 countermeasure(mobile-phishing, antivirus, 80).
-countermeasure(mobile-phishing, not-responding-to-unknown-number, 89).
+countermeasure(mobile-phishing, not-responding-to-unknown-number, 97).
 countermeasure(mobile-phishing, give-only-required-information, 92).
+
+%voice-phishing
+countermeasure(voice-phishing, employee-education, 89).
+countermeasure(voice-phishing, not-responding-to-unknown-number, 98).
+countermeasure(voice-phishing, give-only-required-information, 94).
 
 %typo-squatting
 countermeasure(typo-squatting, only-click-on-familiar-links,97).
-countermeasure(typo-squatting, employee-education, 85).
+countermeasure(typo-squatting, employee-education, 90).
 countermeasure(typo-squatting, antivirus, 79).
 countermeasure(typo-squatting, authenticate-all-servers, 93).
-countermeasure(typo-squatting, DNS-hostnames-check, 92).
+countermeasure(typo-squatting, DNS-hostnames-check, 94). 
+
+%sound-squatting
+countermeasure(sound-squatting, only-click-on-familiar-links,96).
+countermeasure(sound-squatting, employee-education, 90).
+countermeasure(sound-squatting, antivirus, 78).
+countermeasure(sound-squatting, authenticate-all-servers, 94).
+countermeasure(sound-squatting, DNS-hostnames-check, 95). 
+
+%homograph-attack-via-homoglyphs
+countermeasure(homograph-attack-via-homoglyphs, only-click-on-familiar-links,95).
+countermeasure(homograph-attack-via-homoglyphs, employee-education, 90).
+countermeasure(homograph-attack-via-homoglyphs, antivirus, 79).
+countermeasure(homograph-attack-via-homoglyphs, authenticate-all-servers, 95).
+countermeasure(homograph-attack-via-homoglyphs, DNS-hostnames-check, 95). 
+countermeasure(homograph-attack-via-homoglyphs, browsers-that-can-warn-about-characters-from-different-character-sets, 96). 
 
 %pretexting-via-customer-service
 countermeasure(pretexting-via-customer-service, validate-phone-number, 95).
