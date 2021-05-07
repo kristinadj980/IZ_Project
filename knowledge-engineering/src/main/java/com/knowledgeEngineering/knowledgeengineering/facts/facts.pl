@@ -247,6 +247,36 @@ attack(homograph-attack-via-homoglyphs, australia, 84).
 attack(homograph-attack-via-homoglyphs, asia, 81).
 attack(homograph-attack-via-homoglyphs, africa, 28).
 
+%bit-squatting
+attacksymptomslist(bit-squatting, [suspicious-conversation-email,suspicious-link,suspicious-website,credentials-theft,frequents-spams]).
+
+attack(bit-squatting, update, 10).
+attack(bit-squatting, suspicious-conversation-email, 84).
+attack(bit-squatting, ad-click, 14).
+attack(bit-squatting, ad-blocker-deactivation, 3).
+attack(bit-squatting, suspicious-link, 100).
+attack(bit-squatting, pop-up-windows, 22).
+attack(bit-squatting, suspicious-website, 93).
+attack(bit-squatting, credential-re-entering, 9).
+attack(bit-squatting, credentials-theft, 92).
+attack(bit-squatting, frequents-spams, 84).
+attack(bit-squatting, company-size-1-250,84).
+attack(bit-squatting, company-size-250-500,94).
+attack(bit-squatting, company-size-500-1000,92).
+attack(bit-squatting, company-size-1000,88).
+attack(bit-squatting, company-sector-hospital, 60).
+attack(bit-squatting, company-sector-finance, 77).
+attack(bit-squatting, company-sector-technology, 87).
+attack(bit-squatting, company-sector-business-and-professional-service, 79).
+attack(bit-squatting, company-sector-retail-and-manifacturing,67).
+attack(bit-squatting, company-sector-logistics-and-transportation,55).
+attack(bit-squatting, europe, 82).
+attack(bit-squatting, north-america, 90).
+attack(bit-squatting, south-america, 69).
+attack(bit-squatting, australia, 87).
+attack(bit-squatting, asia, 79).
+attack(bit-squatting, africa, 28).
+
 
 %pretexting-via-customer-service
 attacksymptomslist(pretexting-via-customer-service, [suspicious-conversation-phone-call,suspicious-conversation-phone-message,suspicious-conversation-email,ad-click,pop-up-windows,credentials-theft]).
@@ -801,6 +831,14 @@ countermeasure(homograph-attack-via-homoglyphs, antivirus, 79).
 countermeasure(homograph-attack-via-homoglyphs, authenticate-all-servers, 95).
 countermeasure(homograph-attack-via-homoglyphs, DNS-hostnames-check, 95). 
 countermeasure(homograph-attack-via-homoglyphs, browsers-that-can-warn-about-characters-from-different-character-sets, 96). 
+
+%bit-squatting
+countermeasure(bit-squatting, only-click-on-familiar-links,94).
+countermeasure(bit-squatting, employee-education, 93).
+countermeasure(bit-squatting, antivirus, 79).
+countermeasure(bit-squatting, authenticate-all-servers, 94).
+countermeasure(bit-squatting, DNS-hostnames-check, 92). 
+countermeasure(bit-squatting, error-correcting-memory, 93). 
 
 %pretexting-via-customer-service
 countermeasure(pretexting-via-customer-service, validate-phone-number, 95).
