@@ -386,7 +386,43 @@ attack(harvesting-information-via-api-event-monitoring, australia, 72).
 attack(harvesting-information-via-api-event-monitoring, asia, 15).
 attack(harvesting-information-via-api-event-monitoring, africa, 98).
 
+%flash-file-overlay
+attacksymptomslist(flash-file-overlay, [suspicious-conversation-email, ad-click,suspicious-link,credentials-theft,frequents-spams]).
+
+attack(flash-file-overlay, update, 2).
+attack(flash-file-overlay, suspicious-conversation-phone-call, 3).
+attack(flash-file-overlay, suspicious-conversation-phone-message, 15).
+attack(flash-file-overlay, suspicious-conversation-email, 93).
+attack(flash-file-overlay, suspicious-conversation-visit, 0).
+attack(flash-file-overlay, app-download, 3).
+attack(flash-file-overlay, ad-click, 91).
+attack(flash-file-overlay, ad-blocker-deactivation, 44).
+attack(flash-file-overlay, suspicious-link, 91).
+attack(flash-file-overlay, pop-up-windows, 68).
+attack(flash-file-overlay, credential-re-entering, 29).
+attack(flash-file-overlay, credentials-theft, 77).
+attack(flash-file-overlay, suspicious-code-modifications, 33).
+attack(flash-file-overlay, frequents-spams, 72).
+attack(flash-file-overlay, company-size-1-250,92).
+attack(flash-file-overlay, company-size-250-500,77).
+attack(flash-file-overlay, company-size-500-1000,82).
+attack(flash-file-overlay, company-size-1000,86).
+attack(flash-file-overlay, company-sector-hospital,89).
+attack(flash-file-overlay, company-sector-finance,91).
+attack(flash-file-overlay, company-sector-technology,80).
+attack(flash-file-overlay, company-sector-business-and-professional-service,88).
+attack(flash-file-overlay, company-sector-retail-and-manifacturing,69).
+attack(flash-file-overlay, company-sector-logistics-and-transportation,60).
+attack(flash-file-overlay, europe, 81).
+attack(flash-file-overlay, north-america, 93).
+attack(flash-file-overlay, south-america, 51).
+attack(flash-file-overlay, australia, 79).
+attack(flash-file-overlay, asia, 75).
+attack(flash-file-overlay, africa, 49).
+
 %iFrame Overlay
+attacksymptomslist(iframe-overlay, [suspicious-conversation-email,ad-click,suspicious-link,pop-up-windows,credentials-theft,frequents-spams]).
+
 attack(iframe-overlay, update, 3).
 attack(iframe-overlay, suspicious-conversation-phone-call, 2).
 attack(iframe-overlay, suspicious-conversation-phone-message, 18).
@@ -420,6 +456,8 @@ attack(iframe-overlay, africa, 17).
 
 
 %credential_prompt_impersonation
+attacksymptomslist(credential-prompt-impersonation, [app-download,pop-up-windows,credential-re-entering,credentials-theft, frequents-spams]).
+
 attack(credential-prompt-impersonation, update, 3).
 attack(credential-prompt-impersonation, suspicious-conversation-phone-call, 12).
 attack(credential-prompt-impersonation, suspicious-conversation-phone-message, 8).
@@ -451,7 +489,76 @@ attack(credential-prompt-impersonation, australia, 84).
 attack(credential-prompt-impersonation, asia, 75).
 attack(credential-prompt-impersonation, africa, 47).
 
+%android-activity-hijack
+attacksymptomslist(android-activity-hijack, [app-download,credentials-theft,suspicious-code-modifications]).
+
+attack(android-activity-hijack, update, 34).
+attack(android-activity-hijack, suspicious-conversation-phone-call, 1).
+attack(android-activity-hijack, suspicious-conversation-phone-message, 8).
+attack(android-activity-hijack, suspicious-conversation-email, 11).
+attack(android-activity-hijack, suspicious-conversation-visit, 0).
+attack(android-activity-hijack, app-download, 84).
+attack(android-activity-hijack, ad-click, 17).
+attack(android-activity-hijack, ad-blocker-deactivation, 21).
+attack(android-activity-hijack, suspicious-link, 24).
+attack(android-activity-hijack, pop-up-windows, 56).
+attack(android-activity-hijack, credential-re-entering, 19).
+attack(android-activity-hijack, credentials-theft, 100).
+attack(android-activity-hijack, suspicious-code-modifications, 87).
+attack(android-activity-hijack, frequents-spams, 52).
+attack(android-activity-hijack, company-size-1-250,89).
+attack(android-activity-hijack, company-size-250-500,81).
+attack(android-activity-hijack, company-size-500-1000,78).
+attack(android-activity-hijack, company-size-1000,83).
+attack(android-activity-hijack, company-sector-hospital,55).
+attack(android-activity-hijack, company-sector-finance,89).
+attack(android-activity-hijack, company-sector-technology,88).
+attack(android-activity-hijack, company-sector-business-and-professional-service,79).
+attack(android-activity-hijack, company-sector-retail-and-manifacturing,63).
+attack(android-activity-hijack, company-sector-logistics-and-transportation,71).
+attack(android-activity-hijack, europe, 87).
+attack(android-activity-hijack, north-america, 86).
+attack(android-activity-hijack, south-america, 51).
+attack(android-activity-hijack, australia, 83).
+attack(android-activity-hijack, asia, 91).
+attack(android-activity-hijack, africa, 55).
+
+%tapjacking
+attacksymptomslist(tapjacking, [pop-up-windows,app-download,ad-click,frequents-spams]).
+
+attack(tapjacking, update, 68).
+attack(tapjacking, suspicious-conversation-phone-call, 6).
+attack(tapjacking, suspicious-conversation-phone-message, 2).
+attack(tapjacking, suspicious-conversation-email, 34).
+attack(tapjacking, suspicious-conversation-visit, 2).
+attack(tapjacking, app-download, 99).
+attack(tapjacking, ad-click, 72).
+attack(tapjacking, ad-blocker-deactivation, 66).
+attack(tapjacking, suspicious-link, 55).
+attack(tapjacking, pop-up-windows, 82).
+attack(tapjacking, credentials-theft, 59).
+attack(tapjacking, suspicious-code-modifications, 42).
+attack(tapjacking, frequents-spams, 74).
+attack(tapjacking, company-size-1-250,79).
+attack(tapjacking, company-size-250-500,81).
+attack(tapjacking, company-size-500-1000,69).
+attack(tapjacking, company-size-1000,75).
+attack(tapjacking, company-sector-hospital,51).
+attack(tapjacking, company-sector-finance,89).
+attack(tapjacking, company-sector-technology,90).
+attack(tapjacking, company-sector-business-and-professional-service,76).
+attack(tapjacking, company-sector-retail-and-manifacturing,68).
+attack(tapjacking, company-sector-logistics-and-transportation,63).
+attack(tapjacking, europe, 86).
+attack(tapjacking, north-america, 88).
+attack(tapjacking, south-america, 58).
+attack(tapjacking, australia, 81).
+attack(tapjacking, asia, 90).
+attack(tapjacking, africa, 49).
+
 %malicious_manual_software_update
+attacksymptomslist(malicious-manual-software-update, [update,suspicious-conversation-email,app-download, suspicious-link,frequents-spams]).
+
 attack(malicious-manual-software-update, update, 100).
 attack(malicious-manual-software-update, suspicious-conversation-phone-call, 5).
 attack(malicious-manual-software-update, suspicious-conversation-phone-message, 4).
@@ -481,6 +588,40 @@ attack(malicious-manual-software-update, south-america, 47).
 attack(malicious-manual-software-update, australia, 84).
 attack(malicious-manual-software-update, asia, 86).
 attack(malicious-manual-software-update, africa, 33).
+
+%rooting-sim-cards
+attacksymptomslist(rooting-sim-cards, [update,suspicious-conversation-phone-message,credentials-theft]).
+
+attack(rooting-sim-cards, update, 80).
+attack(rooting-sim-cards, suspicious-conversation-phone-call, 54).
+attack(rooting-sim-cards, suspicious-conversation-phone-message, 100).
+attack(rooting-sim-cards, suspicious-conversation-email, 1).
+attack(rooting-sim-cards, suspicious-conversation-visit, 2).
+attack(rooting-sim-cards, app-download, 21).
+attack(rooting-sim-cards, ad-click, 11).
+attack(rooting-sim-cards, ad-blocker-deactivation, 13).
+attack(rooting-sim-cards, suspicious-link, 33).
+attack(rooting-sim-cards, pop-up-windows, 19).
+attack(rooting-sim-cards, credentials-theft, 71).
+attack(rooting-sim-cards, suspicious-code-modifications, 38).
+attack(rooting-sim-cards, frequents-spams, 53).
+attack(rooting-sim-cards, company-size-1-250,78).
+attack(rooting-sim-cards, company-size-250-500,67).
+attack(rooting-sim-cards, company-size-500-1000,73).
+attack(rooting-sim-cards, company-size-1000,53).
+attack(rooting-sim-cards, company-sector-hospital,65).
+attack(rooting-sim-cards, company-sector-finance,88).
+attack(rooting-sim-cards, company-sector-technology,94).
+attack(rooting-sim-cards, company-sector-business-and-professional-service,66).
+attack(rooting-sim-cards, company-sector-retail-and-manifacturing,55).
+attack(rooting-sim-cards, company-sector-logistics-and-transportation,71).
+attack(rooting-sim-cards, europe, 86).
+attack(rooting-sim-cards, north-america, 90).
+attack(rooting-sim-cards, south-america, 77).
+attack(rooting-sim-cards, australia, 84).
+attack(rooting-sim-cards, asia, 86).
+attack(rooting-sim-cards, africa, 71).
+
 
 %pretexting-via-tech-support
 attacksymptomslist(pretexting-via-tech-support, [suspicious-conversation-phone-call,suspicious-conversation-phone-message,suspicious-conversation-email,suspicious-conversation-visit,pop-up-windows,credentials-theft]).
@@ -855,6 +996,11 @@ countermeasure(influence-via-incentives, give-only-required-information, 59).
 %harvesting-information-via-api-event-monitoring
 countermeasure(harvesting-information-via-api-event-monitoring, encrypt-data-transmission,93).
 
+%flash-file-overlay
+countermeasure(flash-file-overlay, turn-off-flash, 99).
+countermeasure(flash-file-overlay, evaluate-email-protection , 84).
+countermeasure(flash-file-overlay, employee-education,77).
+
 %iframe-overlay
 countermeasure(iframe-overlay, disable-iframes, 95).
 countermeasure(iframe-overlay, evaluate-email-protection , 92).
@@ -866,10 +1012,22 @@ countermeasure(credential-prompt-impersonation, avoid-installing-malicious-appli
 countermeasure(credential-prompt-impersonation, avoid-suspicious-applications-with-GET-TASKS-permission, 79).
 countermeasure(credential-prompt-impersonation, employee-education,72).
 
+%android-activity-hijack
+countermeasure(android-activity-hijack, ah-detecor, 94).
+countermeasure(android-activity-hijack, use-explicit-intents, 88).
+
+%tapjacking
+countermeasure(tapjacking, turn-on-filterTouchesWhenObscured, 100).
+countermeasure(tapjacking, employee-education, 75).
+
 %malicious-manual-software-update
 countermeasure(malicious-manual-software-update, validate-software-updates, 88).
 countermeasure(malicious-manual-software-update, install-MSRT , 70).
 countermeasure(malicious-manual-software-update, employee-education, 65).
+
+%rooting-sim-cards
+countermeasure(rooting-sim-cards, upgrade-sim-card-to-use-AES, 98).
+countermeasure(rooting-sim-cards, upgrade-sim-card-to-use-3DES  , 72).
 
 %target-influence-via-interview-and-interrogation
 countermeasure(target-influence-via-interview-and-interrogation, employee-education,84).
