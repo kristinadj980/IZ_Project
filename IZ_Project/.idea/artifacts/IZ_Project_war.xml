@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="IZ_Project:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>IZ_Project</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="IZ_Project-0.0.1-SNAPSHOT.war">
+      <element id="artifact" artifact-name="IZ_Project:war exploded" />
+    </root>
+  </artifact>
+</component>
