@@ -101,7 +101,22 @@
       <option>Medium</option>
       <option>High</option>
     </select>
-  </div>
+    
+    <br/><br/>
+    <button type="button" v-on:click="greet">Analyze data  </button>
+    <br/><br/>
+    Your attack is : {{attackName}}
+    <br/><br/><br/>
+    Possible countermeasures :
+
+    <div id="centered" style="margin: 0 auto; width:300px;text-align: left;"><ol id="example-1">
+      <li v-for="item in countermeasures" :key="item">
+        {{ item }}
+      </li>
+    </ol></div>
+    
+
+</div>
 </template>
 
 <script>
@@ -125,11 +140,21 @@ export default {
       selectedEmployeeNumber : '',
       selectedCompanySector : '',
       selectedLikelihood : '',
-      selectedSeverity : ''
+      selectedSeverity : '',
+      attackName : "spear phishing",
+      countermeasures : ["only-click-on-familiar-links","employee-education","antivirus"]
 
+    }
+  },
+  methods: {
+    greet: function (event) {
+      alert("Hi");
     }
   }
 }
+
+
+
 </script>
 
 <style>
