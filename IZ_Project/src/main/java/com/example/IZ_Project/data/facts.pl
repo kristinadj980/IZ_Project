@@ -393,7 +393,7 @@ attack(flash-file-overlay, update, 2).
 attack(flash-file-overlay, suspicious-conversation-phone-call, 3).
 attack(flash-file-overlay, suspicious-conversation-phone-message, 15).
 attack(flash-file-overlay, suspicious-conversation-email, 93).
-attack(flash-file-overlay, suspicious-conversation-visit, 0).
+attack(flash-file-overlay, suspicious-conversation-visit, 1).
 attack(flash-file-overlay, app-download, 3).
 attack(flash-file-overlay, ad-click, 91).
 attack(flash-file-overlay, ad-blocker-deactivation, 44).
@@ -496,7 +496,7 @@ attack(android-activity-hijack, update, 34).
 attack(android-activity-hijack, suspicious-conversation-phone-call, 1).
 attack(android-activity-hijack, suspicious-conversation-phone-message, 8).
 attack(android-activity-hijack, suspicious-conversation-email, 11).
-attack(android-activity-hijack, suspicious-conversation-visit, 0).
+attack(android-activity-hijack, suspicious-conversation-visit, 1).
 attack(android-activity-hijack, app-download, 84).
 attack(android-activity-hijack, ad-click, 17).
 attack(android-activity-hijack, ad-blocker-deactivation, 21).
@@ -918,153 +918,153 @@ attack(target-influence-via-interview-and-interrogation, africa, 7).
 
 
 %counterfeit-websites
-countermeasure(counterfeit-websites, only-click-on-familiar-links,96).
-countermeasure(counterfeit-websites, employee-education, 82).
+countermeasure(counterfeit-websites, only_click_on_familiar_links,96).
+countermeasure(counterfeit-websites, employee_education, 82).
 countermeasure(counterfeit-websites, antivirus, 76).
-countermeasure(typo-squatting, authenticate-all-servers, 87).
+countermeasure(typo-squatting, authenticate_all_servers, 87).
 
 %pharming
-countermeasure(pharming, only-click-on-familiar-links,92).
-countermeasure(pharming, employee-education, 92).
-countermeasure(pharming, turn-on-spam-filter, 74).
-countermeasure(pharming, bad-grammar-check, 90).
+countermeasure(pharming, only_click_on_familiar_links,92).
+countermeasure(pharming, employee_education, 92).
+countermeasure(pharming, turn_on_spam_filter, 74).
+countermeasure(pharming, bad_grammar_check, 90).
 countermeasure(pharming, antivirus, 91).
 
 %spear-phishing
-countermeasure(spear-phishing, only-click-on-familiar-links,95).
-countermeasure(spear-phishing, employee-education, 89).
-countermeasure(spear-phishing, turn-on-spam-filter, 94).
-countermeasure(spear-phishing, bad-grammar-check, 83).
-countermeasure(spear-phishing, two-way-authentification, 80).
+countermeasure(spear-phishing, only_click_on_familiar_links,95).
+countermeasure(spear-phishing, employee_education, 89).
+countermeasure(spear-phishing, turn_on_spam_filter, 94).
+countermeasure(spear-phishing, bad_grammar_check, 83).
+countermeasure(spear-phishing, two_way_authentification, 80).
 countermeasure(spear-phishing, antivirus, 81).
 
 %mobile-phishing
-countermeasure(mobile-phishing, only-click-on-familiar-links,49).
-countermeasure(mobile-phishing, employee-education, 85).
-countermeasure(mobile-phishing, bad-grammar-check, 73).
+countermeasure(mobile-phishing, only_click_on_familiar_links,49).
+countermeasure(mobile-phishing, employee_education, 85).
+countermeasure(mobile-phishing, bad_grammar_check, 73).
 countermeasure(mobile-phishing, antivirus, 80).
-countermeasure(mobile-phishing, not-responding-to-unknown-number, 97).
-countermeasure(mobile-phishing, give-only-required-information, 92).
+countermeasure(mobile-phishing, not_responding_to_unknown_number, 97).
+countermeasure(mobile-phishing, give_only_required_information, 92).
 
 %voice-phishing
-countermeasure(voice-phishing, employee-education, 89).
-countermeasure(voice-phishing, not-responding-to-unknown-number, 98).
-countermeasure(voice-phishing, give-only-required-information, 94).
+countermeasure(voice-phishing, employee_education, 89).
+countermeasure(voice-phishing, not_responding_to_unknown_number, 98).
+countermeasure(voice-phishing, give_only_required_information, 94).
 
 %typo-squatting
-countermeasure(typo-squatting, only-click-on-familiar-links,97).
-countermeasure(typo-squatting, employee-education, 90).
+countermeasure(typo-squatting, only_click_on_familiar_links,97).
+countermeasure(typo-squatting, employee_education, 90).
 countermeasure(typo-squatting, antivirus, 79).
-countermeasure(typo-squatting, authenticate-all-servers, 93).
-countermeasure(typo-squatting, DNS-hostnames-check, 94). 
+countermeasure(typo-squatting, authenticate_all_servers, 93).
+countermeasure(typo-squatting, DNS_hostnames_check, 94). 
 
 %sound-squatting
-countermeasure(sound-squatting, only-click-on-familiar-links,96).
-countermeasure(sound-squatting, employee-education, 90).
+countermeasure(sound-squatting, only_click_on_familiar_links,96).
+countermeasure(sound-squatting, employee_education, 90).
 countermeasure(sound-squatting, antivirus, 78).
-countermeasure(sound-squatting, authenticate-all-servers, 94).
-countermeasure(sound-squatting, DNS-hostnames-check, 95). 
+countermeasure(sound-squatting, authenticate_all_servers, 94).
+countermeasure(sound-squatting, DNS_hostnames_check, 95). 
 
 %homograph-attack-via-homoglyphs
-countermeasure(homograph-attack-via-homoglyphs, only-click-on-familiar-links,95).
-countermeasure(homograph-attack-via-homoglyphs, employee-education, 90).
+countermeasure(homograph-attack-via-homoglyphs, only_click_on_familiar_links,95).
+countermeasure(homograph-attack-via-homoglyphs, employee_education, 90).
 countermeasure(homograph-attack-via-homoglyphs, antivirus, 79).
-countermeasure(homograph-attack-via-homoglyphs, authenticate-all-servers, 95).
-countermeasure(homograph-attack-via-homoglyphs, DNS-hostnames-check, 95). 
-countermeasure(homograph-attack-via-homoglyphs, browsers-that-can-warn-about-characters-from-different-character-sets, 96). 
+countermeasure(homograph-attack-via-homoglyphs, authenticate_all_servers, 95).
+countermeasure(homograph-attack-via-homoglyphs, DNS_hostnames_check, 95). 
+countermeasure(homograph-attack-via-homoglyphs, browsers_that_can_warn_about_characters_from_different_character_sets, 96). 
 
 %bit-squatting
-countermeasure(bit-squatting, only-click-on-familiar-links,94).
-countermeasure(bit-squatting, employee-education, 93).
+countermeasure(bit-squatting, only_click_on_familiar_links,94).
+countermeasure(bit-squatting, employee_education, 93).
 countermeasure(bit-squatting, antivirus, 79).
-countermeasure(bit-squatting, authenticate-all-servers, 94).
-countermeasure(bit-squatting, DNS-hostnames-check, 92). 
-countermeasure(bit-squatting, error-correcting-memory, 93). 
+countermeasure(bit-squatting, authenticate_all_servers, 94).
+countermeasure(bit-squatting, DNS_hostnames_check, 92). 
+countermeasure(bit-squatting, error_correcting_memory, 93). 
 
 %pretexting-via-customer-service
-countermeasure(pretexting-via-customer-service, validate-phone-number, 95).
-countermeasure(pretexting-via-customer-service, employee-education,47).
+countermeasure(pretexting-via-customer-service, validate_phone_number, 95).
+countermeasure(pretexting-via-customer-service, employee_education,47).
 
 %dns-domain-seizure
-countermeasure(dns-domain-seizure, contact-emergency-services, 95).
-countermeasure(dns-domain-seizure, restore-from-back-up, 77).
+countermeasure(dns-domain-seizure, contact_emergency_services, 95).
+countermeasure(dns-domain-seizure, restore_from_back_up, 77).
 
 %influence-via-incentives
-countermeasure(influence-via-incentives, educate-employees, 81).
-countermeasure(influence-via-incentives, give-only-required-information, 59).
+countermeasure(influence-via-incentives, educate_employees, 81).
+countermeasure(influence-via-incentives, give_only_required_information, 59).
 
 %harvesting-information-via-api-event-monitoring
-countermeasure(harvesting-information-via-api-event-monitoring, encrypt-data-transmission,93).
+countermeasure(harvesting-information-via-api-event-monitoring, encrypt_data_transmission,93).
 
 %flash-file-overlay
-countermeasure(flash-file-overlay, turn-off-flash, 99).
-countermeasure(flash-file-overlay, evaluate-email-protection , 84).
-countermeasure(flash-file-overlay, employee-education,77).
+countermeasure(flash-file-overlay, turn_off_flash, 99).
+countermeasure(flash-file-overlay, evaluate_email_protection , 84).
+countermeasure(flash-file-overlay, employee_education,77).
 
 %iframe-overlay
-countermeasure(iframe-overlay, disable-iframes, 95).
-countermeasure(iframe-overlay, evaluate-email-protection , 92).
-countermeasure(iframe-overlay, add-csp , 88).
-countermeasure(iframe-overlay, employee-education,77).
+countermeasure(iframe-overlay, disable_iframes, 95).
+countermeasure(iframe-overlay, evaluate_email_protection , 92).
+countermeasure(iframe-overlay, add_csp , 88).
+countermeasure(iframe-overlay, employee_education,77).
 
 %credential-prompt-impersonation
-countermeasure(credential-prompt-impersonation, avoid-installing-malicious-applications, 88).
-countermeasure(credential-prompt-impersonation, avoid-suspicious-applications-with-GET-TASKS-permission, 79).
-countermeasure(credential-prompt-impersonation, employee-education,72).
+countermeasure(credential-prompt-impersonation, avoid_installing_malicious_applications, 88).
+countermeasure(credential-prompt-impersonation, avoid_suspicious_applications_with_GET_TASKS_permission, 79).
+countermeasure(credential-prompt-impersonation, employee_education,72).
 
 %android-activity-hijack
-countermeasure(android-activity-hijack, ah-detecor, 94).
-countermeasure(android-activity-hijack, use-explicit-intents, 88).
+countermeasure(android-activity-hijack, ah_detecor, 94).
+countermeasure(android-activity-hijack, use_explicit_intents, 88).
 
 %tapjacking
-countermeasure(tapjacking, turn-on-filterTouchesWhenObscured, 100).
-countermeasure(tapjacking, employee-education, 75).
+countermeasure(tapjacking, turn_on_filterTouchesWhenObscured, 100).
+countermeasure(tapjacking, employee_education, 75).
 
 %malicious-manual-software-update
-countermeasure(malicious-manual-software-update, validate-software-updates, 88).
-countermeasure(malicious-manual-software-update, install-MSRT , 70).
-countermeasure(malicious-manual-software-update, employee-education, 65).
+countermeasure(malicious-manual-software-update, validate_software_updates, 88).
+countermeasure(malicious-manual-software-update, install_MSRT, 70).
+countermeasure(malicious-manual-software-update, employee_education, 65).
 
 %rooting-sim-cards
-countermeasure(rooting-sim-cards, upgrade-sim-card-to-use-AES, 98).
-countermeasure(rooting-sim-cards, upgrade-sim-card-to-use-3DES  , 72).
+countermeasure(rooting-sim-cards, upgrade_sim_card_to_use_AES, 98).
+countermeasure(rooting-sim-cards, upgrade_sim_card_to_use_DES, 72).
 
 %target-influence-via-interview-and-interrogation
-countermeasure(target-influence-via-interview-and-interrogation, employee-education,84).
+countermeasure(target-influence-via-interview-and-interrogation, employee_education,84).
 
 %influence-via-modes-of-thinking
-countermeasure(influence-via-modes-of-thinking, employee-education,82).
+countermeasure(influence-via-modes-of-thinking, employee_education,82).
 
 %target-influence-via-framing
-countermeasure(target-influence-via-framing, employee-education,81).
-countermeasure(target-influence-via-framing, give-only-required-information, 93).
+countermeasure(target-influence-via-framing, employee_education,81).
+countermeasure(target-influence-via-framing, give_only_required_information, 93).
 
 %influence-perception-of-consensus-or-social-proof
-countermeasure(influence-perception-of-consensus-or-social-proof, employee-education,90).
+countermeasure(influence-perception-of-consensus-or-social-proof, employee_education,90).
 
 %influence-perception-of-liking
-countermeasure(influence-perception-of-liking, employee-education,75).
+countermeasure(influence-perception-of-liking, employee_education,75).
 
 %influence-perception-of-authority
-countermeasure(influence-perception-of-authority, employee-education,78).
+countermeasure(influence-perception-of-authority, employee_education,78).
 
 %influence-perception-of-scarcity
-countermeasure(influence-perception-of-scarcity, employee-education,89).
+countermeasure(influence-perception-of-scarcity, employee_education,89).
 
 %influence-perception-of-reciprocation
-countermeasure(influence-perception-of-reciprocation, employee-education,81).
+countermeasure(influence-perception-of-reciprocation, employee_education,81).
 
 %pretexting-via-phone
-countermeasure(pretexting-via-phone, employee-education,82).
-countermeasure(pretexting-via-phone, validate-phone-number,48).
+countermeasure(pretexting-via-phone, employee_education,82).
+countermeasure(pretexting-via-phone, validate_phone_number,48).
 
 %pretexting-via-delivery-person
-countermeasure(pretexting-via-delivery-person, employee-education,80).
-countermeasure(pretexting-via-delivery-person, validate-phone-number,43).
+countermeasure(pretexting-via-delivery-person, employee_education,80).
+countermeasure(pretexting-via-delivery-person, validate_phone_number,43).
 
 %pretexting-via-tech-support
-countermeasure(pretexting-via-tech-support, employee-education,70).
-countermeasure(pretexting-via-tech-support, validate-phone-number,47).
+countermeasure(pretexting-via-tech-support, employee_education,70).
+countermeasure(pretexting-via-tech-support, validate_phone_number,47).
 
 
 
