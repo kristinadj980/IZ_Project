@@ -8,7 +8,7 @@
       v-bind:class="{ 'fix-height': multiple === 'true' }"
       v-model="multipleSelections"
       >
-      <option
+      <option :key="asset"
         v-for="asset in assets"
         :value="asset">
         {{asset}}
@@ -120,7 +120,7 @@
 </template>
 
 <script>
-
+import axios from 'axios'
 
 export default {
   name: 'App',
@@ -148,7 +148,12 @@ export default {
   },
   methods: {
     greet: function (event) {
-      alert("Hi");
+      axios
+      .get('http://localhost:8090/api/temp/hello')
+      .then(response => {
+        this.attackName = response.data;
+        console.log(response);
+      })
     }
   }
 }
