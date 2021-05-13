@@ -156,7 +156,7 @@ export default {
       });
       console.log(this.selectedSkills);
       axios
-        .post(("http://localhost:8090/api/temp/symptoms"), {
+        .post(("http://localhost:8090/api/temp/cbr"), {
                 'symptoms': this.symptoms,
                 'continent' :this.selectedContinent,
                 'prerequisites' : this.selectedPrerequisites,

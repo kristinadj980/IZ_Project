@@ -1,5 +1,13 @@
 package com.example.IZ_Project.model;
 
-public class Prerequisite {
+import ucm.gaia.jcolibri.cbrcore.Attribute;
+import ucm.gaia.jcolibri.cbrcore.CaseComponent;
+
+public class Prerequisite implements CaseComponent {
     private String name;
+
+    @Override
+    public Attribute getIdAttribute() {
+        return null;
+    }
 }
