@@ -8,10 +8,10 @@
       v-bind:class="{ 'fix-height': multiple === 'true' }"
       v-model="multipleSelections"
       >
-      <option
-        v-for="asset in assets"
-        :value="asset">
-        {{asset}}
+      <option :key="symptom"
+        v-for="symptom in symptoms"
+        :value="symptom">
+        {{symptom}}
       </option>
     </select>
 
@@ -21,20 +21,20 @@
     <!-- {{ multipleSelections }} -->
     <select v-model="selectedContinent">
       <option disabled value="">Select continent</option>
-      <option>North America</option>
-      <option>South America</option>
-      <option>Asia</option>
-      <option>Europe</option>
-      <option>Australia</option>
-      <option>Africa</option>
+      <option>north_america</option>
+      <option>south_america</option>
+      <option>asia</option>
+      <option>europe</option>
+      <option>australia</option>
+      <option>africa</option>
     </select>
     <span style="display:inline-block; width: 30px;"></span>
 
     <select v-model="selectedSkills">
       <option disabled value="">Select skills required</option>
-      <option>Low</option>
-      <option>Medium</option>
-      <option>High</option>
+      <option>LOW</option>
+      <option>MEDIUM</option>
+      <option>HIGH</option>
     </select>
 
     <span style="display:inline-block; width: 30px;"></span>
@@ -64,42 +64,44 @@
 
     <span style="display:inline-block; width: 30px;"></span>
 
-    <select v-model="selectedEmployeeNumber">
+    <!-- <select v-model="selectedEmployeeNumber">
       <option disabled value="">Select number of company employees</option>
       <option>1-250</option>
       <option>250-500</option>
       <option>500-1000</option>
       <option>1000+</option>
-    </select>
+    </select> -->
+
+    <input v-model.number="numberOfEmployees" type="number">
 
     <span style="display:inline-block; width: 30px;"></span>
 
     <select v-model="selectedCompanySector">
       <option disabled value="">Select company sector</option>
-      <option>Technology</option>
+      <option>technology</option>
       <option>finance</option>
-      <option>business-and-professional-service</option>
+      <option>business_and_professional_service</option>
       <option>hospital</option>
-      <option>retail-and-manifacturing</option>
-      <option>logistics-and-transportation</option>
+      <option>retail_and_manufacturing</option>
+      <option>logistics_and_transportation</option>
     </select>
 
     <span style="display:inline-block; width: 30px;"></span>
 
     <select v-model="selectedLikelihood">
       <option disabled value="">Select likelihood</option>
-      <option>Low</option>
-      <option>Medium</option>
-      <option>High</option>
+      <option>LOW</option>
+      <option>MEDIUM</option>
+      <option>HIGH</option>
     </select>
 
     <span style="display:inline-block; width: 30px;"></span>
 
     <select v-model="selectedSeverity">
       <option disabled value="">Select severity</option>
-      <option>Low</option>
-      <option>Medium</option>
-      <option>High</option>
+      <option>LOW</option>
+      <option>MEDIUM</option>
+      <option>HIGH</option>
     </select>
     
     <br/><br/>
@@ -120,7 +122,7 @@
 </template>
 
 <script>
-
+import axios from 'axios'
 
 export default {
   name: 'App',
@@ -129,15 +131,13 @@ export default {
   data() {
     return {
       multipleSelections: [],
-      data: null,
       multiple: "true",
-      assets:["update", "suspicious-conversation-email", "app-download", "ad-click", "ad-blocker-deactivation", "suspicious-link", "suspicious-website", "pop-up-windows", "credential-re-entering", "services-fail", "credentials-theft", "frequents-spams", "bribery", "virus-detection"],
-      selected : '',
+      symptoms:["update", "suspicious-conversation-email", "app-download", "ad-click", "ad-blocker-deactivation", "suspicious-link", "suspicious-website", "pop-up-windows", "credential-re-entering", "services-fail", "credentials-theft", "frequents-spams", "bribery", "virus-detection"],
       selectedContinent : '',
       selectedPrerequisites : '',
       selectedSkills : '',
       attackDate : '',
-      selectedEmployeeNumber : '',
+      numberOfEmployees : '',
       selectedCompanySector : '',
       selectedLikelihood : '',
       selectedSeverity : '',
@@ -148,7 +148,49 @@ export default {
   },
   methods: {
     greet: function (event) {
-      alert("Hi");
+      axios
+      .get('http://localhost:8090/api/temp/hello')
+      .then(response => {
+        this.attackName = response.data;
+        console.log(response);
+      });
+      console.log(this.selectedSkills);
+      axios
+        .post(("http://localhost:8090/api/temp/symptoms"), {
+                'symptoms': this.symptoms,
+                'continent' :this.selectedContinent,
+                'prerequisites' : this.selectedPrerequisites,
+                'skillsRequired':this.selectedSkills,
+                'date':this.attackDate,
+                'numberOfEmployees': this.numberOfEmployees,
+                'companySector':this.selectedCompanySector,
+                'likelihood':this.selectedLikelihood,
+                'severity':this.selectedSeverity,
+            },{
+                headers: {
+                    'Content-Type': 'application/json',
+                }
+            })
+            .then(res => {
+                alert("Successfully registered!");
+
+            }).catch(() => {
+            alert("Pharmacy was not registered successfully!")
+        });
+
+    // axios.post(("http://localhost:8090/api/temp/temp"), {
+    //   "simple" : "temp"
+    // },{
+    //             headers: {
+    //                 'Content-Type': 'application/json',
+    //             }
+    //         })
+    //         .then(res => {
+    //             alert("Successfully registered!");
+
+    //         }).catch(() => {
+    //         alert("Pharmacy was not registered successfully!")
+    //     });
     }
   }
 }
