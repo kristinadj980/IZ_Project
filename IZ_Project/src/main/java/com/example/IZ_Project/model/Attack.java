@@ -35,7 +35,7 @@ public class Attack implements CaseComponent {
 
     public Attack(SymptomsDTO symptomsDTO) {
         Company company = new Company();
-        company.setCompanyName("google");
+        company.setCompanyName(symptomsDTO.getCompanyName());
         company.setCompanySector(symptomsDTO.getCompanySector());
         company.setNumberOfEmployees(symptomsDTO.getNumberOfEmployees());
         company.setContinent(symptomsDTO.getContinent());
