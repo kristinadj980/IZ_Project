@@ -1,7 +1,7 @@
 %napadi i simptomi i ucestalost njihovog koriscenja-----------------------------
 
 %counterfeit-websites
-attacksymptomslist(counterfeit-websites, [suspicious-conversation-email,suspicious-link,suspicious-website,credentials-theft]).
+attacksymptomslist(counterfeit-websites, [suspicious_conversation_email,suspicious_link,suspicious_website,credentials_theft]).
 
 attack(counterfeit-websites, update, 12).
 attack(counterfeit-websites, suspicious-conversation-email, 89).

@@ -1,13 +1,13 @@
-package com.example.IZ_Project.model;
+package com.example.IZ_Project.dto;
 
-public class Symptom {
+public class CountermeasuresDTO {
     private String name;
 
-    public Symptom() {
+    public CountermeasuresDTO() {
         super();
     }
 
-    public Symptom(String name) {
+    public CountermeasuresDTO(String name) {
         super();
         this.name = name;
     }
@@ -19,7 +19,4 @@ public class Symptom {
     public void setName(String name) {
         this.name = name;
     }
-
-
-
 }

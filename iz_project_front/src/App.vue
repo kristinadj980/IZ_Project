@@ -109,11 +109,14 @@
     <br/><br/>
     Your attack is : {{attackName}}
     <br/><br/><br/>
+   
+    <button type="button" v-on:click="findCountermeasures">Countermeasures  </button>
+    <br/><br/>
     Possible countermeasures :
 
     <div id="centered" style="margin: 0 auto; width:300px;text-align: left;"><ol id="example-1">
       <li v-for="item in countermeasures" :key="item">
-        {{ item }}
+        {{ item.name }}
       </li>
     </ol></div>
     
@@ -191,7 +194,26 @@ export default {
     //         }).catch(() => {
     //         alert("Pharmacy was not registered successfully!")
     //     });
-    }
+    },
+     findCountermeasures: function (event) {
+      axios
+        .post(("http://localhost:8090/api/temp/countermeasures"), {
+                'attackName': this.attackName,
+            },{
+                headers: {
+                    'Content-Type': 'application/json',
+                }
+            })
+            .then(res => {
+                this.countermeasures = res.data
+                console.log(res.data)
+                alert("Successfully!");
+
+            }).catch(() => {
+            alert("Pharmacy was not registered successfully!")
+        });
+    },
+   
   }
 }
 
