@@ -1,0 +1,31 @@
+@base <http://www.ftn.uns.ac.rs/iz> .
+@prefix xsd: <http://w3.org/2001/XMLSchema#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+
+<#A1> a foaf:Attack;
+      foaf:name "spear phishing"^^xsd:string;
+      foaf:attackedCompany foaf:C1;
+      foaf:severity "high"^^xsd:string;
+      foaf:skillsRequired "medium"^^xsd:string;
+      foaf:date "12-09-2019"^^xsd:date;
+      foaf:attackSymptoms foaf:S1;
+      foaf:attackConsequence foaf:COAN1;
+      foaf:attackPrerequisite foaf:P1;
+      foaf:likelihood "high"^^xsd:string.
+
+<#C1> a foaf:Company;
+      foaf:name "Google"^^xsd:string;
+      foaf:numberOfEmployees "134"^^xsd:int;
+      foaf:companySector "technology"^^xsd:string;
+      foaf:continent "europe"^^xsd:string.
+
+<#S1> a foaf:Symptom;
+      foaf:name "suspicious-conversation-email"^^xsd:string.
+<#S2> a foaf:Symptom;
+      foaf:name "credentials-theft"^^xsd:string.
+<#S3> a foaf:Symptom;
+      foaf:name "suspicious-link"^^xsd:string.
+<#CON1> a foaf:Consequence;
+        foaf:name "read data"^^xsd:string.
+<#P1> a foaf:Prerequisite;
+      foaf:name "none"^^xsd:string.
