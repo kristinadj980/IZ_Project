@@ -182,20 +182,6 @@ export default {
             }).catch(() => {
             alert("Pharmacy was not registered successfully!")
         });
-
-    // axios.post(("http://localhost:8090/api/temp/temp"), {
-    //   "simple" : "temp"
-    // },{
-    //             headers: {
-    //                 'Content-Type': 'application/json',
-    //             }
-    //         })
-    //         .then(res => {
-    //             alert("Successfully registered!");
-
-    //         }).catch(() => {
-    //         alert("Pharmacy was not registered successfully!")
-    //     });
     }
   }
 }
