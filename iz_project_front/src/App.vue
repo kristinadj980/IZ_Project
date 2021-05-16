@@ -145,7 +145,7 @@ export default {
       selectedLikelihood : '',
       selectedSeverity : '',
       attackName : "spear phishing",
-      countermeasures : ["only-click-on-familiar-links","employee-education","antivirus"]
+      countermeasures : []
 
     }
   },

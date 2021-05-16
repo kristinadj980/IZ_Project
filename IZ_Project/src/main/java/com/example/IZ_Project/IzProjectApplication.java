@@ -33,7 +33,6 @@ public class IzProjectApplication {
 		PrologHandler prologHandler = new PrologHandler();
 		ArrayList<Attack> attacks = prologHandler.findAttacksBasedOnSympthoms(symptoms);
 		//ArrayList<Countermeasure> countermeasures = prologHandler.findCountermeasuresBasedOnAttack(attack);
-		System.out.println(attacks.isEmpty());
 
 	}
 

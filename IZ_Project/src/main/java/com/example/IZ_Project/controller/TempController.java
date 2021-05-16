@@ -39,7 +39,6 @@ public class TempController {
         List<CountermeasuresDTO> countermeasuresDTOS = new ArrayList<>();
         for (Countermeasure countermeasure: countermeasures) {
               countermeasuresDTOS.add(new CountermeasuresDTO(countermeasure.getName()));
-              System.out.println("Mera" + countermeasure.getName());
         }
 
         return (ResponseEntity<List<CountermeasuresDTO>>) (countermeasuresDTOS == null ?
