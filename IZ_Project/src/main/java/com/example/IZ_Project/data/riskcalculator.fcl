@@ -1,0 +1,81 @@
+
+FUNCTION_BLOCK sablon
+
+VAR_INPUT               // ulazne varijable
+	severity : REAL;
+	likelihood : REAL;
+	company_size : REAL;
+	continent : REAL;
+	skills_required : REAL;
+	company_sector : REAL;
+END_VAR
+
+VAR_OUTPUT              // izlazne varijable
+	risk : REAL;
+END_VAR
+
+FUZZIFY severity
+	TERM low := (0, 1) (30, 1) (100, 0);
+	TERM medium := (0, 0) (60, 1) (100, 0);
+	TERM high := (0, 0) (90, 1) (100, 1);
+END_FUZZIFY
+
+FUZZIFY likelihood
+	TERM low := (0, 1) (30, 1) (100, 0);
+	TERM medium := (0, 0) (60, 1) (100, 0);
+	TERM high := (0, 0) (90, 1) (100, 1);
+END_FUZZIFY
+
+FUZZIFY skills_required
+	TERM low := (0, 1) (30, 1) (100, 0);
+	TERM medium := (0, 0) (60, 1) (100, 0);
+	TERM high := (0, 0) (90, 1) (100, 1);
+END_FUZZIFY
+
+FUZZIFY company_size
+	TERM do_dvesto_pedeset := (0, 1) (200, 1) (250, 0);
+	TERM dvesto_pedeset_do_petsto := (0, 0) (250, 0) (260, 1) (450, 1) (500, 0);
+	TERM petsto_do_hiljadu := (0, 0) (500, 0) (510, 1) (990, 1) (1000, 0);
+	TERM hiljadu_preko := (0, 0) (1000, 0) (1100, 1);
+END_FUZZIFY
+
+FUZZIFY continent
+	TERM europe := (0, 0) (90, 1) (100, 0);
+	TERM asia := (0, 0) (60, 1) (100, 0);
+	TERM africa := (0, 0) (30, 1) (100, 0);
+	TERM north_america := (0, 0) (90, 1) (100, 0);
+	TERM south_america := (0, 0) (20, 1) (100, 0);
+	TERM australia := (0, 0) (50, 1) (100, 0);
+END_FUZZIFY
+
+FUZZIFY company_sector
+	TERM hospital := (0, 0) (90, 1) (100, 0);
+	TERM finance := (0, 0) (80, 1) (100, 0);
+	TERM technology := (0, 0) (80, 1) (100, 0);
+	TERM business_and_professional_service := (0, 0) (50, 1) (100, 0);
+	TERM retail_and_manufacturing := (0, 0) (40, 1) (100, 0);
+	TERM logistics_and_transportation := (0, 0) (90, 1) (100, 1);
+
+END_FUZZIFY
+
+DEFUZZIFY risk
+	TERM low := (0, 1) (30, 1) (100, 0);
+	TERM medium := (0, 0) (60, 1) (100, 0);
+	TERM high := (0, 0) (90, 1) (100, 1);
+	METHOD : COG;		// 'Center Of Gravity' odn. centar mase (koristi se i MM odn. mean max)
+	DEFAULT := 0;		// podrazumevana vrednost (ukoliko nijedno pravilo nije aktivirano)
+END_DEFUZZIFY
+
+RULEBLOCK blok1
+	AND : MIN;			// za konjunkciju se koristi minimum (samim tim sa za disjunkciju koristi maksimum)
+	ACT : MIN;			// za zaključivanje (implikaciju) je izabran minimum (Mamdani implikacija) (osim MIN koristi se i PROD)
+	ACCU : MAX;			// za kompoziciju je izabran maksimum (osim MAX koristi se i SUM)
+
+	RULE 1 : IF severity IS high AND likelihood IS high THEN risk IS high;
+	RULE 2 : IF likelihood IS high AND skills_required IS low THEN risk IS medium;
+	RULE 3 : IF continent IS europe AND company_sector IS hospital THEN risk IS high WITH 0.7;
+	RULE 4 : IF company_size IS hiljadu_preko AND likelihood IS high THEN risk IS high WITH 0.6;
+END_RULEBLOCK
+
+END_FUNCTION_BLOCK
+
