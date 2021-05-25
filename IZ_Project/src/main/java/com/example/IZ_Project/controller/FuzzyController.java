@@ -1,4 +1,4 @@
-package com.example.IZ_Project;
+package com.example.IZ_Project.controller;
 
 import com.example.IZ_Project.dto.FuzzyAdapterDTO;
 import com.example.IZ_Project.dto.RiskCalculatorDTO;
