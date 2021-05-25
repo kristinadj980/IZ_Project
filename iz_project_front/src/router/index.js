@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import Home from '../views/Home.vue'
 import Cbr from '../views/Cbr.vue'
+import Fuzzy from '../views/Fuzzy.vue'
 
 const routes = [
   {
@@ -22,6 +23,11 @@ const routes = [
     path: '/cbr',
     name: 'Cbr',
     component: Cbr
+  },
+  {
+    path: '/fuzzy',
+    name: 'Fuzzy',
+    component: Fuzzy
   },
 ]
 

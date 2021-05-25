@@ -40,22 +40,21 @@ FUZZIFY company_size
 END_FUZZIFY
 
 FUZZIFY continent
-	TERM europe := (0, 0) (90, 1) (100, 0);
-	TERM asia := (0, 0) (60, 1) (100, 0);
-	TERM africa := (0, 0) (30, 1) (100, 0);
-	TERM north_america := (0, 0) (90, 1) (100, 0);
-	TERM south_america := (0, 0) (20, 1) (100, 0);
-	TERM australia := (0, 0) (50, 1) (100, 0);
+	TERM europe := (0, 0) (10, 1) (15, 0);
+	TERM asia := (15, 0) (20, 1) (25, 0);
+	TERM africa := (25, 0) (30, 1) (35, 0);
+	TERM north_america := (35, 0) (40, 1) (45, 0);
+	TERM south_america := (45, 0) (50, 1) (55, 0);
+	TERM australia := (55, 0) (60, 1) (65, 0);
 END_FUZZIFY
 
 FUZZIFY company_sector
-	TERM hospital := (0, 0) (90, 1) (100, 0);
-	TERM finance := (0, 0) (80, 1) (100, 0);
-	TERM technology := (0, 0) (80, 1) (100, 0);
-	TERM business_and_professional_service := (0, 0) (50, 1) (100, 0);
-	TERM retail_and_manufacturing := (0, 0) (40, 1) (100, 0);
-	TERM logistics_and_transportation := (0, 0) (90, 1) (100, 1);
-
+	TERM hospital := (0, 0) (10, 1) (15, 0);
+	TERM finance := (15, 0) (20, 1) (25, 0);
+	TERM technology := (25, 0) (30, 1) (35, 0);
+	TERM business_and_professional_service := (35, 0) (40, 1) (45, 0);
+	TERM retail_and_manufacturing := (45, 0) (50, 1) (55, 0);
+	TERM logistics_and_transportation := (55, 0) (60, 1) (65, 0);
 END_FUZZIFY
 
 DEFUZZIFY risk
