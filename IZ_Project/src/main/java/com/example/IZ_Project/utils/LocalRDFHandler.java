@@ -37,28 +37,6 @@ public class LocalRDFHandler {
     {
         Model model = loadInfo(fileName);
 
-        String insertAttack = ""
-                + "PREFIX foaf: <http://xmlns.com/foaf/0.1/> "
-                + "PREFIX xsd:   <http://w3.org/2001/XMLSchema#> "
-                + "INSERT DATA {"
-                + "    <http://www.ftn.uns.ac.rs/iz#A2> a foaf:Attack. "
-                + "    foaf:name \"%ATTACKNAME%\"^^xsd:string; "
-                + "    foaf:attackedCompany foaf:C2;"
-                + "    foaf:severity \"%SEVERITY%\"^^xsd:string;"
-                + "    foaf:skillsRequired \"%SKILLSREQUIRED%\"^^xsd:string;"
-                + "    foaf:date \"%DATE%\"^^xsd:date;"
-                + "    foaf:attackSymptoms foaf:S1;"
-                + "    foaf:attackConsequence foaf:COAN1;"
-                + "    foaf:attackPrerequisite foaf:P1;"
-                + "    foaf:likelihood \"%LIKELIHOOD%\"^^xsd:string."
-                + "}";
-        insertAttack.replace("%ATTACKNAME%", "attackName");
-        insertAttack.replace("%SEVERITY%", "attackName");
-        insertAttack.replace("%SKILLSREQUIRED%", "attackName");
-        insertAttack.replace("%DATE%", "attackName");
-        insertAttack.replace("%LIKELIHOOD%", "attackName");
-
-        UpdateAction.parseExecute(insertAttack, model);
 
     }
 }

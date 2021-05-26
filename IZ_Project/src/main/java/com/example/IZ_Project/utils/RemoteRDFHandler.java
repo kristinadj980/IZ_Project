@@ -8,28 +8,30 @@ public class RemoteRDFHandler {
     private static final String QUERY_URL = "http://localhost:3030/inzenjeringznanja/sparql";
     private static final String UPDATE_URL = "http://localhost:3030/inzenjeringznanja/update";
 
-    private void attackRegistration(String fileName, Attack attack)
+    public static void attackRegistration(Attack attack)
     {
         String insertAttack = ""
-                + "PREFIX foaf: <http://xmlns.com/foaf/0.1/> "
+                + "PREFIX iz: <http://www.ftn.uns.ac.rs/iz#> "
                 + "PREFIX xsd:   <http://w3.org/2001/XMLSchema#> "
                 + "INSERT DATA {"
-                + "    <http://www.ftn.uns.ac.rs/iz#A2> a foaf:Attack. "
-                + "    foaf:name \"%ATTACKNAME%\"^^xsd:string; "
-                + "    foaf:attackedCompany foaf:C2;"
-                + "    foaf:severity \"%SEVERITY%\"^^xsd:string;"
-                + "    foaf:skillsRequired \"%SKILLSREQUIRED%\"^^xsd:string;"
-                + "    foaf:date \"%DATE%\"^^xsd:date;"
-                + "    foaf:attackSymptoms foaf:S1;"
-                + "    foaf:attackConsequence foaf:COAN1;"
-                + "    foaf:attackPrerequisite foaf:P1;"
-                + "    foaf:likelihood \"%LIKELIHOOD%\"^^xsd:string."
+                + "    <http://www.ftn.uns.ac.rs/iz#A2> a iz:Attack; "
+                + "    iz:name \"%ATTACKNAME%\"^^xsd:string; "
+                + "    iz:attackedCompany iz:C2;"
+                + "    iz:severity \"%SEVERITY%\"^^xsd:string;"
+                + "    iz:skillsRequired \"%SKILLSREQUIRED%\"^^xsd:string;"
+                + "    iz:date \"%DATE%\"^^xsd:date;"
+                + "    iz:attackSymptoms iz:S1;"
+                + "    iz:attackConsequence iz:COAN1;"
+                + "    iz:attackPrerequisite iz:P1;"
+                + "    iz:likelihood \"%LIKELIHOOD%\"^^xsd:string."
                 + "}";
-        insertAttack.replace("%ATTACKNAME%", "attackName");
-        insertAttack.replace("%SEVERITY%", "attackName");
-        insertAttack.replace("%SKILLSREQUIRED%", "attackName");
-        insertAttack.replace("%DATE%", "attackName");
-        insertAttack.replace("%LIKELIHOOD%", "attackName");
+
+        insertAttack = insertAttack.replace("%ATTACKNAME%", attack.getName());
+        insertAttack = insertAttack.replace("%SEVERITY%", attack.getSeverity().toString());
+        insertAttack = insertAttack.replace("%SKILLSREQUIRED%", attack.getSkillsRequired().toString());
+        insertAttack = insertAttack.replace("%DATE%", attack.getDate().toString());
+        insertAttack = insertAttack.replace("%LIKELIHOOD%", attack.getLikelihood().toString());
+
 
         UpdateRequest updateRequest = UpdateFactory.create(insertAttack);
         UpdateProcessor updateProcessor = UpdateExecutionFactory.createRemote(updateRequest, UPDATE_URL);

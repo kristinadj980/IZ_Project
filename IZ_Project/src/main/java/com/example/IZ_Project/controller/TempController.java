@@ -3,6 +3,7 @@ package com.example.IZ_Project.controller;
 import com.example.IZ_Project.cbr.CbrApplication;
 import com.example.IZ_Project.dto.SymptomsDTO;
 import com.example.IZ_Project.model.Attack;
+import com.example.IZ_Project.utils.RemoteRDFHandler;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
@@ -27,6 +28,7 @@ public class TempController {
     public ResponseEntity<String> cbrReasoning(@RequestBody SymptomsDTO symptomsDTO) {
         Attack attack = new Attack(symptomsDTO);
         CbrApplication.calculate(attack);
+        RemoteRDFHandler.attackRegistration(attack);
         return new ResponseEntity<>("ok", HttpStatus.OK);
     }
 }
