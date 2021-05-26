@@ -74,6 +74,21 @@ RULEBLOCK blok1
 	RULE 2 : IF likelihood IS high AND skills_required IS low THEN risk IS medium;
 	RULE 3 : IF continent IS europe AND company_sector IS hospital THEN risk IS high WITH 0.7;
 	RULE 4 : IF company_size IS hiljadu_preko AND likelihood IS high THEN risk IS high WITH 0.6;
+	RULE 5 : IF severity IS low AND likelihood IS low THEN risk IS low;
+	RULE 6 : IF severity IS medium AND likelihood IS low THEN risk IS low WITH 0.5;
+	RULE 8 : IF continent IS north_america AND company_sector IS technology THEN risk IS high WITH 0.7;
+	RULE 9 : IF likelihood IS medium AND company_sector IS technology AND continent IS north_america THEN risk IS high;
+	RULE 10 : IF likelihood IS low AND severity IS high THEN risk IS medium WITH 0.8;
+	RULE 11 : IF skills_required IS medium AND severity IS high AND likelihood IS high THEN risk IS high WITH 0.8;
+	RULE 12 : IF company_sector IS finance AND company_size IS petsto_do_hiljadu THEN risk IS high WITH 0.7;
+	RULE 13 : IF skills_required IS low AND company_size IS petsto_do_hiljadu AND likelihood IS low THEN risk IS low WITH 0.6;
+	RULE 14 : IF skills_required IS high AND severity IS medium THEN risk IS medium WITH 0.7;
+	RULE 15 : IF skills_required IS medium AND likelihood IS medium AND company_sector IS logistics_and_transportation THEN risk IS medium;
+	RULE 16 : IF company_sector IS technology AND company_size IS petsto_do_hiljadu AND continent is europe AND likelihood IS high THEN risk IS high WITH 0.8;
+	RULE 17 : IF continent IS africa AND company_size IS do_dvesto_pedeset THEN risk IS low WITH 0.6;
+	RULE 18 : IF severity IS low AND skills_required IS medium AND likelihood IS medium THEN risk IS medium WITH 0.6;
+	RULE 19 : IF skills_required IS high AND likelihood IS medium AND company_sector IS technology AND severity IS high THEN risk IS high;
+    RULE 20 : IF severity IS high AND company_sector IS technology AND company_size IS petsto_do_hiljadu THEN risk IS high with 0.7;
 END_RULEBLOCK
 
 END_FUNCTION_BLOCK
