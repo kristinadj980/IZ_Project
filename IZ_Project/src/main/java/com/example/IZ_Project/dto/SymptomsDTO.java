@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import java.util.Date;
 
 public class SymptomsDTO {
+    private String companyName;
     private ArrayList<String> symptoms;
     private Continent continent;
     private String prerequisites;
@@ -21,7 +22,8 @@ public class SymptomsDTO {
     public SymptomsDTO() {
     }
 
-    public SymptomsDTO(ArrayList<String> symptoms, Continent continent, String prerequisites, Scale skillsRequired, Scale likelihood, Date date, int numberOfEmployees, CompanySector companySector, Scale severity) {
+    public SymptomsDTO(String companyName, ArrayList<String> symptoms, Continent continent, String prerequisites, Scale skillsRequired, Scale likelihood, Date date, int numberOfEmployees, CompanySector companySector, Scale severity) {
+        this.companyName = companyName;
         this.symptoms = symptoms;
         this.continent = continent;
         this.prerequisites = prerequisites;
@@ -105,4 +107,11 @@ public class SymptomsDTO {
         this.severity = severity;
     }
 
+    public String getCompanyName() {
+        return companyName;
+    }
+
+    public void setCompanyName(String companyName) {
+        this.companyName = companyName;
+    }
 }
