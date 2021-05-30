@@ -38,7 +38,7 @@ public class PrologHandler {
                     String[] parts = solution5.split(",");
                     for (int i = 0; i < parts.length - 1; i++) {
                         attack.setName(parts[i]);
-                        System.out.println(attack.getName());
+                        //System.out.println(attack.getName());
                         attacks.add(attack);
                     }
                 }
@@ -51,6 +51,45 @@ public class PrologHandler {
         return attacks;
     }
 
+    public Attack  findAttack(Attack attack) throws Exception {
+        ArrayList<String> attacks = new ArrayList<>();
+        try {
+            engine.consultFile("src/main/java/com/example/IZ_Project/data/facts.pl");
+            JIPQuery query = engine.openSynchronousQuery("symptoms(" + attack.getName() + ",L)");
+            JIPTerm solution;
+
+            while ((solution = query.nextSolution()) != null) {
+                for (JIPVariable var : solution.getVariables()) {
+                    String solution1 = var.toString();
+                    String solution2 = solution1.replace("(", ")");
+                    String solution3 = solution2.replace(")", " ");
+                    String solution4 = solution3.replace("[]", "'.'");
+                    String solution5 = solution4.replace("'.'", " ");
+                    String solution6 = solution5.replaceAll(" ", "");
+                    String[] parts = solution6.split(",");
+
+                    for (int i = 0; i < parts.length; i++) {
+                        if(parts[i] != ""){
+                            attacks.add(parts[i]);
+                        }
+                    }
+                }
+
+                for (String a : attacks) {
+                    System.out.println(a);
+
+                }
+
+
+            }
+        } catch (Exception e) {
+            throw new Exception(e);
+        } finally {
+            this.engine.closeAllQueries();
+        }
+
+        return attack;
+    }
     public ArrayList<Countermeasure>  findCountermeasuresBasedOnAttack(Attack attack) throws Exception {
         ArrayList<Countermeasure> countermeasures = new ArrayList<>();
         try {

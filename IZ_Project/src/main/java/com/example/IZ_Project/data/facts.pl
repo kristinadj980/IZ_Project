@@ -35,35 +35,35 @@ attack(counterfeit_websites, africa, 22).
 %pharming
 attacksymptomslist(pharming, [suspicious_link,suspicious_website,credential_re_entering,credentials_theft,virus_detection]).
 
-attack(pharming, update, 16).
-attack(pharming, suspicious_conversation_email, 63).
-attack(pharming, app_download, 19).
-attack(pharming, ad_click, 15).
-attack(pharming, ad_blocker_deactivation, 3).
-attack(pharming, suspicious_link, 97).
-attack(pharming, suspicious_website, 95).
-attack(pharming, pop_up_windows, 23).
-attack(pharming, credential_re_entering, 75).
-attack(pharming, services_fail, 29).
-attack(pharming, credentials_theft, 72).
-attack(pharming, frequents_spams, 47).
-attack(pharming, virus_detection, 83).
-attack(pharming, company-size-1-250,78).
-attack(pharming, company-size-250-500,85).
-attack(pharming, company-size-500-1000,80).
-attack(pharming, company-size-1000,70).
-attack(pharming, company-sector-hospital, 46).
-attack(pharming, company-sector-finance, 98).
-attack(pharming, company-sector-technology,80).
-attack(pharming, company-sector-business-and-professional-service,68).
-attack(pharming, company-sector-retail-and-manifacturing,65).
-attack(pharming, company-sector-logistics-and-transportation,53).
-attack(pharming, europe, 89).
-attack(pharming, north-america, 87).
-attack(pharming, south-america, 73).
-attack(pharming, australia, 85).
-attack(pharming, asia, 84).
-attack(pharming, africa, 22).
+attack(pharming,update,16).
+attack(pharming,suspicious_conversation_email,63).
+attack(pharming,app_download,19).
+attack(pharming,ad_click,15).
+attack(pharming,ad_blocker_deactivation,3).
+attack(pharming,suspicious_link,97).
+attack(pharming,suspicious_website,95).
+attack(pharming,pop_up_windows,23).
+attack(pharming,credential_re_entering,75).
+attack(pharming,services_fail,29).
+attack(pharming,credentials_theft,72).
+attack(pharming,frequents_spams,47).
+attack(pharming,virus_detection,83).
+attack1(pharming, company-size-1-250,78).
+attack1(pharming, company-size-250-500,85).
+attack1(pharming, company-size-500-1000,80).
+attack1(pharming, company-size-1000,70).
+attack1(pharming, company-sector-hospital, 46).
+attack1(pharming, company-sector-finance, 98).
+attack1(pharming, company-sector-technology,80).
+attack1(pharming, company-sector-business-and-professional-service,68).
+attack1(pharming, company-sector-retail-and-manifacturing,65).
+attack1(pharming, company-sector-logistics-and-transportation,53).
+attack1(pharming, europe, 89).
+attack1(pharming, north-america, 87).
+attack1(pharming, south-america, 73).
+attack1(pharming, australia, 85).
+attack1(pharming, asia, 84).
+attack1(pharming, africa, 22).
 
 %spear-phishing
 attacksymptomslist(spear_phishing, [suspicious_conversation_email,suspicious_link,suspicious_website,credentials_theft,frequents_spams]).
@@ -1078,3 +1078,5 @@ possible_attacks_list(S1,A1) :- findall(X, possible_attack_by_symptoms(S1,X), A1
 
 countermeasures(A,L) :- findall(X, countermeasure(A,X,V),L).
 countermeasures_sorted(A,L) :- findall([V,X], countermeasure(A,X,V), L1),sort(L1,L).
+
+symptoms(A,L) :- findall([X,V], attack(A,X,V), L).

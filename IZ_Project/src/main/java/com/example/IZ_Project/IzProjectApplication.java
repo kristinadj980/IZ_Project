@@ -29,10 +29,11 @@ public class IzProjectApplication {
 		symptoms.add(new Symptom("suspicious_website"));
 		symptoms.add(new Symptom("suspicious_conversation_email"));
 		Attack attack = new Attack();
-		attack.setName("spear-phishing");
+		attack.setName("pharming");
 		PrologHandler prologHandler = new PrologHandler();
 		ArrayList<Attack> attacks = prologHandler.findAttacksBasedOnSympthoms(symptoms);
 		//ArrayList<Countermeasure> countermeasures = prologHandler.findCountermeasuresBasedOnAttack(attack);
+		Attack attack1 = prologHandler.findAttack(attack);
 
 	}
 
