@@ -17,6 +17,7 @@ import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
 
 public class BayesianController {
@@ -27,7 +28,7 @@ public class BayesianController {
         String poslednji4="";
         BaseIO io = new NetIO();
         try {
-            net = (ProbabilisticNetwork) io.load(new File("C:\\Users\\Lenovo\\Desktop\\inz2\\IZ_Project\\IZ_Project\\src\\main\\java\\com\\example\\IZ_Project\\data\\bayesian.net"));
+            net = (ProbabilisticNetwork) io.load(new File("C:\\Users\\user\\Desktop\\inzenjering projekat\\IZ_Project\\IZ_Project\\src\\main\\java\\com\\example\\IZ_Project\\data\\bayesian.net"));
         } catch (LoadException e1) {
             System.out.println("OVDE PUCA1111");
             e1.printStackTrace();
@@ -330,8 +331,270 @@ public class BayesianController {
             listOfProbabillity.add(((ProbabilisticNode)pharming).getMarginalAt(i));
 
         }
+        //************************************
+        String temp2="";
+        Node counterfeitWebsites = net.getNode("counterfeit_websites");
+        System.out.println("Counterfeit_websites: " + counterfeitWebsites.getName());
+        temp2+= "counterfeit_websites: " + counterfeitWebsites.getName() + "\n";
+        for(int i = 0; i < counterfeitWebsites.getStatesSize(); i++) {
+            listOfProbabillity.add(((ProbabilisticNode)counterfeitWebsites).getMarginalAt(i));
+        }
+
+        String temp3="";
+        Node spearPhishing = net.getNode("spear_phishing");
+        System.out.println("spearPhishing: " + spearPhishing.getName());
+        temp3+= "spearPhishing: " + spearPhishing.getName() + "\n";
+        for(int i = 0; i < spearPhishing.getStatesSize(); i++) {
+            listOfProbabillity.add(((ProbabilisticNode)spearPhishing).getMarginalAt(i));
+        }
+
+        String temp4="";
+        Node mobilePhishing = net.getNode("mobile_phishing");
+        System.out.println("mobilePhishing: " + mobilePhishing.getName());
+        temp4+= "mobilePhishing: " + mobilePhishing.getName() + "\n";
+        for(int i = 0; i < mobilePhishing.getStatesSize(); i++) {
+            listOfProbabillity.add(((ProbabilisticNode)mobilePhishing).getMarginalAt(i));
+        }
+
+        String temp5="";
+        Node voicePhishing = net.getNode("voice_phishing");
+        System.out.println("voicePhishing: " + voicePhishing.getName());
+        temp5+= "voicePhishing: " + voicePhishing.getName() + "\n";
+        for(int i = 0; i < voicePhishing.getStatesSize(); i++) {
+            listOfProbabillity.add(((ProbabilisticNode)voicePhishing).getMarginalAt(i));
+
+        }
+
+        String temp6="";
+        Node typoSquatting = net.getNode("typo_squatting");
+        System.out.println("typoSquatting: " + typoSquatting.getName());
+        temp6+= "typoSquatting: " + typoSquatting.getName() + "\n";
+        for(int i = 0; i < typoSquatting.getStatesSize(); i++) {
+            listOfProbabillity.add(((ProbabilisticNode)typoSquatting).getMarginalAt(i));
+        }
+
+        String temp7="";
+        Node soundSquatting = net.getNode("sound_squatting");
+        System.out.println("soundSquatting: " + soundSquatting.getName());
+        temp7+= "soundSquatting: " + soundSquatting.getName() + "\n";
+        for(int i = 0; i < soundSquatting.getStatesSize(); i++) {
+            listOfProbabillity.add(((ProbabilisticNode)soundSquatting).getMarginalAt(i));
+        }
+
+        String temp8="";
+        Node homographAttackViaHomoglyphs = net.getNode("homograph_attack_via_homoglyphs");
+        System.out.println("homographAttackViaHomoglyphs: " + homographAttackViaHomoglyphs.getName());
+        temp8+= "homographAttackViaHomoglyphs: " + homographAttackViaHomoglyphs.getName() + "\n";
+        for(int i = 0; i < homographAttackViaHomoglyphs.getStatesSize(); i++) {
+            listOfProbabillity.add(((ProbabilisticNode)homographAttackViaHomoglyphs).getMarginalAt(i));
+        }
+
+        String temp9="";
+        Node bitSquatting = net.getNode("bit_squatting");
+        System.out.println("bitSquatting: " + bitSquatting.getName());
+        temp9+= "bitSquatting: " + bitSquatting.getName() + "\n";
+        for(int i = 0; i < bitSquatting.getStatesSize(); i++) {
+            listOfProbabillity.add(((ProbabilisticNode)bitSquatting).getMarginalAt(i));
+        }
+
+        String temp10="";
+        Node pretextingViaCustomerService = net.getNode("pretexting_via_customer_service");
+        System.out.println("pretextingViaCustomerService: " + pretextingViaCustomerService.getName());
+        temp10+= "pretextingViaCustomerService: " + pretextingViaCustomerService.getName() + "\n";
+        for(int i = 0; i < pretextingViaCustomerService.getStatesSize(); i++) {
+            listOfProbabillity.add(((ProbabilisticNode)pretextingViaCustomerService).getMarginalAt(i));
+        }
+
+        String temp11="";
+        Node dnsDomainSeizure = net.getNode("dns_domain_seizure");
+        System.out.println("dnsDomainSeizure: " + dnsDomainSeizure.getName());
+        temp11+= "dnsDomainSeizure: " + dnsDomainSeizure.getName() + "\n";
+        for(int i = 0; i < dnsDomainSeizure.getStatesSize(); i++) {
+            listOfProbabillity.add(((ProbabilisticNode)dnsDomainSeizure).getMarginalAt(i));
+        }
+
+        String temp12="";
+        Node influenceViaIncentives = net.getNode("influence_via_incentives");
+        System.out.println("influenceViaIncentives: " + influenceViaIncentives.getName());
+        temp12+= "influenceViaIncentives: " + influenceViaIncentives.getName() + "\n";
+        for(int i = 0; i < influenceViaIncentives.getStatesSize(); i++) {
+            listOfProbabillity.add(((ProbabilisticNode)influenceViaIncentives).getMarginalAt(i));
+        }
+
+        String temp13="";
+        Node harvestingInformationViaApiEventMonitoring = net.getNode("harvesting_information_via_api_event_monitoring");
+        System.out.println("harvestingInformationViaApiEventMonitoring: " + harvestingInformationViaApiEventMonitoring.getName());
+        temp13+= "harvestingInformationViaApiEventMonitoring: " + harvestingInformationViaApiEventMonitoring.getName() + "\n";
+        for(int i = 0; i < harvestingInformationViaApiEventMonitoring.getStatesSize(); i++) {
+            listOfProbabillity.add(((ProbabilisticNode)harvestingInformationViaApiEventMonitoring).getMarginalAt(i));
+        }
+
+        String temp14="";
+        Node flashFileOverlay = net.getNode("flash_file_overlay");
+        System.out.println("flashFileOverlay: " + flashFileOverlay.getName());
+        temp14+= "flashFileOverlay: " + flashFileOverlay.getName() + "\n";
+        for(int i = 0; i < flashFileOverlay.getStatesSize(); i++) {
+            listOfProbabillity.add(((ProbabilisticNode)flashFileOverlay).getMarginalAt(i));
+        }
+
+        String temp15="";
+        Node iframeOverlay = net.getNode("ifame_overlay");
+        System.out.println("iframeOverlay: " + iframeOverlay.getName());
+        temp15+= "iframeOverlay: " + iframeOverlay.getName() + "\n";
+        for(int i = 0; i < iframeOverlay.getStatesSize(); i++) {
+            listOfProbabillity.add(((ProbabilisticNode)iframeOverlay).getMarginalAt(i));
+        }
+
+        String temp16="";
+        Node credentialPromptImpersonation = net.getNode("credential_prompt_impersonation");
+        System.out.println("credentialPromptImpersonation: " + credentialPromptImpersonation.getName());
+        temp16+= "credentialPromptImpersonation: " + credentialPromptImpersonation.getName() + "\n";
+        for(int i = 0; i < credentialPromptImpersonation.getStatesSize(); i++) {
+            listOfProbabillity.add(((ProbabilisticNode)credentialPromptImpersonation).getMarginalAt(i));
+        }
+
+        String temp17="";
+        Node androidActivityHijack = net.getNode("android_activity_hijack");
+        System.out.println("androidActivityHijack: " + androidActivityHijack.getName());
+        temp17+= "androidActivityHijack: " + androidActivityHijack.getName() + "\n";
+        for(int i = 0; i < androidActivityHijack.getStatesSize(); i++) {
+            listOfProbabillity.add(((ProbabilisticNode)androidActivityHijack).getMarginalAt(i));
+        }
+
+        String temp18="";
+        Node tapjacking = net.getNode("tapjacking");
+        System.out.println("tapjacking: " + tapjacking.getName());
+        temp18+= "tapjacking: " + tapjacking.getName() + "\n";
+        for(int i = 0; i < tapjacking.getStatesSize(); i++) {
+            listOfProbabillity.add(((ProbabilisticNode)tapjacking).getMarginalAt(i));
+        }
+
+        String temp19="";
+        Node maliciousManualSoftwareUpdate = net.getNode("malicious_manual_software_update");
+        System.out.println("maliciousManualSoftwareUpdate: " + maliciousManualSoftwareUpdate.getName());
+        temp19+= "maliciousManualSoftwareUpdate: " + maliciousManualSoftwareUpdate.getName() + "\n";
+        for(int i = 0; i < maliciousManualSoftwareUpdate.getStatesSize(); i++) {
+            listOfProbabillity.add(((ProbabilisticNode)maliciousManualSoftwareUpdate).getMarginalAt(i));
+        }
+
+        String temp20="";
+        Node rootingSimCards = net.getNode("rooting_sim_cards");
+        System.out.println("rootingSimCards: " + rootingSimCards.getName());
+        temp20+= "rootingSimCards: " + rootingSimCards.getName() + "\n";
+        for(int i = 0; i < rootingSimCards.getStatesSize(); i++) {
+            listOfProbabillity.add(((ProbabilisticNode)rootingSimCards).getMarginalAt(i));
+
+        }
+
+        String temp21="";
+        Node pretextingViaTechSupport = net.getNode("pretexting_via_tech_support");
+        System.out.println("pretextingViaTechSupport: " + pretextingViaTechSupport.getName());
+        temp21+= "pretextingViaTechSupport: " + pretextingViaTechSupport.getName() + "\n";
+        for(int i = 0; i < pretextingViaTechSupport.getStatesSize(); i++) {
+            listOfProbabillity.add(((ProbabilisticNode)pretextingViaTechSupport).getMarginalAt(i));
+        }
+
+        String temp22="";
+        Node pretextingViaDeliveryPerson = net.getNode("pretexting_via_delivery_person");
+        System.out.println("pretextingViaDeliveryPerson: " + pretextingViaDeliveryPerson.getName());
+        temp22+= "pretextingViaDeliveryPerson: " + pretextingViaDeliveryPerson.getName() + "\n";
+        for(int i = 0; i < pretextingViaDeliveryPerson.getStatesSize(); i++) {
+            listOfProbabillity.add(((ProbabilisticNode)pretextingViaDeliveryPerson).getMarginalAt(i));
+        }
+
+        String temp23="";
+        Node pretextingViaPhone = net.getNode("pretexting_via_phone");
+        System.out.println("pretextingViaPhone: " + pretextingViaPhone.getName());
+        temp23+= "pretextingViaPhone: " + pretextingViaPhone.getName() + "\n";
+        for(int i = 0; i < pretextingViaPhone.getStatesSize(); i++) {
+            listOfProbabillity.add(((ProbabilisticNode)pretextingViaPhone).getMarginalAt(i));
+        }
+
+        String temp24="";
+        Node influencePerceptionOfReciprocation = net.getNode("influence_perception_of_reciprocation");
+        System.out.println("influencePerceptionOfReciprocation: " + influencePerceptionOfReciprocation.getName());
+        temp24+= "influencePerceptionOfReciprocation: " + influencePerceptionOfReciprocation.getName() + "\n";
+        for(int i = 0; i < influencePerceptionOfReciprocation.getStatesSize(); i++) {
+            listOfProbabillity.add(((ProbabilisticNode)influencePerceptionOfReciprocation).getMarginalAt(i));
+        }
+
+
+        String temp25="";
+        Node influencePerceptionOfScarcity = net.getNode("influence_perception_of_scarcity");
+        System.out.println("influencePerceptionOfScarcity :" + influencePerceptionOfScarcity.getName());
+        temp+= "influencePerceptionOfScarcity : " + influencePerceptionOfScarcity.getName() + "\n";
+        for(int i = 0; i < influencePerceptionOfScarcity.getStatesSize(); i++) {
+
+            listOfProbabillity.add(((ProbabilisticNode)influencePerceptionOfScarcity).getMarginalAt(i));
+
+        }
+
+
+        String temp26="";
+        Node influencePerceptionOfAuthority = net.getNode("influence_perception_of_authority");
+        System.out.println("influencePerceptionOfAuthority :" + influencePerceptionOfAuthority.getName());
+        temp+= "influencePerceptionOfAuthority : " + influencePerceptionOfAuthority.getName() + "\n";
+        for(int i = 0; i < influencePerceptionOfAuthority.getStatesSize(); i++) {
+
+            listOfProbabillity.add(((ProbabilisticNode)influencePerceptionOfAuthority).getMarginalAt(i));
+
+        }
+
+        String temp27="";
+        Node influencePerceptionOfLiking = net.getNode("influence_perception_of_liking");
+        System.out.println("influencePerceptionOfLiking  :" + influencePerceptionOfLiking.getName());
+        temp+= "influencePerceptionOfLiking  : " + influencePerceptionOfLiking.getName() + "\n";
+        for(int i = 0; i < influencePerceptionOfLiking.getStatesSize(); i++) {
+
+            listOfProbabillity.add(((ProbabilisticNode)influencePerceptionOfLiking).getMarginalAt(i));
+
+        }
+
+        String temp28="";
+        Node influencePerceptionOfConsensusOrSocialProof = net.getNode("influence_perception_of_concensus_or_social_proof");
+        System.out.println("influencePerceptionOfConsensusOrSocialProof :" + influencePerceptionOfConsensusOrSocialProof.getName());
+        temp+= "influencePerceptionOfConsensusOrSocialProof : " + influencePerceptionOfConsensusOrSocialProof.getName() + "\n";
+        for(int i = 0; i < influencePerceptionOfConsensusOrSocialProof.getStatesSize(); i++) {
+
+            listOfProbabillity.add(((ProbabilisticNode)influencePerceptionOfConsensusOrSocialProof).getMarginalAt(i));
+
+        }
+
+        String temp29="";
+        Node targetInfluenceViaFraming = net.getNode("target_influence_via_framing");
+        System.out.println("targetInfluenceViaFraming :" + targetInfluenceViaFraming.getName());
+        temp+= "targetInfluenceViaFraming : " + targetInfluenceViaFraming.getName() + "\n";
+        for(int i = 0; i < targetInfluenceViaFraming.getStatesSize(); i++) {
+
+            listOfProbabillity.add(((ProbabilisticNode)targetInfluenceViaFraming).getMarginalAt(i));
+
+        }
+
+
+        String temp30="";
+        Node influenceViaModesOfThinking = net.getNode("influence_via_modes_of_thinking");
+        System.out.println("influenceViaModesOfThinking :" + influenceViaModesOfThinking.getName());
+        temp+= "influenceViaModesOfThinking : " + influenceViaModesOfThinking.getName() + "\n";
+        for(int i = 0; i < influenceViaModesOfThinking.getStatesSize(); i++) {
+
+            listOfProbabillity.add(((ProbabilisticNode)influenceViaModesOfThinking).getMarginalAt(i));
+
+        }
+
+        String temp31="";
+        Node targetInfluenceViaInterviewAndInterrogation = net.getNode("target_influence_via_interview_and_interrogation");
+        System.out.println("targetInfluenceViaInterviewAndInterrogation : " + targetInfluenceViaInterviewAndInterrogation.getName());
+        temp+= "targetInfluenceViaInterviewAndInterrogation : " + targetInfluenceViaInterviewAndInterrogation.getName() + "\n";
+        for(int i = 0; i < targetInfluenceViaInterviewAndInterrogation.getStatesSize(); i++) {
+
+            listOfProbabillity.add(((ProbabilisticNode)targetInfluenceViaInterviewAndInterrogation).getMarginalAt(i));
+
+        }
+
+        //********************************
         Collections.sort(listOfProbabillity);
         Collections.reverse(listOfProbabillity);
+
         double max = 0.0;
         String maxId = "";
         temp="";
@@ -346,10 +609,24 @@ public class BayesianController {
                 maxId += pharming.getStateAt(i);
             }
         }
+        //********************************************
+        for(int i = 0; i < rootingSimCards.getStatesSize(); i++) {
+            temp += rootingSimCards.getStateAt(i) + ": " +  ((ProbabilisticNode)rootingSimCards).getMarginalAt(i) + "\n";
+             System.out.println(pharming.getStateAt(i) + ": " +  ((ProbabilisticNode)pharming).getMarginalAt(i));
+            tapjackingList.add(temp);
+            temp="";
+            if(((ProbabilisticNode)rootingSimCards).getMarginalAt(i) > max) {
+                maxId = "";
+                max = ((ProbabilisticNode)rootingSimCards).getMarginalAt(i);
+                maxId += rootingSimCards.getStateAt(i);
+            }
+        }
+        //********************************
 
         System.out.println("*****\n");
 
         System.out.println(maxId.toUpperCase() + ": " + max);
+
 
         poslednji4 += maxId.toUpperCase();
 
