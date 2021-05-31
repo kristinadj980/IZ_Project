@@ -97,7 +97,7 @@ attack(spear-phishing, asia, 88).
 attack(spear-phishing, africa, 29).
 
 %mobile-phishing
-attacksymptomslist(mobile-phishing, [suspicious-conversation-phone-call,suspicious-conversation-phone-message,suspicious-link,credentials-theft,frequents-spams]).
+attacksymptomslist(mobile-phishing, [suspicious-conversation-phone-call,suspicious-conversation-phone-message,credentials-theft,frequents-spams]).
 
 attack(mobile-phishing, update, 7).
 attack(mobile-phishing, suspicious-conversation-phone-call, 100).
@@ -106,7 +106,7 @@ attack(mobile-phishing, suspicious-conversation-email, 49).
 attack(mobile-phishing, app-download, 18).
 attack(mobile-phishing, ad-click, 9).
 attack(mobile-phishing, ad-blocker-deactivation, 4).
-attack(mobile-phishing, suspicious-link, 99).
+attack(mobile-phishing, suspicious-link, 65).
 attack(mobile-phishing, pop-up-windows, 10).
 attack(mobile-phishing, credential-re-entering, 7).
 attack(mobile-phishing, credentials-theft, 99).
