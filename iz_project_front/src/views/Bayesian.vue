@@ -114,10 +114,10 @@ export default {
             })
             .then(res => {
                 this.attackNames = res.data;
-                alert("Bayesian reasoning is successfully!");
+                alert("Bayesian reasoning is successful!");
 
             }).catch(() => {
-            alert("Not successfully!")
+            alert("Not successful!")
         });
     }
   }
