@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 
 @Controller
 @RequestMapping("/api/temp")
-public class TempController {
+public class CbrController {
 
 
     @GetMapping(value = "/hello")
@@ -26,8 +26,6 @@ public class TempController {
     @PostMapping(consumes = "application/json", value = "/cbr")
     public ResponseEntity<String> cbrReasoning(@RequestBody SymptomsDTO symptomsDTO) {
         Attack attack = new Attack(symptomsDTO);
-        BayesianController b = new BayesianController();
-        b.testBayesian(symptomsDTO);
         CbrApplication.calculate(attack);
         return new ResponseEntity<>("ok", HttpStatus.OK);
     }
