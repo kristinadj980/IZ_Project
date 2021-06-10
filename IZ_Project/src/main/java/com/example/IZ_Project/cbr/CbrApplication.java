@@ -6,6 +6,7 @@ import java.util.Collection;
 import com.example.IZ_Project.connector.CsvConnector;
 import com.example.IZ_Project.model.Attack;
 import com.example.IZ_Project.model.Company;
+import com.example.IZ_Project.model.Prerequisite;
 import ucm.gaia.jcolibri.casebase.LinealCaseBase;
 import ucm.gaia.jcolibri.cbraplications.StandardCBRApplication;
 import ucm.gaia.jcolibri.cbrcore.Attribute;
@@ -40,6 +41,7 @@ public class CbrApplication implements StandardCBRApplication {
         simConfig.setDescriptionSimFunction(new Average());  // global similarity function = average
 
         simConfig.addMapping(new Attribute("name", Attack.class), new EqualsStringIgnoreCase());
+        simConfig.addMapping(new Attribute("name", Prerequisite.class), new EqualsStringIgnoreCase());
         simConfig.addMapping(new Attribute("likelihood", Attack.class), new Equal());
         simConfig.addMapping(new Attribute("severity", Attack.class), new Equal());
         simConfig.addMapping(new Attribute("skillsRequired", Attack.class), new Equal());

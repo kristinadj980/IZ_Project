@@ -51,6 +51,8 @@ public class CsvConnector implements Connector {
                 attack.setLikelihood(Enum.valueOf(Scale.class,values[10]));
 
                 //prerequisites 8
+                attack.setPrerequisite(new Prerequisite(values[8]));
+
                 //consensquences 9
                 //symptoms 3
                 company.setCompanyName(values[0]);

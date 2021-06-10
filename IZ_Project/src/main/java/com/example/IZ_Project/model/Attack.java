@@ -17,22 +17,22 @@ public class Attack implements CaseComponent {
     private Company company;
     private ArrayList<Symptom> symptoms;
     private ArrayList<Consequence> consequences;
-    private ArrayList<Prerequisite> prerequisites;
+    private Prerequisite prerequisite;
 
     public Attack() {
     }
 
-    public Attack(String name, Scale likelihood, Scale severity, Scale skillsRequired, Date date, Company company, ArrayList<Symptom> symptoms, ArrayList<Consequence> consequences, ArrayList<Prerequisite> prerequisites, Long dateLong) {
+    public Attack(String name, Scale likelihood, Scale severity, Scale skillsRequired, Date date, Long dateLong, Company company, ArrayList<Symptom> symptoms, ArrayList<Consequence> consequences, Prerequisite prerequisite) {
         this.name = name;
         this.likelihood = likelihood;
         this.severity = severity;
         this.skillsRequired = skillsRequired;
         this.date = date;
+        this.dateLong = dateLong;
         this.company = company;
         this.symptoms = symptoms;
         this.consequences = consequences;
-        this.prerequisites = prerequisites;
-        this.dateLong = dateLong;
+        this.prerequisite = prerequisite;
     }
 
     public Attack(SymptomsDTO symptomsDTO) {
@@ -50,6 +50,7 @@ public class Attack implements CaseComponent {
         this.setDate(symptomsDTO.getDate());
         this.setSeverity(symptomsDTO.getSeverity());
         this.setDateLong(symptomsDTO.getDate().getTime());
+        this.setPrerequisite(new Prerequisite(symptomsDTO.getPrerequisites()));
     }
 
     @Override
@@ -129,14 +130,13 @@ public class Attack implements CaseComponent {
         this.consequences = consequences;
     }
 
-    public ArrayList<Prerequisite> getPrerequisites() {
-        return prerequisites;
+    public Prerequisite getPrerequisite() {
+        return prerequisite;
     }
 
-    public void setPrerequisites(ArrayList<Prerequisite> prerequisites) {
-        this.prerequisites = prerequisites;
+    public void setPrerequisite(Prerequisite prerequisite) {
+        this.prerequisite = prerequisite;
     }
-
 
     @Override
     public String toString() {
@@ -150,7 +150,7 @@ public class Attack implements CaseComponent {
                 ", company=" + company +
                 ", symptoms=" + symptoms +
                 ", consequences=" + consequences +
-                ", prerequisites=" + prerequisites +
+                ", prerequisite=" + prerequisite +
                 '}';
     }
 }

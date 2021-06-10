@@ -45,7 +45,7 @@
     <select v-model="selectedPrerequisites">
       <option disabled value="">Select prerequisites</option>
       <option>none</option>
-      <option>allow iFrames</option>
+      <option>allow_iFrames</option>
       <option>knowledge_about_update_processes</option>
       <option>access_to_the_target_system</option>
       <option>knowledge_about_deployed_system</option>
@@ -156,7 +156,7 @@ export default {
     greet: function (event) {
       axios
         .post(("http://localhost:8090/api/temp/cbr"), {
-                'symptoms': this.symptoms,
+                'symptoms': this.multipleSelections,
                 'continent' :this.selectedContinent,
                 'prerequisites' : this.selectedPrerequisites,
                 'skillsRequired':this.selectedSkills,
