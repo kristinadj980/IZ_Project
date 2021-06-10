@@ -13,6 +13,7 @@ public class Attack implements CaseComponent {
     private Scale severity;
     private Scale skillsRequired;
     private Date date;
+    private Long dateLong;
     private Company company;
     private ArrayList<Symptom> symptoms;
     private ArrayList<Consequence> consequences;
@@ -21,7 +22,7 @@ public class Attack implements CaseComponent {
     public Attack() {
     }
 
-    public Attack(String name, Scale likelihood, Scale severity, Scale skillsRequired, Date date, Company company, ArrayList<Symptom> symptoms, ArrayList<Consequence> consequences, ArrayList<Prerequisite> prerequisites) {
+    public Attack(String name, Scale likelihood, Scale severity, Scale skillsRequired, Date date, Company company, ArrayList<Symptom> symptoms, ArrayList<Consequence> consequences, ArrayList<Prerequisite> prerequisites, Long dateLong) {
         this.name = name;
         this.likelihood = likelihood;
         this.severity = severity;
@@ -31,6 +32,7 @@ public class Attack implements CaseComponent {
         this.symptoms = symptoms;
         this.consequences = consequences;
         this.prerequisites = prerequisites;
+        this.dateLong = dateLong;
     }
 
     public Attack(SymptomsDTO symptomsDTO) {
@@ -42,11 +44,12 @@ public class Attack implements CaseComponent {
 
         this.setCompany(company);
 
-        this.setName("spear-fishing");
+        //this.setName("spear-fishing");
         this.setSkillsRequired(symptomsDTO.getSkillsRequired());
         this.setLikelihood(symptomsDTO.getLikelihood());
         this.setDate(symptomsDTO.getDate());
         this.setSeverity(symptomsDTO.getSeverity());
+        this.setDateLong(symptomsDTO.getDate().getTime());
     }
 
     @Override
@@ -94,6 +97,14 @@ public class Attack implements CaseComponent {
         this.date = date;
     }
 
+    public Long getDateLong() {
+        return dateLong;
+    }
+
+    public void setDateLong(Long dateLong) {
+        this.dateLong = dateLong;
+    }
+
     public Company getCompany() {
         return company;
     }
@@ -126,6 +137,7 @@ public class Attack implements CaseComponent {
         this.prerequisites = prerequisites;
     }
 
+
     @Override
     public String toString() {
         return "Attack{" +
@@ -134,6 +146,7 @@ public class Attack implements CaseComponent {
                 ", severity=" + severity +
                 ", skillsRequired=" + skillsRequired +
                 ", date=" + date +
+                ", dateLong=" + dateLong +
                 ", company=" + company +
                 ", symptoms=" + symptoms +
                 ", consequences=" + consequences +

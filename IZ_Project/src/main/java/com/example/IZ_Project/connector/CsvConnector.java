@@ -42,7 +42,9 @@ public class CsvConnector implements Connector {
                 Attack attack = new Attack();
                 DateFormat format = new SimpleDateFormat("yyyy-MM-dd", Locale.ENGLISH);
                 Date date = format.parse(values[1]);
+                Long dateLong = date.getTime();
                 attack.setDate(date);
+                attack.setDateLong(dateLong);
                 attack.setName(values[2]);
                 attack.setSkillsRequired(Enum.valueOf(Scale.class,values[7]));
                 attack.setSeverity(Enum.valueOf(Scale.class,values[11]));

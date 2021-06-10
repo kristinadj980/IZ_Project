@@ -40,15 +40,15 @@ public class CbrApplication implements StandardCBRApplication {
         simConfig.setDescriptionSimFunction(new Average());  // global similarity function = average
 
         simConfig.addMapping(new Attribute("name", Attack.class), new EqualsStringIgnoreCase());
-        // simConfig.addMapping(new Attribute("price", TransactionDescription.class), new Interval(100));
         simConfig.addMapping(new Attribute("likelihood", Attack.class), new Equal());
         simConfig.addMapping(new Attribute("severity", Attack.class), new Equal());
         simConfig.addMapping(new Attribute("skillsRequired", Attack.class), new Equal());
-        //simConfig.addMapping(new Attribute("date", Attack.class), new Interval(100));
+        simConfig.addMapping(new Attribute("dateLong", Attack.class), new Interval(100000000000.00));
         simConfig.addMapping(new Attribute("companyName", Company.class), new EqualsStringIgnoreCase());
-        simConfig.addMapping(new Attribute("numberOfEmployees", Company.class), new Interval(300));
+        simConfig.addMapping(new Attribute("numberOfEmployees", Company.class), new Interval(2));
         simConfig.addMapping(new Attribute("companySector", Company.class), new EqualsStringIgnoreCase());
         simConfig.addMapping(new Attribute("continent", Company.class), new EqualsStringIgnoreCase());
+        //prerequisites, symptoms
 
         // Equal - returns 1 if both individuals are equal, otherwise returns 0
         // Interval - returns the similarity of two number inside an interval: sim(x,y) = 1-(|x-y|/interval)
