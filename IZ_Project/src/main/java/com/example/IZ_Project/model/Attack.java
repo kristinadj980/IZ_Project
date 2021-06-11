@@ -17,11 +17,12 @@ public class Attack implements CaseComponent {
     private ArrayList<Symptom> symptoms;
     private ArrayList<Consequence> consequences;
     private ArrayList<Prerequisite> prerequisites;
+    private ArrayList<Countermeasure> countermeasures;   //vidi sa njima jel treba ovo!
 
     public Attack() {
     }
 
-    public Attack(String name, Scale likelihood, Scale severity, Scale skillsRequired, Date date, Company company, ArrayList<Symptom> symptoms, ArrayList<Consequence> consequences, ArrayList<Prerequisite> prerequisites) {
+    public Attack(String name, Scale likelihood, Scale severity, Scale skillsRequired, Date date, Company company, ArrayList<Symptom> symptoms, ArrayList<Consequence> consequences, ArrayList<Prerequisite> prerequisites,ArrayList<Countermeasure> countermeasures) {
         this.name = name;
         this.likelihood = likelihood;
         this.severity = severity;
@@ -31,6 +32,11 @@ public class Attack implements CaseComponent {
         this.symptoms = symptoms;
         this.consequences = consequences;
         this.prerequisites = prerequisites;
+        this.countermeasures = countermeasures;
+    }
+
+    public Attack(String name) {
+        this.name = name;
     }
 
     public Attack(SymptomsDTO symptomsDTO) {
@@ -124,6 +130,14 @@ public class Attack implements CaseComponent {
 
     public void setPrerequisites(ArrayList<Prerequisite> prerequisites) {
         this.prerequisites = prerequisites;
+    }
+
+    public ArrayList<Countermeasure> getCountermeasures() {
+        return countermeasures;
+    }
+
+    public void setCountermeasures(ArrayList<Countermeasure> countermeasures) {
+        this.countermeasures = countermeasures;
     }
 
     @Override

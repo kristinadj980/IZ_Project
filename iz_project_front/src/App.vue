@@ -10,6 +10,7 @@
   <router-view/>
 </template>
 
+>>>>>>> main
 <style>
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
