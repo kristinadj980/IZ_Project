@@ -66,11 +66,14 @@
     <div :key="a"
         v-for="a in attackNames">
         
-    Your attack is : {{a}}
+   
         </div>
-    
-    
-
+    Possible attacks:
+    <select v-model="attackName">
+      <option v-for="attack in this.attackNames"  v-on:click ="addAlternativeTolist($event, attack)" v-bind:key="attack">
+      {{attack}}</option> 
+    </select>
+    <br/><br/><br/>
     <button type="button" v-on:click="findCountermeasures">Countermeasures  </button>
     <br/><br/>
     Possible countermeasures :
@@ -106,8 +109,9 @@ export default {
       numberOfEmployees : '',
       selectedLikelihood : '',
       selectedSeverity : '',
-      attackNames : [],
+      attackNames : ["_____________________"],
       attackName :"",
+      countermeasures:[]
     }
   },
   methods: {
