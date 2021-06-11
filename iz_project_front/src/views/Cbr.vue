@@ -139,7 +139,10 @@ export default {
       multipleSelections: [],
       companyName : "",
       multiple: "true",
-      symptoms:["update", "suspicious-conversation-email", "app-download", "ad-click", "ad-blocker-deactivation", "suspicious-link", "suspicious-website", "pop-up-windows", "credential-re-entering", "services-fail", "credentials-theft", "frequents-spams", "bribery", "virus-detection"],
+       symptoms:["update", "suspicious_conversation_email", "app_download", "ad_click", "ad_blocker_deactivation",
+       "suspicious_link", "suspicious_website", "pop_up_windows", "credential_re_entering", "services_fail", 
+       "credentials_theft", "frequents_spams", "bribery", "virus_detection", "suspicious_code_modifications", 
+       "suspicious_conversation_visit", "suspicious_conversasion_phone_call","suspicious_conversasion_phone_message"],
       selectedContinent : '',
       selectedPrerequisites : '',
       selectedSkills : '',
@@ -149,7 +152,8 @@ export default {
       selectedLikelihood : '',
       selectedSeverity : '',
       attackName : "spear phishing",
-      countermeasures : []
+      countermeasures : [],
+      attack:'',
     }
   },
   methods: {
@@ -202,6 +206,7 @@ export default {
             
         });
     },
+   
   }
 }
 

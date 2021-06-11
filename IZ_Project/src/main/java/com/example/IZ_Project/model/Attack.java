@@ -35,6 +35,10 @@ public class Attack implements CaseComponent {
         this.countermeasures = countermeasures;
     }
 
+    public Attack(String name) {
+        this.name = name;
+    }
+
     public Attack(SymptomsDTO symptomsDTO) {
         Company company = new Company();
         company.setCompanyName(symptomsDTO.getCompanyName());

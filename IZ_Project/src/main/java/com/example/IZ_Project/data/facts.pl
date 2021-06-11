@@ -3,18 +3,18 @@
 %counterfeit-websites
 attacksymptomslist(counterfeit_websites, [suspicious_conversation_email,suspicious_link,suspicious_website,credentials_theft]).
 
-attack(counterfeit_websites, update, 12).
-attack(counterfeit_websites, suspicious_conversation_email, 89).
-attack(counterfeit_websites, app_download, 17).
-attack(counterfeit_websites, ad_click, 11).
-attack(counterfeit_websites, ad_blocker_deactivation, 3).
-attack(counterfeit_websites, suspicious_link, 96).
-attack(counterfeit_websites, suspicious_website, 100).
-attack(counterfeit_websites, pop_up_windows, 23).
-attack(counterfeit_websites, credential_re_entering, 22).
-attack(counterfeit_websites, services_fail, 25).
-attack(counterfeit_websites, credentials_theft, 92).
-attack(counterfeit_websites, frequents_spams, 57).
+attack(counterfeit_websites,update, 12).
+attack(counterfeit_websites,suspicious_conversation_email, 89).
+attack(counterfeit_websites,app_download, 17).
+attack(counterfeit_websites,ad_click, 11).
+attack(counterfeit_websites,ad_blocker_deactivation, 3).
+attack(counterfeit_websites,suspicious_link, 96).
+attack(counterfeit_websites,suspicious_website, 100).
+attack(counterfeit_websites,pop_up_windows, 23).
+attack(counterfeit_websites,credential_re_entering, 22).
+attack(counterfeit_websites,services_fail, 25).
+attack(counterfeit_websites,credentials_theft, 92).
+attack(counterfeit_websites,frequents_spams, 57).
 attack(counterfeit_websites, company-size-1-250,78).
 attack(counterfeit_websites, company-size-250-500,85).
 attack(counterfeit_websites, company-size-500-1000,80).
@@ -48,37 +48,37 @@ attack(pharming,services_fail,29).
 attack(pharming,credentials_theft,72).
 attack(pharming,frequents_spams,47).
 attack(pharming,virus_detection,83).
-attack1(pharming, company-size-1-250,78).
-attack1(pharming, company-size-250-500,85).
-attack1(pharming, company-size-500-1000,80).
-attack1(pharming, company-size-1000,70).
-attack1(pharming, company-sector-hospital, 46).
-attack1(pharming, company-sector-finance, 98).
-attack1(pharming, company-sector-technology,80).
-attack1(pharming, company-sector-business-and-professional-service,68).
-attack1(pharming, company-sector-retail-and-manifacturing,65).
-attack1(pharming, company-sector-logistics-and-transportation,53).
-attack1(pharming, europe, 89).
-attack1(pharming, north-america, 87).
-attack1(pharming, south-america, 73).
-attack1(pharming, australia, 85).
-attack1(pharming, asia, 84).
-attack1(pharming, africa, 22).
+attack(pharming, company-size-1-250,78).
+attack(pharming, company-size-250-500,85).
+attack(pharming, company-size-500-1000,80).
+attack(pharming, company-size-1000,70).
+attack(pharming, company-sector-hospital, 46).
+attack(pharming, company-sector-finance, 98).
+attack(pharming, company-sector-technology,80).
+attack(pharming, company-sector-business-and-professional-service,68).
+attack(pharming, company-sector-retail-and-manifacturing,65).
+attack(pharming, company-sector-logistics-and-transportation,53).
+attack(pharming, europe, 89).
+attack(pharming, north-america, 87).
+attack(pharming, south-america, 73).
+attack(pharming, australia, 85).
+attack(pharming, asia, 84).
+attack(pharming, africa, 22).
 
 %spear-phishing
 attacksymptomslist(spear_phishing, [suspicious_conversation_email,suspicious_link,suspicious_website,credentials_theft,frequents_spams]).
 
-attack(spear_phishing, update, 19).
-attack(spear_phishing, suspicious_conversation_phone_call, 5).
-attack(spear_phishing, suspicious_conversation_phone_message, 5).
-attack(spear_phishing, suspicious_conversation_email, 100).
-attack(spear_phishing, suspicious_conversation_visit, 30).
-attack(spear_phishing, app_download, 23).
-attack(spear_phishing, suspicious_link, 97).
-attack(spear_phishing, suspicious_website, 89).
-attack(spear_phishing, credential_re_entering, 26).
-attack(spear_phishing, credentials_theft, 98).
-attack(spear_phishing, frequents_spams, 72).
+attack(spear_phishing,update, 19).
+attack(spear_phishing,suspicious_conversation_phone_call, 5).
+attack(spear_phishing,suspicious_conversation_phone_message, 5).
+attack(spear_phishing,suspicious_conversation_email, 100).
+attack(spear_phishing,suspicious_conversation_visit, 30).
+attack(spear_phishing,app_download, 23).
+attack(spear_phishing,suspicious_link, 97).
+attack(spear_phishing,suspicious_website, 89).
+attack(spear_phishing,credential_re_entering, 26).
+attack(spear_phishing,credentials_theft, 98).
+attack(spear_phishing,frequents_spams, 72).
 attack(spear_phishing, company-size-1-250,87).
 attack(spear_phishing, company-size-250-500,90).
 attack(spear_phishing, company-size-500-1000,93).
@@ -99,18 +99,18 @@ attack(spear_phishing, africa, 29).
 %mobile-phishing
 attacksymptomslist(mobile_phishing, [suspicious_conversation_phone_call,suspicious_conversation_phone_message,suspicious_link,credentials_theft,frequents_spams]).
 
-attack(mobile_phishing, update, 7).
-attack(mobile_phishing, suspicious_conversation_phone_call, 100).
-attack(mobile_phishing, suspicious_conversation_phone_message, 100).
-attack(mobile_phishing, suspicious_conversation_email, 49).
-attack(mobile_phishing, app_download, 18).
-attack(mobile_phishing, ad_click, 9).
-attack(mobile_phishing, ad_blocker_deactivation, 4).
-attack(mobile_phishing, suspicious_link, 99).
-attack(mobile_phishing, pop_up_windows, 10).
-attack(mobile_phishing, credential_re_entering, 7).
-attack(mobile_phishing, credentials_theft, 99).
-attack(mobile_phishing, frequents_spams, 73).
+attack(mobile_phishing,update, 7).
+attack(mobile_phishing,suspicious_conversation_phone_call, 100).
+attack(mobile_phishing,suspicious_conversation_phone_message, 100).
+attack(mobile_phishing,suspicious_conversation_email, 49).
+attack(mobile_phishing,app_download, 18).
+attack(mobile_phishing,ad_click, 9).
+attack(mobile_phishing,ad_blocker_deactivation, 4).
+attack(mobile_phishing,suspicious_link, 99).
+attack(mobile_phishing,pop_up_windows, 10).
+attack(mobile_phishing,credential_re_entering, 7).
+attack(mobile_phishing,credentials_theft, 99).
+attack(mobile_phishing,frequents_spams, 73).
 attack(mobile_phishing, company-size-1-250,87).
 attack(mobile_phishing, company-size-250-500,90).
 attack(mobile_phishing, company-size-500-1000,93).
@@ -131,15 +131,15 @@ attack(mobile_phishing, africa, 28).
 %voice-phishing
 attacksymptomslist(voice_phishing, [suspicious_conversation_phone_call,credentials_theft,frequents_spams]).
 
-attack(voice_phishing, suspicious_conversation_phone_call, 100).
-attack(voice_phishing, app_download, 5).
-attack(voice_phishing, ad_click, 4).
-attack(voice_phishing, ad_blocker_deactivation, 4).
-attack(voice_phishing, suspicious_link, 4).
-attack(voice_phishing, pop_up_windows, 6).
-attack(voice_phishing, credential_re_entering, 7).
-attack(voice_phishing, credentials_theft, 99).
-attack(voice_phishing, frequents_spams, 79).
+attack(voice_phishing,suspicious_conversation_phone_call, 100).
+attack(voice_phishing,app_download, 5).
+attack(voice_phishing,ad_click, 4).
+attack(voice_phishing,ad_blocker_deactivation, 4).
+attack(voice_phishing,suspicious_link, 4).
+attack(voice_phishing,pop_up_windows, 6).
+attack(voice_phishing,credential_re_entering, 7).
+attack(voice_phishing,credentials_theft, 99).
+attack(voice_phishing,frequents_spams, 79).
 attack(voice_phishing, company-size-1-250,88).
 attack(voice_phishing, company-size-250-500,90).
 attack(voice_phishing, company-size-500-1000,93).
@@ -160,16 +160,16 @@ attack(voice_phishing, africa, 28).
 %typo-squatting
 attacksymptomslist(typo_squatting, [suspicious_conversation_email,suspicious_link,suspicious_website,credentials_theft,frequents_spams]).
 
-attack(typo_squatting, update, 14).
-attack(typo_squatting, suspicious_conversation_email, 87).
-attack(typo_squatting, ad_click, 16).
-attack(typo_squatting, ad_blocker_deactivation, 3).
-attack(typo_squatting, suspicious_link, 100).
-attack(typo_squatting, pop_up_windows, 23).
-attack(typo_squatting, suspicious_website, 90).
-attack(typo_squatting, credential_re_entering, 7).
-attack(typo_squatting, credentials_theft, 90).
-attack(typo_squatting, frequents_spams, 84).
+attack(typo_squatting,update, 14).
+attack(typo_squatting,suspicious_conversation_email, 87).
+attack(typo_squatting,ad_click, 16).
+attack(typo_squatting,ad_blocker_deactivation, 3).
+attack(typo_squatting,suspicious_link, 100).
+attack(typo_squatting,pop_up_windows, 23).
+attack(typo_squatting,suspicious_website, 90).
+attack(typo_squatting,credential_re_entering, 7).
+attack(typo_squatting,credentials_theft, 90).
+attack(typo_squatting,frequents_spams, 84).
 attack(typo_squatting, company-size-1-250,89).
 attack(typo_squatting, company-size-250-500,95).
 attack(typo_squatting, company-size-500-1000,93).
@@ -190,16 +190,16 @@ attack(typo_squatting, africa, 30).
 %sound-squatting
 attacksymptomslist(sound_squatting, [suspicious_conversation_email,suspicious_link,suspicious_website,credentials_theft,frequents_spams]).
 
-attack(sound_squatting, update, 13).
-attack(sound_squatting, suspicious_conversation_email, 71).
-attack(sound_squatting, ad_click, 15).
-attack(sound_squatting, ad_blocker_deactivation, 4).
-attack(sound_squatting, suspicious_link, 100).
-attack(sound_squatting, pop_up_windows, 24).
-attack(sound_squatting, suspicious_website, 95).
-attack(sound_squatting, credential_re_entering, 8).
-attack(sound_squatting, credentials_theft, 90).
-attack(sound_squatting, frequents_spams, 82).
+attack(sound_squatting,update, 13).
+attack(sound_squatting,suspicious_conversation_email, 71).
+attack(sound_squatting,ad_click, 15).
+attack(sound_squatting,ad_blocker_deactivation, 4).
+attack(sound_squatting,suspicious_link, 100).
+attack(sound_squatting,pop_up_windows, 24).
+attack(sound_squatting,suspicious_website, 95).
+attack(sound_squatting,credential_re_entering, 8).
+attack(sound_squatting,credentials_theft, 90).
+attack(sound_squatting,frequents_spams, 82).
 attack(sound_squatting, company-size-1-250,88).
 attack(sound_squatting, company-size-250-500,93).
 attack(sound_squatting, company-size-500-1000,92).
@@ -220,16 +220,16 @@ attack(sound_squatting, africa, 31).
 %homograph-attack-via-homoglyphs
 attacksymptomslist(homograph_attack_via_homoglyphs, [suspicious_conversation_email,suspicious_link,suspicious_website,credentials_theft,frequents_spams]).
 
-attack(homograph_attack_via_homoglyphs, update, 12).
-attack(homograph_attack_via_homoglyphs, suspicious_conversation_email, 71).
-attack(homograph_attack_via_homoglyphs, ad_click, 13).
-attack(homograph_attack_via_homoglyphs, ad_blocker_deactivation, 4).
-attack(homograph_attack_via_homoglyphs, suspicious_link, 97).
-attack(homograph_attack_via_homoglyphs, pop_up_windows, 26).
-attack(homograph_attack_via_homoglyphs, suspicious_website, 96).
-attack(homograph_attack_via_homoglyphs, credential_re_entering, 9).
-attack(homograph_attack_via_homoglyphs, credentials_theft, 92).
-attack(homograph_attack_via_homoglyphs, frequents_spams, 84).
+attack(homograph_attack_via_homoglyphs,update, 12).
+attack(homograph_attack_via_homoglyphs,suspicious_conversation_email, 71).
+attack(homograph_attack_via_homoglyphs,ad_click, 13).
+attack(homograph_attack_via_homoglyphs,ad_blocker_deactivation, 4).
+attack(homograph_attack_via_homoglyphs,suspicious_link, 97).
+attack(homograph_attack_via_homoglyphs,pop_up_windows, 26).
+attack(homograph_attack_via_homoglyphs,suspicious_website, 96).
+attack(homograph_attack_via_homoglyphs,credential_re_entering, 9).
+attack(homograph_attack_via_homoglyphs,credentials_theft, 92).
+attack(homograph_attack_via_homoglyphs,frequents_spams, 84).
 attack(homograph_attack_via_homoglyphs, company-size-1-250,89).
 attack(homograph_attack_via_homoglyphs, company-size-250-500,94).
 attack(homograph_attack_via_homoglyphs, company-size-500-1000,90).
@@ -250,16 +250,16 @@ attack(homograph_attack_via_homoglyphs, africa, 28).
 %bit-squatting
 attacksymptomslist(bit_squatting, [suspicious_conversation_email,suspicious_link,suspicious_website,credentials_theft,frequents_spams]).
 
-attack(bit_squatting, update, 10).
-attack(bit_squatting, suspicious_conversation_email, 84).
-attack(bit_squatting, ad_click, 14).
-attack(bit_squatting, ad_blocker_deactivation, 3).
-attack(bit_squatting, suspicious_link, 100).
-attack(bit_squatting, pop_up_windows, 22).
-attack(bit_squatting, suspicious_website, 93).
-attack(bit_squatting, credential_re_entering, 9).
-attack(bit_squatting, credentials_theft, 92).
-attack(bit_squatting, frequents_spams, 84).
+attack(bit_squatting,update, 10).
+attack(bit_squatting,suspicious_conversation_email, 84).
+attack(bit_squatting,ad_click, 14).
+attack(bit_squatting,ad_blocker_deactivation, 3).
+attack(bit_squatting,suspicious_link, 100).
+attack(bit_squatting,pop_up_windows, 22).
+attack(bit_squatting,suspicious_website, 93).
+attack(bit_squatting,credential_re_entering, 9).
+attack(bit_squatting,credentials_theft, 92).
+attack(bit_squatting,frequents_spams, 84).
 attack(bit_squatting, company-size-1-250,84).
 attack(bit_squatting, company-size-250-500,94).
 attack(bit_squatting, company-size-500-1000,92).
@@ -281,12 +281,12 @@ attack(bit_squatting, africa, 28).
 %pretexting-via-customer-service
 attacksymptomslist(pretexting_via_customer_service, [suspicious_conversation_phone_call,suspicious_conversation_phone_message,suspicious_conversation_email,ad_click,pop_up_windows,credentials_theft]).
 
-attack(pretexting_via_customer_service, suspicious_conversation_phone_call, 87).
-attack(pretexting_via_customer_service, suspicious_conversation_phone_message, 98).
-attack(pretexting_via_customer_service, ssuspicious_conversation_email, 76).
-attack(pretexting_via_customer_service, ad_click, 86).
-attack(pretexting_via_customer_service, pop_up_windows, 82).
-attack(pretexting_via_customer_service, credentials_theft, 83).
+attack(pretexting_via_customer_service,suspicious_conversation_phone_call, 87).
+attack(pretexting_via_customer_service,suspicious_conversation_phone_message, 98).
+attack(pretexting_via_customer_service,ssuspicious_conversation_email, 76).
+attack(pretexting_via_customer_service,ad_click, 86).
+attack(pretexting_via_customer_service,pop_up_windows, 82).
+attack(pretexting_via_customer_service,credentials_theft, 83).
 attack(pretexting_via_customer_service, company-size-1-250,92).
 attack(pretexting_via_customer_service, company-size-250-500,87).
 attack(pretexting_via_customer_service, company-size-500-1000,57).
@@ -304,14 +304,13 @@ attack(pretexting_via_customer_service, australia, 93).
 attack(pretexting_via_customer_servicee, asia, 75).
 attack(pretexting_via_customer_service, africa, 7).
 
-
 %dns-domain-seizure
 attacksymptomslist(dns_domain_seizure, [credential_re_entering,services_fail,credentials_theft,suspicious_code_modifications]).
 
-attack(dns_domain_seizure, credential_re_entering, 79).
-attack(dns_domain_seizure, services_fail, 99).
-attack(dns_domain_seizure, credentials_theft, 83).
-attack(dns_domain_seizure, suspicious_code_modifications, 73).
+attack(dns_domain_seizure,credential_re_entering, 79).
+attack(dns_domain_seizure,services_fail, 99).
+attack(dns_domain_seizure,credentials_theft, 83).
+attack(dns_domain_seizure,suspicious_code_modifications, 73).
 attack(dns_domain_seizure, company-size-1-250, 11).
 attack(dns_domain_seizure, company-size-250-500, 7).
 attack(dns_domain_seizure, company-size-500-1000, 37).
@@ -329,18 +328,17 @@ attack(dns_domain_seizure, australia, 76).
 attack(dns_domain_seizure, asia, 75).
 attack(dns_domain_seizure, africa, 17).
 
-
 %influence-via-incentives
 attacksymptomslist(influence_via_incentives, [suspicious_conversation_phone_call,suspicious_conversation_phone_message,suspicious_conversation_email,suspicious_conversation_visit,bribery,suspicious_link,credentials_theft]).
 
 
-attack(influence_via_incentives, suspicious_conversation_phone_call, 97).
-attack(influence_via_incentives, suspicious_conversation_phone_message, 98).
-attack(influence_via_incentives, suspicious_conversation_email, 91).
-attack(influence_via_incentives, suspicious_conversation_visit, 85).
-attack(influence_via_incentives, bribery, 70).
-attack(influence_via_incentives, suspicious_link, 89).
-attack(influence_via_incentives, credentials_theft, 83).
+attack(influence_via_incentives,suspicious_conversation_phone_call, 97).
+attack(influence_via_incentives,suspicious_conversation_phone_message, 98).
+attack(influence_via_incentives,suspicious_conversation_email, 91).
+attack(influence_via_incentives,suspicious_conversation_visit, 85).
+attack(influence_via_incentives,bribery, 70).
+attack(influence_via_incentives,suspicious_link, 89).
+attack(influence_via_incentives,credentials_theft, 83).
 attack(influence_via_incentives, company-size-1-250, 65).
 attack(influence_via_incentives, company-size-250-500, 17).
 attack(influence_via_incentives, company-size-500-1000,37).
@@ -362,13 +360,13 @@ attack(influence_via_incentives, africa, 17).
 %harvesting-information-via-api-event-monitoring
 attacksymptomslist(harvesting_information_via_api_event_monitoring, [suspicious_conversation_phone_call,suspicious_conversation_phone_message,suspicious_conversation_visit,app_download,credential_re_entering,credentials_theft,frequents_spams]).
 
-attack(harvesting_information_via_api_event_monitoring, suspicious_conversation_phone_call, 98).
-attack(harvesting_information_via_api_event_monitoring, suspicious_conversation_phone_message, 84).
-attack(harvesting_information_via_api_event_monitoring, suspicious_conversation_visit, 79).
-attack(harvesting_information_via_api_event_monitoring, app_download, 70).
-attack(harvesting_information_via_api_event_monitoring, credential_re_entering, 79).
-attack(harvesting_information_via_api_event_monitoring, credentials_theft, 81).
-attack(harvesting_information_via_api_event_monitoring, frequents_spams, 71).
+attack(harvesting_information_via_api_event_monitoring,suspicious_conversation_phone_call, 98).
+attack(harvesting_information_via_api_event_monitoring,suspicious_conversation_phone_message, 84).
+attack(harvesting_information_via_api_event_monitoring,suspicious_conversation_visit, 79).
+attack(harvesting_information_via_api_event_monitoring,app_download, 70).
+attack(harvesting_information_via_api_event_monitoring,credential_re_entering, 79).
+attack(harvesting_information_via_api_event_monitoring,credentials_theft, 81).
+attack(harvesting_information_via_api_event_monitoring,frequents_spams, 71).
 attack(harvesting_information_via_api_event_monitoring, company-size-1-250, 56).
 attack(harvesting_information_via_api_event_monitoring, company-size-250-500, 73).
 attack(harvesting_information_via_api_event_monitoring, company-size-500-1000,13).
@@ -389,20 +387,20 @@ attack(harvesting_information_via_api_event_monitoring, africa, 98).
 %flash-file-overlay
 attacksymptomslist(flash_file_overlay, [suspicious_conversation_email, ad_click,suspicious_link,credentials_theft,frequents_spams]).
 
-attack(flash_file_overlay, update, 2).
-attack(flash_file_overlay, suspicious_conversation_phone_call, 3).
-attack(flash_file_overlay, suspicious_conversation_phone_message, 15).
-attack(flash_file_overlay, suspicious_conversation_email, 93).
-attack(flash_file_overlay, suspicious_conversation_visit, 1).
-attack(flash_file_overlay, app_download, 3).
-attack(flash_file_overlay, ad_click, 91).
-attack(flash_file_overlay, ad_blocker_deactivation, 44).
-attack(flash_file_overlay, suspicious_link, 91).
-attack(flash_file_overlay, pop_up_windows, 68).
-attack(flash_file_overlay, credential_re_entering, 29).
-attack(flash_file_overlay, credentials_theft, 77).
-attack(flash_file_overlay, suspicious_code_modifications, 33).
-attack(flash_file_overlay, frequents_spams, 72).
+attack(flash_file_overlay,update, 2).
+attack(flash_file_overlay,suspicious_conversation_phone_call, 3).
+attack(flash_file_overlay,suspicious_conversation_phone_message, 15).
+attack(flash_file_overlay,suspicious_conversation_email, 93).
+attack(flash_file_overlay,suspicious_conversation_visit, 1).
+attack(flash_file_overlay,app_download, 3).
+attack(flash_file_overlay,ad_click, 91).
+attack(flash_file_overlay,ad_blocker_deactivation, 44).
+attack(flash_file_overlay,suspicious_link, 91).
+attack(flash_file_overlay,pop_up_windows, 68).
+attack(flash_file_overlay,credential_re_entering, 29).
+attack(flash_file_overlay,credentials_theft, 77).
+attack(flash_file_overlay,suspicious_code_modifications, 33).
+attack(flash_file_overlay,frequents_spams, 72).
 attack(flash_file_overlay, company-size-1-250,92).
 attack(flash_file_overlay, company-size-250-500,77).
 attack(flash_file_overlay, company-size-500-1000,82).
@@ -423,20 +421,20 @@ attack(flash_file_overlay, africa, 49).
 %iFrame Overlay
 attacksymptomslist(iframe_overlay, [suspicious_conversation_email,ad_click,suspicious_link,pop_up_windows,credentials_theft,frequents_spams]).
 
-attack(iframe_overlay, update, 3).
-attack(iframe_overlay, suspicious_conversation_phone_call, 2).
-attack(iframe_overlay, suspicious_conversation_phone_message, 18).
-attack(iframe_overlay, suspicious_conversation_email, 98).
-attack(iframe_overlay, suspicious_conversation_visit, 2).
-attack(iframe_overlay, app_download, 4).
-attack(iframe_overlay, ad_click, 89).
-attack(iframe_overlay, ad_blocker_deactivation, 56).
-attack(iframe_overlay, suspicious_link, 95).
-attack(iframe_overlay, pop_up_windows, 85).
-attack(iframe_overlay, credential_re_entering, 38).
-attack(iframe_overlay, credentials_theft, 83).
-attack(iframe_overlay, suspicious_code_modifications, 3).
-attack(iframe_overlay, frequents_spams, 73).
+attack(iframe_overlay,update, 3).
+attack(iframe_overlay,suspicious_conversation_phone_call, 2).
+attack(iframe_overlay,suspicious_conversation_phone_message, 18).
+attack(iframe_overlay,suspicious_conversation_email, 98).
+attack(iframe_overlay,suspicious_conversation_visit, 2).
+attack(iframe_overlay,app_download, 4).
+attack(iframe_overlay,ad_click, 89).
+attack(iframe_overlay,ad_blocker_deactivation, 56).
+attack(iframe_overlay,suspicious_link, 95).
+attack(iframe_overlay,pop_up_windows, 85).
+attack(iframe_overlay,credential_re_entering, 38).
+attack(iframe_overlay,credentials_theft, 83).
+attack(iframe_overlay,suspicious_code_modifications, 3).
+attack(iframe_overlay,frequents_spams, 73).
 attack(iframe_overlay, company-size-1-250,82).
 attack(iframe_overlay, company-size-250-500,91).
 attack(iframe_overlay, company-size-500-1000,77).
@@ -458,20 +456,20 @@ attack(iframe_overlay, africa, 17).
 %credential_prompt_impersonation
 attacksymptomslist(credential_prompt_impersonation, [app_download,pop_up_windows,credential_re_entering,credentials_theft, frequents_spams]).
 
-attack(credential_prompt_impersonation, update, 3).
-attack(credential_prompt_impersonation, suspicious_conversation_phone_call, 12).
-attack(credential_prompt_impersonation, suspicious_conversation_phone_message, 8).
-attack(credential_prompt_impersonation, suspicious_conversation_email, 11).
-attack(credential_prompt_impersonation, suspicious_conversation_visit, 2).
-attack(credential_prompt_impersonation, app_download, 84).
-attack(credential_prompt_impersonation, ad_click, 19).
-attack(credential_prompt_impersonation, ad_blocker_deactivation, 16).
-attack(credential_prompt_impersonation, suspicious_link, 15).
-attack(credential_prompt_impersonation, pop_up_windows, 89).
-attack(credential_prompt_impersonation, credential_re_entering, 99).
-attack(credential_prompt_impersonation, credentials_theft, 100).
-attack(credential_prompt_impersonation, suspicious_code_modifications, 3).
-attack(credential_prompt_impersonation, frequents_spams, 73).
+attack(credential_prompt_impersonation,update, 3).
+attack(credential_prompt_impersonation,suspicious_conversation_phone_call, 12).
+attack(credential_prompt_impersonation,suspicious_conversation_phone_message, 8).
+attack(credential_prompt_impersonation,suspicious_conversation_email, 11).
+attack(credential_prompt_impersonation,suspicious_conversation_visit, 2).
+attack(credential_prompt_impersonation,app_download, 84).
+attack(credential_prompt_impersonation,ad_click, 19).
+attack(credential_prompt_impersonation,ad_blocker_deactivation, 16).
+attack(credential_prompt_impersonation,suspicious_link, 15).
+attack(credential_prompt_impersonation,pop_up_windows, 89).
+attack(credential_prompt_impersonation,credential_re_entering, 99).
+attack(credential_prompt_impersonation,credentials_theft, 100).
+attack(credential_prompt_impersonation,suspicious_code_modifications, 3).
+attack(credential_prompt_impersonation,frequents_spams, 73).
 attack(credential_prompt_impersonation, company-size-1-250,84).
 attack(credential_prompt_impersonation, company-size-250-500,89).
 attack(credential_prompt_impersonation, company-size-500-1000,79).
@@ -489,23 +487,24 @@ attack(credential_prompt_impersonation, australia, 84).
 attack(credential_prompt_impersonation, asia, 75).
 attack(credential_prompt_impersonation, africa, 47).
 
+
 %android-activity-hijack
 attacksymptomslist(android_activity_hijack, [app_download,credentials_theft,suspicious_code_modifications]).
 
-attack(android_activity_hijack, update, 34).
-attack(android_activity_hijack, suspicious_conversation_phone_call, 1).
-attack(android_activity_hijack, suspicious_conversation_phone_message, 8).
-attack(android_activity_hijack, suspicious_conversation_email, 11).
-attack(android_activity_hijack, suspicious_conversation_visit, 1).
-attack(android_activity_hijack, app_download, 84).
-attack(android_activity_hijack, ad_click, 17).
-attack(android_activity_hijack, ad_blocker_deactivation, 21).
-attack(android_activity_hijack, suspicious_link, 24).
-attack(android_activity_hijack, pop_up_windows, 56).
-attack(android_activity_hijack, credential_re_entering, 19).
-attack(android_activity_hijack, credentials_theft, 100).
-attack(android_activity_hijack, suspicious_code_modifications, 87).
-attack(android_activity_hijack, frequents_spams, 52).
+attack(android_activity_hijack,update, 34).
+attack(android_activity_hijack,suspicious_conversation_phone_call, 1).
+attack(android_activity_hijack,suspicious_conversation_phone_message, 8).
+attack(android_activity_hijack,suspicious_conversation_email, 11).
+attack(android_activity_hijack,suspicious_conversation_visit, 1).
+attack(android_activity_hijack,app_download, 84).
+attack(android_activity_hijack,ad_click, 17).
+attack(android_activity_hijack,ad_blocker_deactivation, 21).
+attack(android_activity_hijack,suspicious_link, 24).
+attack(android_activity_hijack,pop_up_windows, 56).
+attack(android_activity_hijack,credential_re_entering, 19).
+attack(android_activity_hijack,credentials_theft, 100).
+attack(android_activity_hijack,suspicious_code_modifications, 87).
+attack(android_activity_hijack,frequents_spams, 52).
 attack(android_activity_hijack, company-size-1-250,89).
 attack(android_activity_hijack, company-size-250-500,81).
 attack(android_activity_hijack, company-size-500-1000,78).
@@ -526,19 +525,19 @@ attack(android_activity_hijack, africa, 55).
 %tapjacking
 attacksymptomslist(tapjacking, [pop_up_windows,app_download,ad_click,frequents_spams]).
 
-attack(tapjacking, update, 68).
-attack(tapjacking, suspicious_conversation_phone_call, 6).
-attack(tapjacking, suspicious_conversation_phone_message, 2).
-attack(tapjacking, suspicious_conversation_email, 34).
-attack(tapjacking, suspicious_conversation_visit, 2).
-attack(tapjacking, app_download, 99).
-attack(tapjacking, ad_click, 72).
-attack(tapjacking, ad_blocker_deactivation, 66).
-attack(tapjacking, suspicious_link, 55).
-attack(tapjacking, pop_up_windows, 82).
-attack(tapjacking, credentials_theft, 59).
-attack(tapjacking, suspicious_code_modifications, 42).
-attack(tapjacking, frequents_spams, 74).
+attack(tapjacking,update, 68).
+attack(tapjacking,suspicious_conversation_phone_call, 6).
+attack(tapjacking,suspicious_conversation_phone_message, 2).
+attack(tapjacking,suspicious_conversation_email, 34).
+attack(tapjacking,suspicious_conversation_visit, 2).
+attack(tapjacking,app_download, 99).
+attack(tapjacking,ad_click, 72).
+attack(tapjacking,ad_blocker_deactivation, 66).
+attack(tapjacking,suspicious_link, 55).
+attack(tapjacking,pop_up_windows, 82).
+attack(tapjacking,credentials_theft, 59).
+attack(tapjacking,suspicious_code_modifications, 42).
+attack(tapjacking,frequents_spams, 74).
 attack(tapjacking, company-size-1-250,79).
 attack(tapjacking, company-size-250-500,81).
 attack(tapjacking, company-size-500-1000,69).
@@ -559,19 +558,19 @@ attack(tapjacking, africa, 49).
 %malicious_manual_software_update
 attacksymptomslist(malicious_manual_software_update, [update,suspicious_conversation-email,app_download, suspicious_link,frequents_spams]).
 
-attack(malicious_manual_software_update, update, 100).
-attack(malicious_manual_software_update, suspicious_conversation_phone_call, 5).
-attack(malicious_manual_software_update, suspicious_conversation_phone_message, 4).
-attack(malicious_manual_software_update, suspicious_conversation_email, 72).
-attack(malicious_manual_software_update, suspicious_conversation_visit, 2).
-attack(malicious_manual_software_update, app_download, 87).
-attack(malicious_manual_software_update, ad_click, 12).
-attack(malicious_manual_software_update, ad_blocker_deactivation, 16).
-attack(malicious_manual_software_update, suspicious_link, 75).
-attack(malicious_manual_software_update, pop_up_windows, 19).
-attack(malicious_manual_software_update, credentials_theft, 20).
-attack(malicious_manual_software_update, suspicious_code_modifications, 68).
-attack(malicious_manual_software_update, frequents_spams, 73).
+attack(malicious_manual_software_update,update, 100).
+attack(malicious_manual_software_update,suspicious_conversation_phone_call, 5).
+attack(malicious_manual_software_update,suspicious_conversation_phone_message, 4).
+attack(malicious_manual_software_update,suspicious_conversation_email, 72).
+attack(malicious_manual_software_update,suspicious_conversation_visit, 2).
+attack(malicious_manual_software_update,app_download, 87).
+attack(malicious_manual_software_update,ad_click, 12).
+attack(malicious_manual_software_update,ad_blocker_deactivation, 16).
+attack(malicious_manual_software_update,suspicious_link, 75).
+attack(malicious_manual_software_update,pop_up_windows, 19).
+attack(malicious_manual_software_update,credentials_theft, 20).
+attack(malicious_manual_software_update,suspicious_code_modifications, 68).
+attack(malicious_manual_software_update,frequents_spams, 73).
 attack(malicious_manual_software_update, company-size-1-250,78).
 attack(malicious_manual_software_update, company-size-250-500,85).
 attack(malicious_manual_software_update, company-size-500-1000,73).
@@ -592,19 +591,19 @@ attack(malicious_manual_software_update, africa, 33).
 %rooting-sim-cards
 attacksymptomslist(rooting_sim_cards, [update,suspicious_conversation_phone_message,credentials_theft]).
 
-attack(rooting_sim_cards, update, 80).
-attack(rooting_sim_cards, suspicious_conversation_phone_call, 54).
-attack(rooting_sim_cards, suspicious_conversation_phone_message, 100).
-attack(rooting_sim_cards, suspicious_conversation_email, 1).
-attack(rooting_sim_cards, suspicious_conversation_visit, 2).
-attack(rooting_sim_cards, app_download, 21).
-attack(rooting_sim_cards, ad_click, 11).
-attack(rooting_sim_cards, ad_blocker_deactivation, 13).
-attack(rooting_sim_cards, suspicious_link, 33).
-attack(rooting_sim_cards, pop_up_windows, 19).
-attack(rooting_sim_cards, credentials_theft, 71).
-attack(rooting_sim_cards, suspicious_code_modifications, 38).
-attack(rooting_sim_cards, frequents_spams, 53).
+attack(rooting_sim_cards,update, 80).
+attack(rooting_sim_cards,suspicious_conversation_phone_call, 54).
+attack(rooting_sim_cards,suspicious_conversation_phone_message, 100).
+attack(rooting_sim_cards,suspicious_conversation_email, 1).
+attack(rooting_sim_cards,suspicious_conversation_visit, 2).
+attack(rooting_sim_cards,app_download, 21).
+attack(rooting_sim_cards,ad_click, 11).
+attack(rooting_sim_cards,ad_blocker_deactivation, 13).
+attack(rooting_sim_cards,suspicious_link, 33).
+attack(rooting_sim_cards,pop_up_windows, 19).
+attack(rooting_sim_cards,credentials_theft, 71).
+attack(rooting_sim_cards,suspicious_code_modifications, 38).
+attack(rooting_sim_cards,frequents_spams, 53).
 attack(rooting_sim_cards, company-size-1-250,78).
 attack(rooting_sim_cards, company-size-250-500,67).
 attack(rooting_sim_cards, company-size-500-1000,73).
@@ -622,16 +621,15 @@ attack(rooting_sim_cards, australia, 84).
 attack(rooting_sim_cards, asia, 86).
 attack(rooting_sim_cards, africa, 71).
 
-
 %pretexting-via-tech-support
 attacksymptomslist(pretexting_via_tech_support, [suspicious_conversation_phone_call,suspicious_conversation_phone_message,suspicious_conversation_email,suspicious_conversation_visit,pop_up_windows,credentials_theft]).
 
-attack(pretexting_via_tech_support, suspicious_conversation_phone_call, 99).
-attack(pretexting_via_tech_support, suspicious_conversation_phone_message, 98).
-attack(pretexting_via_tech_support, suspicious_conversation_email, 86).
-attack(pretexting_via_tech_support, suspicious_conversation_visit, 71).
-attack(pretexting_via_tech_support, pop_up_windows, 82).
-attack(pretexting_via_tech_support, credentials_theft, 83).
+attack(pretexting_via_tech_support,suspicious_conversation_phone_call, 99).
+attack(pretexting_via_tech_support,suspicious_conversation_phone_message, 98).
+attack(pretexting_via_tech_support,suspicious_conversation_email, 86).
+attack(pretexting_via_tech_support,suspicious_conversation_visit, 71).
+attack(pretexting_via_tech_support,pop_up_windows, 82).
+attack(pretexting_via_tech_support,credentials_theft, 83).
 attack(pretexting_via_tech_support, company-size-1-250,92).
 attack(pretexting_via_tech_support, company-size-250-500,87).
 attack(pretexting_via_tech_support, company-size-500-1000,57).
@@ -654,9 +652,9 @@ attack(pretexting_via_tech_support, africa, 7).
 %pretexting-via-delivery-person
 attacksymptomslist(pretexting_via_delivery_person, [suspicious_conversation_phone_call,suspicious_conversation_phone_message,suspicious_conversation_visit]).
 
-attack(pretexting_via_delivery_person, suspicious_conversation_phone_call, 87).
-attack(pretexting_via_delivery_person, suspicious_conversation_phone_message, 98).
-attack(pretexting_via_delivery_person, suspicious_conversation_visit, 96).
+attack(pretexting_via_delivery_person,suspicious_conversation_phone_call, 87).
+attack(pretexting_via_delivery_person,suspicious_conversation_phone_message, 98).
+attack(pretexting_via_delivery_person,suspicious_conversation_visit, 96).
 attack(pretexting_via_delivery_person, company-size-1-250,92).
 attack(pretexting_via_delivery_person, company-size-250-500,7).
 attack(pretexting_via_delivery_person, company-size-500-1000,19).
@@ -678,9 +676,9 @@ attack(pretexting_via_delivery_person, africa, 7).
 %pretexting-via-phone
 attacksymptomslist(pretexting_via_phone, [suspicious_conversation_phone_call,suspicious_conversation_phone_message,credentials_theft]).
 
-attack(pretexting_via_phone, suspicious_conversation_phone_call, 87).
-attack(pretexting_via_phone, suspicious_conversation_phone_message, 98).
-attack(pretexting_via_phone, credentials_theft, 83).
+attack(pretexting_via_phone,suspicious_conversation_phone_call, 87).
+attack(pretexting_via_phone,suspicious_conversation_phone_message, 98).
+attack(pretexting_via_phone,credentials_theft, 83).
 attack(pretexting_via_phone, company-size-1-250,92).
 attack(pretexting_via_phone, company-size-250-500,87).
 attack(pretexting_via_phone, company-size-500-1000,57).
@@ -699,15 +697,16 @@ attack(pretexting_via_phone, asia, 75).
 attack(pretexting_via_phone, africa, 7).
 
 
+
 %influence-perception-of-reciprocation
 attacksymptomslist(influence_perception_of_reciprocation, [suspicious_conversation_phone_call,suspicious_conversation_phone_message,suspicious_conversation_email,ad_click,pop_up_windows,credentials_theft]).
 
-attack(influence_perception_of_reciprocation, suspicious_conversation_phone_call, 81).
-attack(influence_perception_of_reciprocation, suspicious_conversation_phone_message, 80).
-attack(influence_perception_of_reciprocation, suspicious_conversation_email, 72).
-attack(influence_perception_of_reciprocation, ad_click, 76).
-attack(influence_perception_of_reciprocation, pop_up_windows, 72).
-attack(influence_perception_of_reciprocation, credentials_theft, 71).
+attack(influence_perception_of_reciprocation,suspicious_conversation_phone_call, 81).
+attack(influence_perception_of_reciprocation,suspicious_conversation_phone_message, 80).
+attack(influence_perception_of_reciprocation,suspicious_conversation_email, 72).
+attack(influence_perception_of_reciprocation,ad_click, 76).
+attack(influence_perception_of_reciprocation,pop_up_windows, 72).
+attack(influence_perception_of_reciprocation,credentials_theft, 71).
 attack(influence_perception_of_reciprocation, company-size-1-250,92).
 attack(influence_perception_of_reciprocation, company-size-250-500,87).
 attack(influence_perception_of_reciprocation, company-size-500-1000,57).
@@ -726,15 +725,16 @@ attack(influence_perception_of_reciprocation, asia, 75).
 attack(influence_perception_of_reciprocation, africa, 7).
 
 
+
 %influence-perception-of-scarcity
 attacksymptomslist(influence_perception_of_scarcity, [suspicious_conversation_phone_call,suspicious_conversation_phone_message,suspicious_conversation_email,ad_click,pop_up_windows,credentials_theft]).
 
-attack(influence_perception_of_scarcity, suspicious_conversation_phone_call, 90).
-attack(influence_perception_of_scarcity, suspicious_conversation_phone_message, 98).
-attack(influence_perception_of_scarcity, suspicious_conversation_email, 76).
-attack(influence_perception_of_scarcity, ad_click, 87).
-attack(influence_perception_of_scarcity, pop_up_windows, 90).
-attack(influence_perception_of_scarcity, credentials_theft, 83).
+attack(influence_perception_of_scarcity,suspicious_conversation_phone_call, 90).
+attack(influence_perception_of_scarcity,suspicious_conversation_phone_message, 98).
+attack(influence_perception_of_scarcity,suspicious_conversation_email, 76).
+attack(influence_perception_of_scarcity,ad_click, 87).
+attack(influence_perception_of_scarcity,pop_up_windows, 90).
+attack(influence_perception_of_scarcity,credentials_theft, 83).
 attack(influence_perception_of_scarcity, company-size-1-250,92).
 attack(influence_perception_of_scarcity, company-size-250-500,87).
 attack(influence_perception_of_scarcity, company-size-500-1000,57).
@@ -756,12 +756,12 @@ attack(influence_perception_of_scarcity, africa, 7).
 %influence-perception-of-authority
 attacksymptomslist(influence_perception_of_authority, [suspicious_conversation_phone_call,suspicious_conversation_phone_message,suspicious_conversation_email,ad_click,pop_up_windows,credentials_theft]).
 
-attack(influence_perception_of_authority, suspicious_conversation_phone_call, 77).
-attack(influence_perception_of_authority, suspicious_conversation_phone_message, 91).
-attack(influence_perception_of_authority, suspicious_conversation_email, 94).
-attack(influence_perception_of_authority, ad_click, 72).
-attack(influence_perception_of_authority, pop_up_windows, 83).
-attack(influence_perception_of_authority, credentials_theft, 84).
+attack(influence_perception_of_authority,suspicious_conversation_phone_call, 77).
+attack(influence_perception_of_authority,suspicious_conversation_phone_message, 91).
+attack(influence_perception_of_authority,suspicious_conversation_email, 94).
+attack(influence_perception_of_authority,ad_click, 72).
+attack(influence_perception_of_authority,pop_up_windows, 83).
+attack(influence_perception_of_authority,credentials_theft, 84).
 attack(influence_perception_of_authority, company-size-1-250,92).
 attack(influence_perception_of_authority, company-size-250-500,87).
 attack(influence_perception_of_authority, company-size-500-1000,57).
@@ -783,11 +783,10 @@ attack(influence_perception_of_authority, africa, 7).
 %influence-perception-of-liking
 attacksymptomslist(influence_perception_of_liking, [suspicious_conversation_phone_call,suspicious_conversation_phone_message,suspicious_conversation_email,suspicious_conversation_visit,credentials_theft]).
 
-attack(influence_perception_of_liking, suspicious_conversation_phone-call, 89).
-attack(influence_perception_of_liking, suspicious_conversation_phone-message, 71).
-attack(influence_perception_of_liking, suspicious_conversation_email, 72).
-attack(influence_perception_of_liking, suspicious_conversation_visit, 77).
-attack(influence_perception_of_liking, credentials_theft, 70).
+attack(influence_perception_of_liking,suspicious_conversation_phone-call, 89).
+attack(influence_perception_of_liking,suspicious_conversation_phone-message, 71).
+attack(influence_perception_of_liking,suspicious_conversation_email, 72).
+attack(influence_perception_of_liking,suspicious_conversation_visit, 77).
 attack(influence_perception_of_liking, company-size-1-250,92).
 attack(influence_perception_of_liking, company-size-250-500,87).
 attack(influence_perception_of_liking, company-size-500-1000,57).
@@ -809,12 +808,12 @@ attack(influence_perception_of_liking, africa, 7).
 %influence-perception-of-consensus-or-social-proof
 attacksymptomslist(influence_perception_of_consensus_or_social_proof, [suspicious_conversation_phone_call,suspicious_conversation_phone_message,suspicious_conversation_email,ad_click,pop_up_windows,credentials_theft]).
 
-attack(influence_perception_of_consensus_or_social_proof, suspicious_conversation_phone_call, 77).
-attack(influence_perception_of_consensus_or_social_proof, suspicious_conversation_phone_message, 78).
-attack(influence_perception_of_consensus_or_social_proof, suspicious_conversation_email, 86).
-attack(influence_perception_of_consensus_or_social_proof, ad_click, 71).
-attack(influence_perception_of_consensus_or_social_proof, pop_up_windows, 82).
-attack(influence_perception_of_consensus_or_social_proof, credentials_theft, 83).
+attack(influence_perception_of_consensus_or_social_proof,suspicious_conversation_phone_call, 77).
+attack(influence_perception_of_consensus_or_social_proof,suspicious_conversation_phone_message, 78).
+attack(influence_perception_of_consensus_or_social_proof,suspicious_conversation_email, 86).
+attack(influence_perception_of_consensus_or_social_proof,ad_click, 71).
+attack(influence_perception_of_consensus_or_social_proof,pop_up_windows, 82).
+attack(influence_perception_of_consensus_or_social_proof,credentials_theft, 83).
 attack(influence_perception_of_consensus_or_social_proof, company-size-1-250,92).
 attack(influence_perception_of_consensus_or_social_proof, company-size-250-500,87).
 attack(influence_perception_of_consensus_or_social_proof, company-size-500-1000,57).
@@ -836,12 +835,12 @@ attack(influence_perception_of_consensus_or_social_proof, africa, 7).
 %target-influence-via-framing
 attacksymptomslist(target_influence_via_framing, [suspicious_conversation_phone_call,suspicious_conversation_phone_message,suspicious_conversation_email,ad_click,pop_up_windows,credentials_theft]).
 
-attack(target_influence_via_framing, suspicious_conversation_phone_call, 83).
-attack(target_influence_via_framing, suspicious_conversation_phone_message, 98).
-attack(target_influence_via_framing, suspicious_conversation_email, 72).
-attack(target_influence_via_framing, ad_click, 84).
-attack(target_influence_via_framing, pop_up_windows, 81).
-attack(target_influence_via_framing, credentials_theft, 83).
+attack(target_influence_via_framing,suspicious_conversation_phone_call, 83).
+attack(target_influence_via_framing,suspicious_conversation_phone_message, 98).
+attack(target_influence_via_framing,suspicious_conversation_email, 72).
+attack(target_influence_via_framing,ad_click, 84).
+attack(target_influence_via_framing,pop_up_windows, 81).
+attack(target_influence_via_framing,credentials_theft, 83).
 attack(target_influence_via_framing, company-size-1-250,92).
 attack(target_influence_via_framing, company-size-250-500,87).
 attack(target_influence_via_framing, company-size-500-1000,57).
@@ -860,13 +859,14 @@ attack(target_influence_via_framing, asia, 75).
 attack(target_influence_via_framing, africa, 7).
 
 
+
 %influence-via-modes-of-thinking
 attacksymptomslist(influence_via_modes_of_thinking, [suspicious_conversation_phone_call,suspicious_conversation_phone_message,suspicious_conversation_visit,credentials_theft]).
 
-attack(influence_via_modes_of_thinking, suspicious_conversation_phone_call, 82).
-attack(influence_via_modes_of_thinking, suspicious_conversation_phone_message, 88).
-attack(influence_via_modes_of_thinking, suspicious_conversation_visit, 74).
-attack(influence_via_modes_of_thinking, credentials_theft, 78).
+attack(influence_via_modes_of_thinking,suspicious_conversation_phone_call, 82).
+attack(influence_via_modes_of_thinking,suspicious_conversation_phone_message, 88).
+attack(influence_via_modes_of_thinking,suspicious_conversation_visit, 74).
+attack(influence_via_modes_of_thinking,credentials_theft, 78).
 attack(influence_via_modes_of_thinking, company-size-1-250,92).
 attack(influence_via_modes_of_thinking, company-size-250-500,87).
 attack(influence_via_modes_of_thinking, company-size-500-1000,57).
@@ -885,15 +885,14 @@ attack(influence_via_modes_of_thinking, asia, 75).
 attack(influence_via_modes_of_thinking, africa, 7).
 
 
-
 %target-influence-via-interview-and-interrogation
 attacksymptomslist(target_influence_via_interview_and_interrogation, [suspicious_conversation_phone_call,suspicious_conversation_phone_message,suspicious_conversation_email,ad_click,pop_up_windows]).
 
-attack(target_influence_via_interview_and_interrogation, suspicious_conversation_phone_call, 90).
-attack(target_influence_via_interview_and_interrogation, suspicious_conversation_phone_message, 73).
-attack(target_influence_via_interview_and_interrogation, suspicious_conversation_email, 78).
-attack(target_influence_via_interview_and_interrogation, ad_click, 81).
-attack(target_influence_via_interview_and_interrogation, pop_up_windows, 76).
+attack(target_influence_via_interview_and_interrogation,suspicious_conversation_phone_call, 90).
+attack(target_influence_via_interview_and_interrogation,suspicious_conversation_phone_message, 73).
+attack(target_influence_via_interview_and_interrogation,suspicious_conversation_email, 78).
+attack(target_influence_via_interview_and_interrogation,ad_click, 81).
+attack(target_influence_via_interview_and_interrogation,pop_up_windows, 76).
 attack(target_influence_via_interview_and_interrogation, company-size-1-250,92).
 attack(target_influence_via_interview_and_interrogation, company-size-250-500,87).
 attack(target_influence_via_interview_and_interrogation, company-size-500-1000,57).
