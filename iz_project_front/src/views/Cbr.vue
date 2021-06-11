@@ -151,20 +151,13 @@ export default {
       selectedCompanySector : '',
       selectedLikelihood : '',
       selectedSeverity : '',
-      attackName : "spear phishing",
-      countermeasures : [],
-      attack:'',
+      attackName : "_______________",
+      countermeasures : []
+
     }
   },
   methods: {
     greet: function (event) {
-      axios
-      .get('http://localhost:8090/api/temp/hello')
-      .then(response => {
-        this.attackName = response.data;
-        console.log(response);
-      });
-      console.log(this.selectedSkills);
       axios
         .post(("http://localhost:8090/api/temp/cbr"), {
                 'symptoms': this.symptoms,
@@ -183,10 +176,10 @@ export default {
                 }
             })
             .then(res => {
-                alert("Successfully registered!");
+                alert("CBR successful!");
 
             }).catch(() => {
-            alert("Pharmacy was not registered successfully!")
+            alert("CBR not successful!")
         });
     },
     findCountermeasures: function (event) {
