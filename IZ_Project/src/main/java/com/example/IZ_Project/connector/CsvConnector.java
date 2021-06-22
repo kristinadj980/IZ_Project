@@ -5,10 +5,7 @@ import java.io.InputStreamReader;
 import java.net.URL;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
-import java.util.Collection;
-import java.util.Date;
-import java.util.LinkedList;
-import java.util.Locale;
+import java.util.*;
 
 
 import com.example.IZ_Project.model.*;
@@ -42,14 +39,17 @@ public class CsvConnector implements Connector {
                 Attack attack = new Attack();
                 DateFormat format = new SimpleDateFormat("yyyy-MM-dd", Locale.ENGLISH);
                 Date date = format.parse(values[1]);
+                Long dateLong = date.getTime();
                 attack.setDate(date);
+                attack.setDateLong(dateLong);
                 attack.setName(values[2]);
                 attack.setSkillsRequired(Enum.valueOf(Scale.class,values[7]));
                 attack.setSeverity(Enum.valueOf(Scale.class,values[11]));
                 attack.setLikelihood(Enum.valueOf(Scale.class,values[10]));
 
                 //prerequisites 8
-                //consensquences 9
+                attack.setPrerequisiteCBR(new Prerequisite(values[8]));
+
                 //symptoms 3
                 company.setCompanyName(values[0]);
                 company.setCompanySector(Enum.valueOf(CompanySector.class,values[5]));
@@ -58,7 +58,7 @@ public class CsvConnector implements Connector {
 
                 attack.setCompany(company);
 
-
+                extractSymptomsList(attack, values[3]);
 
 
                 cbrCase.setDescription(attack);
@@ -69,6 +69,21 @@ public class CsvConnector implements Connector {
             e.printStackTrace();
         }
         return cases;
+    }
+
+    private void extractSymptomsList(Attack attack, String symptomsList) {
+        //[symptom1;symptom2;symptom3]
+        symptomsList = symptomsList.substring(1, symptomsList.length() - 1);
+        String[] symptoms = symptomsList.split(";");
+        Arrays.sort(symptoms);
+        for (int i = 0; i < symptoms.length; i++) {
+            if (i== 0)
+                attack.setSymptom1(symptoms[i]);
+            else if (i==1)
+                attack.setSymptom2(symptoms[i]);
+            else if (i==2)
+                attack.setSymptom3(symptoms[i]);
+        }
     }
 
     @Override

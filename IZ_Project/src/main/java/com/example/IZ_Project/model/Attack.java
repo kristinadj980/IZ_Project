@@ -5,6 +5,8 @@ import ucm.gaia.jcolibri.cbrcore.Attribute;
 import ucm.gaia.jcolibri.cbrcore.CaseComponent;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.Date;
 
 public class Attack implements CaseComponent {
@@ -13,30 +15,37 @@ public class Attack implements CaseComponent {
     private Scale severity;
     private Scale skillsRequired;
     private Date date;
+    private Long dateLong;
     private Company company;
     private ArrayList<Symptom> symptoms;
     private ArrayList<Consequence> consequences;
     private ArrayList<Prerequisite> prerequisites;
     private ArrayList<Countermeasure> countermeasures;   //vidi sa njima jel treba ovo!
+    private Prerequisite prerequisiteCBR;
+    private String symptom1;
+    private String symptom2;
+    private String symptom3;
 
     public Attack() {
     }
 
-    public Attack(String name, Scale likelihood, Scale severity, Scale skillsRequired, Date date, Company company, ArrayList<Symptom> symptoms, ArrayList<Consequence> consequences, ArrayList<Prerequisite> prerequisites,ArrayList<Countermeasure> countermeasures) {
+    public Attack(String name) {
+        this.name = name;
+    }
+
+    public Attack(String name, Scale likelihood, Scale severity, Scale skillsRequired, Date date, Long dateLong, Company company, ArrayList<Symptom> symptoms, ArrayList<Consequence> consequences, ArrayList<Prerequisite> prerequisites, ArrayList<Countermeasure> countermeasures, Prerequisite prerequisiteCBR) {
         this.name = name;
         this.likelihood = likelihood;
         this.severity = severity;
         this.skillsRequired = skillsRequired;
         this.date = date;
+        this.dateLong = dateLong;
         this.company = company;
         this.symptoms = symptoms;
         this.consequences = consequences;
         this.prerequisites = prerequisites;
         this.countermeasures = countermeasures;
-    }
-
-    public Attack(String name) {
-        this.name = name;
+        this.prerequisiteCBR = prerequisiteCBR;
     }
 
     public Attack(SymptomsDTO symptomsDTO) {
@@ -48,16 +57,56 @@ public class Attack implements CaseComponent {
 
         this.setCompany(company);
 
-        this.setName("spear-fishing");
+        //this.setName("spear-fishing");
         this.setSkillsRequired(symptomsDTO.getSkillsRequired());
         this.setLikelihood(symptomsDTO.getLikelihood());
         this.setDate(symptomsDTO.getDate());
         this.setSeverity(symptomsDTO.getSeverity());
+        this.setDateLong(symptomsDTO.getDate().getTime());
+        this.setPrerequisiteCBR(new Prerequisite(symptomsDTO.getPrerequisites()));
+        ArrayList<Symptom> temp = new ArrayList<>();
+        for (String s : symptomsDTO.getSymptoms()) {
+            Symptom symptom = new Symptom(s);
+            temp.add(symptom);
+        }
+        this.setSymptoms(temp);
+
+        //ideja je da sortiramo listu simptoma po alfabetu i onda uzmemo prva tri i uporedimo za cbr sa EqualsIgnoreCase
+        Collections.sort(symptomsDTO.getSymptoms());
+
+        for (int i = 0; i < symptomsDTO.getSymptoms().size(); i++) {
+            if (i== 0)
+                this.setSymptom1(symptomsDTO.getSymptoms().get(i));
+            else if (i==1)
+                this.setSymptom2(symptomsDTO.getSymptoms().get(i));
+            else if (i==2)
+                this.setSymptom3(symptomsDTO.getSymptoms().get(i));
+        }
+
     }
 
-    @Override
-    public Attribute getIdAttribute() {
-        return null;
+    public String getSymptom1() {
+        return symptom1;
+    }
+
+    public void setSymptom1(String symptom1) {
+        this.symptom1 = symptom1;
+    }
+
+    public String getSymptom2() {
+        return symptom2;
+    }
+
+    public void setSymptom2(String symptom2) {
+        this.symptom2 = symptom2;
+    }
+
+    public String getSymptom3() {
+        return symptom3;
+    }
+
+    public void setSymptom3(String symptom3) {
+        this.symptom3 = symptom3;
     }
 
     public String getName() {
@@ -100,6 +149,14 @@ public class Attack implements CaseComponent {
         this.date = date;
     }
 
+    public Long getDateLong() {
+        return dateLong;
+    }
+
+    public void setDateLong(Long dateLong) {
+        this.dateLong = dateLong;
+    }
+
     public Company getCompany() {
         return company;
     }
@@ -140,6 +197,19 @@ public class Attack implements CaseComponent {
         this.countermeasures = countermeasures;
     }
 
+    public Prerequisite getPrerequisiteCBR() {
+        return prerequisiteCBR;
+    }
+
+    public void setPrerequisiteCBR(Prerequisite prerequisiteCBR) {
+        this.prerequisiteCBR = prerequisiteCBR;
+    }
+
+    @Override
+    public Attribute getIdAttribute() {
+        return null;
+    }
+
     @Override
     public String toString() {
         return "Attack{" +
@@ -148,10 +218,13 @@ public class Attack implements CaseComponent {
                 ", severity=" + severity +
                 ", skillsRequired=" + skillsRequired +
                 ", date=" + date +
+                ", dateLong=" + dateLong +
                 ", company=" + company +
                 ", symptoms=" + symptoms +
-                ", consequences=" + consequences +
-                ", prerequisites=" + prerequisites +
+                ", prerequisiteCBR=" + prerequisiteCBR +
+                ", symptom1='" + symptom1 + '\'' +
+                ", symptom2='" + symptom2 + '\'' +
+                ", symptom3='" + symptom3 + '\'' +
                 '}';
     }
 }

@@ -1,8 +1,6 @@
 package com.example.IZ_Project.controller;
 
-import com.example.IZ_Project.dto.AttackDTO;
-import com.example.IZ_Project.dto.CountermeasuresDTO;
-import com.example.IZ_Project.dto.SymptomsDTO;
+import com.example.IZ_Project.dto.*;
 import com.example.IZ_Project.handlers.PrologHandler;
 import com.example.IZ_Project.model.Attack;
 import com.example.IZ_Project.model.Countermeasure;
@@ -33,7 +31,6 @@ public class CbrController {
         return new ResponseEntity<>("ok", HttpStatus.OK);
     }
 
-    //da na osnovu liste simptoma koja se posalje sa fronta
     @PostMapping(consumes = "application/json", value = "/countermeasures")
     public ResponseEntity<List<CountermeasuresDTO>> findCountermeasures(@RequestBody AttackDTO attackDTO) throws Exception {
         PrologHandler prologHandler = new PrologHandler();
@@ -52,9 +49,8 @@ public class CbrController {
 
 
     @PostMapping(consumes = "application/json", value = "/cbr")
-    public ResponseEntity<String> cbrReasoning(@RequestBody SymptomsDTO symptomsDTO) {
+    public ResponseEntity<ArrayList<CbrDTO>> cbrReasoning(@RequestBody SymptomsDTO symptomsDTO) {
         Attack attack = new Attack(symptomsDTO);
-        CbrApplication.calculate(attack);
-        return new ResponseEntity<>("ok", HttpStatus.OK);
+        return new ResponseEntity<>(CbrApplication.calculate(attack), HttpStatus.OK);
     }
 }
