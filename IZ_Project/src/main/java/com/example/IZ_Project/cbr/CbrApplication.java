@@ -1,5 +1,6 @@
 package com.example.IZ_Project.cbr;
 
+import java.util.ArrayList;
 import java.util.Collection;
 
 
@@ -31,6 +32,7 @@ public class CbrApplication implements StandardCBRApplication {
     CBRCaseBase _caseBase;  /** CaseBase object */
 
     NNConfig simConfig;  /** KNN configuration */
+    private static ArrayList<String> attacks = new ArrayList<String>();
 
     public void configure() throws ExecutionException {
         _connector =  new CsvConnector();
@@ -50,7 +52,12 @@ public class CbrApplication implements StandardCBRApplication {
         simConfig.addMapping(new Attribute("numberOfEmployees", Company.class), new Interval(2));
         simConfig.addMapping(new Attribute("companySector", Company.class), new EqualsStringIgnoreCase());
         simConfig.addMapping(new Attribute("continent", Company.class), new EqualsStringIgnoreCase());
-        //prerequisites, symptoms
+
+        //ideja je da sortiramo listu simptoma po alfabetu i onda uzmemo prva tri i uporedimo za cbr sa EqualsIgnoreCase
+        simConfig.addMapping(new Attribute("symptom1", Attack.class), new EqualsStringIgnoreCase());
+        simConfig.addMapping(new Attribute("symptom2", Attack.class), new EqualsStringIgnoreCase());
+        simConfig.addMapping(new Attribute("symptom3", Attack.class), new EqualsStringIgnoreCase());
+
 
         // Equal - returns 1 if both individuals are equal, otherwise returns 0
         // Interval - returns the similarity of two number inside an interval: sim(x,y) = 1-(|x-y|/interval)
@@ -67,8 +74,12 @@ public class CbrApplication implements StandardCBRApplication {
         Collection<RetrievalResult> eval = NNScoringMethod.evaluateSimilarity(_caseBase.getCases(), query, simConfig);
         eval = SelectCases.selectTopKRR(eval, 5);
         System.out.println("Retrieved cases:");
-        for (RetrievalResult nse : eval)
+        for (RetrievalResult nse : eval) {
+            String temp = nse.get_case().getDescription().toString();
+            Attack attack = (Attack) nse.get_case().getDescription();
             System.out.println(nse.get_case().getDescription() + " -> " + nse.getEval());
+            attacks.add(attack.toString() + "--->" + nse.getEval());
+        }
     }
 
     public void postCycle() throws ExecutionException {
@@ -83,7 +94,8 @@ public class CbrApplication implements StandardCBRApplication {
         return _caseBase;
     }
 
-    public static void calculate(Attack attack) {
+    public static ArrayList<String> calculate(Attack attack) {
+        attacks.removeAll(attacks);
         StandardCBRApplication recommender = new CbrApplication();
         try {
             recommender.configure();
@@ -92,21 +104,17 @@ public class CbrApplication implements StandardCBRApplication {
 
             CBRQuery query = new CBRQuery();
 
-//            TransactionDescription txDescription = new TransactionDescription();
-//            RealEstateDescription reDescription = new RealEstateDescription();
-//            reDescription.setAge(25);
-//            reDescription.setDistanceToPublicTransportation(300);
-//            reDescription.setLocalStores(5);
-//            txDescription.setRealEstateDescription(reDescription);
-//            txDescription.setYear(2013);
 
             query.setDescription( attack );
             recommender.cycle(query);
 
             recommender.postCycle();
+
+
         } catch (Exception e) {
             e.printStackTrace();
         }
+        return attacks;
     }
 
 }

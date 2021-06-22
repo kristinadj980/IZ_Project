@@ -43,7 +43,7 @@
     <span style="display:inline-block; width: 30px;"></span>
 
     <select v-model="selectedPrerequisites">
-      <option disabled value="">Select prerequisites</option>
+      <option disabled value="">Select prerequisite</option>
       <option>none</option>
       <option>allow_iFrames</option>
       <option>knowledge_about_update_processes</option>
@@ -108,9 +108,15 @@
     </select>
     
     <br/><br/>
-    <button type="button" v-on:click="greet">Analyze data  </button>
+    <button type="button" v-on:click="sendToAnalysis">Analyze data  </button>
     <br/><br/>
-    Your attack is : {{attackName}}
+    Similar attacks are :
+    <ol id="example-2">
+      <li v-for="attack in cbrResult" :key="attack">
+        {{ attack}}
+        <br/><br/><br/>
+      </li>
+    </ol>
     <br/><br/><br/>
 
     <button type="button" v-on:click="findCountermeasures">Countermeasures  </button>
@@ -152,12 +158,13 @@ export default {
       selectedLikelihood : '',
       selectedSeverity : '',
       attackName : "_______________",
-      countermeasures : []
+      countermeasures : [],
+      cbrResult : []
 
     }
   },
   methods: {
-    greet: function (event) {
+    sendToAnalysis: function (event) {
       axios
         .post(("http://localhost:8090/api/temp/cbr"), {
                 'symptoms': this.multipleSelections,
@@ -176,7 +183,8 @@ export default {
                 }
             })
             .then(res => {
-                alert("CBR successful!");
+              this.cbrResult = [];
+              this.cbrResult = res.data;
 
             }).catch(() => {
             alert("CBR not successful!")

@@ -5,6 +5,8 @@ import ucm.gaia.jcolibri.cbrcore.Attribute;
 import ucm.gaia.jcolibri.cbrcore.CaseComponent;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.Date;
 
 public class Attack implements CaseComponent {
@@ -20,6 +22,9 @@ public class Attack implements CaseComponent {
     private ArrayList<Prerequisite> prerequisites;
     private ArrayList<Countermeasure> countermeasures;   //vidi sa njima jel treba ovo!
     private Prerequisite prerequisiteCBR;
+    private String symptom1;
+    private String symptom2;
+    private String symptom3;
 
     public Attack() {
     }
@@ -59,6 +64,49 @@ public class Attack implements CaseComponent {
         this.setSeverity(symptomsDTO.getSeverity());
         this.setDateLong(symptomsDTO.getDate().getTime());
         this.setPrerequisiteCBR(new Prerequisite(symptomsDTO.getPrerequisites()));
+        ArrayList<Symptom> temp = new ArrayList<>();
+        for (String s : symptomsDTO.getSymptoms()) {
+            Symptom symptom = new Symptom(s);
+            temp.add(symptom);
+        }
+        this.setSymptoms(temp);
+
+        //ideja je da sortiramo listu simptoma po alfabetu i onda uzmemo prva tri i uporedimo za cbr sa EqualsIgnoreCase
+        Collections.sort(symptomsDTO.getSymptoms());
+
+        for (int i = 0; i < symptomsDTO.getSymptoms().size(); i++) {
+            if (i== 0)
+                this.setSymptom1(symptomsDTO.getSymptoms().get(i));
+            else if (i==1)
+                this.setSymptom2(symptomsDTO.getSymptoms().get(i));
+            else if (i==2)
+                this.setSymptom3(symptomsDTO.getSymptoms().get(i));
+        }
+
+    }
+
+    public String getSymptom1() {
+        return symptom1;
+    }
+
+    public void setSymptom1(String symptom1) {
+        this.symptom1 = symptom1;
+    }
+
+    public String getSymptom2() {
+        return symptom2;
+    }
+
+    public void setSymptom2(String symptom2) {
+        this.symptom2 = symptom2;
+    }
+
+    public String getSymptom3() {
+        return symptom3;
+    }
+
+    public void setSymptom3(String symptom3) {
+        this.symptom3 = symptom3;
     }
 
     public String getName() {
@@ -160,5 +208,23 @@ public class Attack implements CaseComponent {
     @Override
     public Attribute getIdAttribute() {
         return null;
+    }
+
+    @Override
+    public String toString() {
+        return "Attack{" +
+                "name='" + name + '\'' +
+                ", likelihood=" + likelihood +
+                ", severity=" + severity +
+                ", skillsRequired=" + skillsRequired +
+                ", date=" + date +
+                ", dateLong=" + dateLong +
+                ", company=" + company +
+                ", symptoms=" + symptoms +
+                ", prerequisiteCBR=" + prerequisiteCBR +
+                ", symptom1='" + symptom1 + '\'' +
+                ", symptom2='" + symptom2 + '\'' +
+                ", symptom3='" + symptom3 + '\'' +
+                '}';
     }
 }

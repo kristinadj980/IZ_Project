@@ -5,10 +5,7 @@ import java.io.InputStreamReader;
 import java.net.URL;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
-import java.util.Collection;
-import java.util.Date;
-import java.util.LinkedList;
-import java.util.Locale;
+import java.util.*;
 
 
 import com.example.IZ_Project.model.*;
@@ -53,7 +50,6 @@ public class CsvConnector implements Connector {
                 //prerequisites 8
                 attack.setPrerequisiteCBR(new Prerequisite(values[8]));
 
-                //consensquences 9
                 //symptoms 3
                 company.setCompanyName(values[0]);
                 company.setCompanySector(Enum.valueOf(CompanySector.class,values[5]));
@@ -62,7 +58,7 @@ public class CsvConnector implements Connector {
 
                 attack.setCompany(company);
 
-
+                extractSymptomsList(attack, values[3]);
 
 
                 cbrCase.setDescription(attack);
@@ -73,6 +69,21 @@ public class CsvConnector implements Connector {
             e.printStackTrace();
         }
         return cases;
+    }
+
+    private void extractSymptomsList(Attack attack, String symptomsList) {
+        //[symptom1;symptom2;symptom3]
+        symptomsList = symptomsList.substring(1, symptomsList.length() - 1);
+        String[] symptoms = symptomsList.split(";");
+        Arrays.sort(symptoms);
+        for (int i = 0; i < symptoms.length; i++) {
+            if (i== 0)
+                attack.setSymptom1(symptoms[i]);
+            else if (i==1)
+                attack.setSymptom2(symptoms[i]);
+            else if (i==2)
+                attack.setSymptom3(symptoms[i]);
+        }
     }
 
     @Override
