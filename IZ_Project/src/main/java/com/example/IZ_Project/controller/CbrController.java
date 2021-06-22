@@ -33,7 +33,6 @@ public class CbrController {
         return new ResponseEntity<>("ok", HttpStatus.OK);
     }
 
-    //da na osnovu liste simptoma koja se posalje sa fronta
     @PostMapping(consumes = "application/json", value = "/countermeasures")
     public ResponseEntity<List<CountermeasuresDTO>> findCountermeasures(@RequestBody AttackDTO attackDTO) throws Exception {
         PrologHandler prologHandler = new PrologHandler();

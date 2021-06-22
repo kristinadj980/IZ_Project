@@ -24,21 +24,23 @@ public class Attack implements CaseComponent {
     public Attack() {
     }
 
-    public Attack(String name, Scale likelihood, Scale severity, Scale skillsRequired, Date date, Company company, ArrayList<Symptom> symptoms, ArrayList<Consequence> consequences, ArrayList<Prerequisite> prerequisites) {
+    public Attack(String name) {
+        this.name = name;
+    }
+
+    public Attack(String name, Scale likelihood, Scale severity, Scale skillsRequired, Date date, Long dateLong, Company company, ArrayList<Symptom> symptoms, ArrayList<Consequence> consequences, ArrayList<Prerequisite> prerequisites, ArrayList<Countermeasure> countermeasures, Prerequisite prerequisiteCBR) {
         this.name = name;
         this.likelihood = likelihood;
         this.severity = severity;
         this.skillsRequired = skillsRequired;
         this.date = date;
+        this.dateLong = dateLong;
         this.company = company;
         this.symptoms = symptoms;
         this.consequences = consequences;
         this.prerequisites = prerequisites;
         this.countermeasures = countermeasures;
-    }
-
-    public Attack(String name) {
-        this.name = name;
+        this.prerequisiteCBR = prerequisiteCBR;
     }
 
     public Attack(SymptomsDTO symptomsDTO) {
@@ -56,12 +58,7 @@ public class Attack implements CaseComponent {
         this.setDate(symptomsDTO.getDate());
         this.setSeverity(symptomsDTO.getSeverity());
         this.setDateLong(symptomsDTO.getDate().getTime());
-        this.setPrerequisite(new Prerequisite(symptomsDTO.getPrerequisites()));
-    }
-
-    @Override
-    public Attribute getIdAttribute() {
-        return null;
+        this.setPrerequisiteCBR(new Prerequisite(symptomsDTO.getPrerequisites()));
     }
 
     public String getName() {
@@ -144,18 +141,24 @@ public class Attack implements CaseComponent {
         this.prerequisites = prerequisites;
     }
 
+    public ArrayList<Countermeasure> getCountermeasures() {
+        return countermeasures;
+    }
+
+    public void setCountermeasures(ArrayList<Countermeasure> countermeasures) {
+        this.countermeasures = countermeasures;
+    }
+
+    public Prerequisite getPrerequisiteCBR() {
+        return prerequisiteCBR;
+    }
+
+    public void setPrerequisiteCBR(Prerequisite prerequisiteCBR) {
+        this.prerequisiteCBR = prerequisiteCBR;
+    }
+
     @Override
-    public String toString() {
-        return "Attack{" +
-                "name='" + name + '\'' +
-                ", likelihood=" + likelihood +
-                ", severity=" + severity +
-                ", skillsRequired=" + skillsRequired +
-                ", date=" + date +
-                ", company=" + company +
-                ", symptoms=" + symptoms +
-                ", consequences=" + consequences +
-                ", prerequisites=" + prerequisites +
-                '}';
+    public Attribute getIdAttribute() {
+        return null;
     }
 }
