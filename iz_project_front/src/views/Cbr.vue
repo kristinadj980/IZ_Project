@@ -109,17 +109,19 @@
     
     <br/><br/>
     <button type="button" v-on:click="greet">Analyze data  </button>
-    <br/><br/><br/>
+    <br/><br/>
     Your attack is : {{attackName}}
     <br/><br/><br/>
 
-<!--    Possible countermeasures :-->
+    <button type="button" v-on:click="findCountermeasures">Countermeasures  </button>
+    <br/><br/>
+    Possible countermeasures :
 
-<!--    <div id="centered" style="margin: 0 auto; width:300px;text-align: left;"><ol id="example-1">-->
-<!--      <li v-for="item in countermeasures" :key="item">-->
-<!--        {{ item }}-->
-<!--      </li>-->
-<!--    </ol></div>-->
+    <div id="centered" style="margin: 0 auto; width:300px;text-align: left;"><ol id="example-1">
+      <li v-for="item in countermeasures" :key="item">
+        {{ item.name }}
+      </li>
+    </ol></div>
     
 
 </div>
@@ -137,8 +139,10 @@ export default {
       multipleSelections: [],
       companyName : "",
       multiple: "true",
-      symptoms:["update", "suspicious_conversation_email", "app_download", "ad_click", "ad_blocker_deactivation", "suspicious_link", "suspicious_website", "pop_up_windows", "credential_re_entering", "services_fail", "credentials_theft", "frequents_spams", "bribery", "virus_detection", "suspicious_code_modifications", "suspicious_conversation_visit", "suspicious_conversasion_phone_call",
-        "suspicious_conversasion_phone_message"],
+       symptoms:["update", "suspicious_conversation_email", "app_download", "ad_click", "ad_blocker_deactivation",
+       "suspicious_link", "suspicious_website", "pop_up_windows", "credential_re_entering", "services_fail",
+       "credentials_theft", "frequents_spams", "bribery", "virus_detection", "suspicious_code_modifications",
+       "suspicious_conversation_visit", "suspicious_conversasion_phone_call","suspicious_conversasion_phone_message"],
       selectedContinent : '',
       selectedPrerequisites : '',
       selectedSkills : '',
@@ -177,7 +181,25 @@ export default {
             }).catch(() => {
             alert("CBR not successful!")
         });
-    }
+    },
+    findCountermeasures: function (event) {
+      axios
+        .post(("http://localhost:8090/api/temp/countermeasures"), {
+                'attackName': this.attackName,
+            },{
+                headers: {
+                    'Content-Type': 'application/json',
+                }
+            })
+            .then(res => {
+                this.countermeasures = res.data
+                console.log(res.data)
+                alert("Successfully!");
+            }).catch(() => {
+
+        });
+    },
+
   }
 }
 

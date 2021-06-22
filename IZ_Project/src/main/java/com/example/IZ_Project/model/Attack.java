@@ -17,22 +17,28 @@ public class Attack implements CaseComponent {
     private Company company;
     private ArrayList<Symptom> symptoms;
     private ArrayList<Consequence> consequences;
-    private Prerequisite prerequisite;
+    private ArrayList<Prerequisite> prerequisites;
+    private ArrayList<Countermeasure> countermeasures;   //vidi sa njima jel treba ovo!
+    private Prerequisite prerequisiteCBR;
 
     public Attack() {
     }
 
-    public Attack(String name, Scale likelihood, Scale severity, Scale skillsRequired, Date date, Long dateLong, Company company, ArrayList<Symptom> symptoms, ArrayList<Consequence> consequences, Prerequisite prerequisite) {
+    public Attack(String name, Scale likelihood, Scale severity, Scale skillsRequired, Date date, Company company, ArrayList<Symptom> symptoms, ArrayList<Consequence> consequences, ArrayList<Prerequisite> prerequisites) {
         this.name = name;
         this.likelihood = likelihood;
         this.severity = severity;
         this.skillsRequired = skillsRequired;
         this.date = date;
-        this.dateLong = dateLong;
         this.company = company;
         this.symptoms = symptoms;
         this.consequences = consequences;
-        this.prerequisite = prerequisite;
+        this.prerequisites = prerequisites;
+        this.countermeasures = countermeasures;
+    }
+
+    public Attack(String name) {
+        this.name = name;
     }
 
     public Attack(SymptomsDTO symptomsDTO) {
@@ -130,12 +136,12 @@ public class Attack implements CaseComponent {
         this.consequences = consequences;
     }
 
-    public Prerequisite getPrerequisite() {
-        return prerequisite;
+    public ArrayList<Prerequisite> getPrerequisites() {
+        return prerequisites;
     }
 
-    public void setPrerequisite(Prerequisite prerequisite) {
-        this.prerequisite = prerequisite;
+    public void setPrerequisites(ArrayList<Prerequisite> prerequisites) {
+        this.prerequisites = prerequisites;
     }
 
     @Override
@@ -146,11 +152,10 @@ public class Attack implements CaseComponent {
                 ", severity=" + severity +
                 ", skillsRequired=" + skillsRequired +
                 ", date=" + date +
-                ", dateLong=" + dateLong +
                 ", company=" + company +
                 ", symptoms=" + symptoms +
                 ", consequences=" + consequences +
-                ", prerequisite=" + prerequisite +
+                ", prerequisites=" + prerequisites +
                 '}';
     }
 }
