@@ -1,8 +1,6 @@
 package com.example.IZ_Project.controller;
 
-import com.example.IZ_Project.dto.AttackDTO;
-import com.example.IZ_Project.dto.CountermeasuresDTO;
-import com.example.IZ_Project.dto.SymptomsDTO;
+import com.example.IZ_Project.dto.*;
 import com.example.IZ_Project.handlers.PrologHandler;
 import com.example.IZ_Project.model.Attack;
 import com.example.IZ_Project.model.Countermeasure;
@@ -51,7 +49,7 @@ public class CbrController {
 
 
     @PostMapping(consumes = "application/json", value = "/cbr")
-    public ResponseEntity<ArrayList<String>> cbrReasoning(@RequestBody SymptomsDTO symptomsDTO) {
+    public ResponseEntity<ArrayList<CbrDTO>> cbrReasoning(@RequestBody SymptomsDTO symptomsDTO) {
         Attack attack = new Attack(symptomsDTO);
         return new ResponseEntity<>(CbrApplication.calculate(attack), HttpStatus.OK);
     }

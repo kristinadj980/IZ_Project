@@ -113,21 +113,29 @@
     Similar attacks are :
     <ol id="example-2">
       <li v-for="attack in cbrResult" :key="attack">
-        {{ attack}}
+        {{ attack}}<br/>
+        <b>Evaluation: </b>{{attack.evaluation}}
         <br/><br/><br/>
       </li>
     </ol>
-    <br/><br/><br/>
+    <br/>
+    <select v-model="selectAttackForCountermeasure">
+      <option v-for="attackName in this.possibleAttacks"  >
+        {{attackName}}</option>
+    </select>
+    <br/><br/>
 
     <button type="button" v-on:click="findCountermeasures">Countermeasures  </button>
     <br/><br/>
     Possible countermeasures :
 
-    <div id="centered" style="margin: 0 auto; width:300px;text-align: left;"><ol id="example-1">
-      <li v-for="item in countermeasures" :key="item">
-        {{ item.name }}
-      </li>
-    </ol></div>
+    <div id="centered" style="margin: 0 auto; width:300px;text-align: left;">
+      <ol id="example-1">
+        <li v-for="item in countermeasures" :key="item">
+          {{ item.name }}
+        </li>
+    </ol>
+    </div>
     
 
 </div>
@@ -159,12 +167,19 @@ export default {
       selectedSeverity : '',
       attackName : "_______________",
       countermeasures : [],
-      cbrResult : []
+      cbrResult : [],
+      possibleAttacks : [],
+      selectAttackForCountermeasure : ""
 
     }
   },
   methods: {
     sendToAnalysis: function (event) {
+      if (this.companyName === "" || this.multipleSelections.length === 0 || this.selectedContinent === "" || this.selectedPrerequisites === "" || this.selectedSkills === ""
+      || this.attackDate === "" || this.selectedCompanySector === "" || this.selectedLikelihood === "" ||  this.selectedSeverity === "" || this.numberOfEmployees === "") {
+        alert("Please fill in all fields!");
+        return;
+      }
       axios
         .post(("http://localhost:8090/api/temp/cbr"), {
                 'symptoms': this.multipleSelections,
@@ -184,7 +199,11 @@ export default {
             })
             .then(res => {
               this.cbrResult = [];
+              this.possibleAttacks = [];
               this.cbrResult = res.data;
+              this.cbrResult.forEach((cbrResult) => {
+                this.possibleAttacks.push(cbrResult.attack.name)
+              })
 
             }).catch(() => {
             alert("CBR not successful!")
@@ -193,7 +212,7 @@ export default {
     findCountermeasures: function (event) {
       axios
         .post(("http://localhost:8090/api/temp/countermeasures"), {
-                'attackName': this.attackName,
+                'attackName': this.selectAttackForCountermeasure,
             },{
                 headers: {
                     'Content-Type': 'application/json',
@@ -202,9 +221,9 @@ export default {
             .then(res => {
                 this.countermeasures = res.data
                 console.log(res.data)
-                alert("Successfully!");
+                //alert("Successfully!");
             }).catch(() => {
-
+              alert("Countermeasures retrieval fail!")
         });
     },
 

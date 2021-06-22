@@ -5,6 +5,7 @@ import java.util.Collection;
 
 
 import com.example.IZ_Project.connector.CsvConnector;
+import com.example.IZ_Project.dto.CbrDTO;
 import com.example.IZ_Project.model.Attack;
 import com.example.IZ_Project.model.Company;
 import com.example.IZ_Project.model.Prerequisite;
@@ -32,7 +33,7 @@ public class CbrApplication implements StandardCBRApplication {
     CBRCaseBase _caseBase;  /** CaseBase object */
 
     NNConfig simConfig;  /** KNN configuration */
-    private static ArrayList<String> attacks = new ArrayList<String>();
+    private static ArrayList<CbrDTO> attacks = new ArrayList<CbrDTO>();
 
     public void configure() throws ExecutionException {
         _connector =  new CsvConnector();
@@ -78,7 +79,7 @@ public class CbrApplication implements StandardCBRApplication {
             String temp = nse.get_case().getDescription().toString();
             Attack attack = (Attack) nse.get_case().getDescription();
             System.out.println(nse.get_case().getDescription() + " -> " + nse.getEval());
-            attacks.add(attack.toString() + "--->" + nse.getEval());
+            attacks.add(new CbrDTO(attack, nse.getEval()));
         }
     }
 
@@ -94,7 +95,7 @@ public class CbrApplication implements StandardCBRApplication {
         return _caseBase;
     }
 
-    public static ArrayList<String> calculate(Attack attack) {
+    public static ArrayList<CbrDTO> calculate(Attack attack) {
         attacks.removeAll(attacks);
         StandardCBRApplication recommender = new CbrApplication();
         try {
