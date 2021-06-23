@@ -43,9 +43,9 @@
     <span style="display:inline-block; width: 30px;"></span>
 
     <select v-model="selectedPrerequisites">
-      <option disabled value="">Select prerequisites</option>
+      <option disabled value="">Select prerequisite</option>
       <option>none</option>
-      <option>allow iFrames</option>
+      <option>allow_iFrames</option>
       <option>knowledge_about_update_processes</option>
       <option>access_to_the_target_system</option>
       <option>knowledge_about_deployed_system</option>
@@ -108,17 +108,34 @@
     </select>
     
     <br/><br/>
-    <button type="button" v-on:click="greet">Analyze data  </button>
+    <button type="button" v-on:click="sendToAnalysis">Analyze data  </button>
     <br/><br/>
-    Your attack is : {{attackName}}
-    <br/><br/><br/>
+    Similar attacks are :
+    <ol id="example-2">
+      <li v-for="attack in cbrResult" :key="attack">
+        {{ attack}}<br/>
+        <b>Evaluation: </b>{{attack.evaluation}}
+        <br/><br/><br/>
+      </li>
+    </ol>
+    <br/>
+    <select v-model="selectAttackForCountermeasure">
+      <option v-for="attackName in this.possibleAttacks"  >
+        {{attackName}}</option>
+    </select>
+    <br/><br/>
+
+    <button type="button" v-on:click="findCountermeasures">Countermeasures  </button>
+    <br/><br/>
     Possible countermeasures :
 
-    <div id="centered" style="margin: 0 auto; width:300px;text-align: left;"><ol id="example-1">
-      <li v-for="item in countermeasures" :key="item">
-        {{ item }}
-      </li>
-    </ol></div>
+    <div id="centered" style="margin: 0 auto; width:300px;text-align: left;">
+      <ol id="example-1">
+        <li v-for="item in countermeasures" :key="item">
+          {{ item.name }}
+        </li>
+    </ol>
+    </div>
     
 
 </div>
@@ -136,7 +153,10 @@ export default {
       multipleSelections: [],
       companyName : "",
       multiple: "true",
-      symptoms:["update", "suspicious-conversation-email", "app-download", "ad-click", "ad-blocker-deactivation", "suspicious-link", "suspicious-website", "pop-up-windows", "credential-re-entering", "services-fail", "credentials-theft", "frequents-spams", "bribery", "virus-detection"],
+       symptoms:["update", "suspicious_conversation_email", "app_download", "ad_click", "ad_blocker_deactivation",
+       "suspicious_link", "suspicious_website", "pop_up_windows", "credential_re_entering", "services_fail",
+       "credentials_theft", "frequents_spams", "bribery", "virus_detection", "suspicious_code_modifications",
+       "suspicious_conversation_visit", "suspicious_conversasion_phone_call","suspicious_conversasion_phone_message"],
       selectedContinent : '',
       selectedPrerequisites : '',
       selectedSkills : '',
@@ -145,23 +165,24 @@ export default {
       selectedCompanySector : '',
       selectedLikelihood : '',
       selectedSeverity : '',
-      attackName : "spear phishing",
-      countermeasures : ["only-click-on-familiar-links","employee-education","antivirus"]
+      attackName : "_______________",
+      countermeasures : [],
+      cbrResult : [],
+      possibleAttacks : [],
+      selectAttackForCountermeasure : ""
 
     }
   },
   methods: {
-    greet: function (event) {
-      axios
-      .get('http://localhost:8090/api/temp/hello')
-      .then(response => {
-        this.attackName = response.data;
-        console.log(response);
-      });
-      console.log(this.selectedSkills);
+    sendToAnalysis: function (event) {
+      if (this.companyName === "" || this.multipleSelections.length === 0 || this.selectedContinent === "" || this.selectedPrerequisites === "" || this.selectedSkills === ""
+      || this.attackDate === "" || this.selectedCompanySector === "" || this.selectedLikelihood === "" ||  this.selectedSeverity === "" || this.numberOfEmployees === "") {
+        alert("Please fill in all fields!");
+        return;
+      }
       axios
         .post(("http://localhost:8090/api/temp/cbr"), {
-                'symptoms': this.symptoms,
+                'symptoms': this.multipleSelections,
                 'continent' :this.selectedContinent,
                 'prerequisites' : this.selectedPrerequisites,
                 'skillsRequired':this.selectedSkills,
@@ -177,12 +198,39 @@ export default {
                 }
             })
             .then(res => {
-                alert("Successfully registered!");
+              this.cbrResult = [];
+              this.possibleAttacks = [];
+              this.cbrResult = res.data;
+              this.cbrResult.forEach((cbrResult) => {
+                this.possibleAttacks.push(cbrResult.attack.name)
+              })
 
             }).catch(() => {
-            alert("Pharmacy was not registered successfully!")
+            alert("CBR not successful!")
         });
-    }
+    },
+    findCountermeasures: function (event) {
+      if (this.selectAttackForCountermeasure === "") {
+        alert("Please select attack")
+        return;
+      }
+      axios
+        .post(("http://localhost:8090/api/temp/countermeasures"), {
+                'attackName': this.selectAttackForCountermeasure,
+            },{
+                headers: {
+                    'Content-Type': 'application/json',
+                }
+            })
+            .then(res => {
+                this.countermeasures = res.data
+                console.log(res.data)
+                //alert("Successfully!");
+            }).catch(() => {
+              alert("Countermeasures retrieval fail!")
+        });
+    },
+
   }
 }
 
