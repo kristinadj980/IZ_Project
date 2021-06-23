@@ -174,7 +174,7 @@ export default {
     }
   },
   methods: {
-    sendToAnalysis: function (event) {
+    sendToAnalysis: function () {
       if (this.companyName === "" || this.multipleSelections.length === 0 || this.selectedContinent === "" || this.selectedPrerequisites === "" || this.selectedSkills === ""
       || this.attackDate === "" || this.selectedCompanySector === "" || this.selectedLikelihood === "" ||  this.selectedSeverity === "" || this.numberOfEmployees === "") {
         alert("Please fill in all fields!");
@@ -209,7 +209,7 @@ export default {
             alert("CBR not successful!")
         });
     },
-    findCountermeasures: function (event) {
+    findCountermeasures: function () {
       if (this.selectAttackForCountermeasure === "") {
         alert("Please select attack")
         return;
