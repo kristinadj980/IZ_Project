@@ -210,6 +210,10 @@ export default {
         });
     },
     findCountermeasures: function (event) {
+      if (this.selectAttackForCountermeasure === "") {
+        alert("Please select attack")
+        return;
+      }
       axios
         .post(("http://localhost:8090/api/temp/countermeasures"), {
                 'attackName': this.selectAttackForCountermeasure,
