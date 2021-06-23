@@ -2,9 +2,20 @@ package com.example.IZ_Project.utils;
 
 import com.example.IZ_Project.dto.RdfDTO;
 import com.example.IZ_Project.model.Attack;
+import com.example.IZ_Project.model.CompanySector;
+import com.example.IZ_Project.model.Continent;
+import com.example.IZ_Project.model.Scale;
+import org.apache.jena.query.*;
+import org.apache.jena.rdf.model.Literal;
+import org.apache.jena.rdf.model.Resource;
 import org.apache.jena.update.*;
 
+import java.text.SimpleDateFormat;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
 import java.util.UUID;
 
 
@@ -29,7 +40,7 @@ public class RemoteRDFHandler {
                 "	   attacks:skillsRequired \"" + attack.getSkillsRequired() + "\"^^xsd:string;" +
                 "	   attacks:likelihood \"" + attack.getLikelihood() + "\"^^xsd:string;" +
                 "	   attacks:date\"" + attack.getDate() +  "\"^^xsd:date;" +
-                "	   attacks:numberOfEmployees \"" + attack.getNumberOfEmployees() +  "\"^^xsd:int;" +
+                "	   attacks:numberOfEmployees \"" + attack.getNumberOfEmployees() +  "\"^^xsd:string;" +
                 "	   attacks:companySector \"" + attack.getCompanySector() + "\"^^xsd:string;" +
                 "	   attacks:severity \"" + attack.getSeverity() + "\"^^xsd:string;" +
                 "}";
@@ -39,6 +50,65 @@ public class RemoteRDFHandler {
         updateProcessor.execute();
 
         return  attack;
+    }
+
+    public static List<RdfDTO> getAttacks() {
+        List<RdfDTO> attacks = new ArrayList<>();
+        String getAttacks = "PREFIX attacks: <http://www.ftn.uns.ac.rs/attacks#> \n" +
+                "\n" +
+                "SELECT  ?attacks ?attackName ?companyName ?symptom1 ?symptom2 ?symptom3 ?continent\n" +
+                "?prerequisites ?skillsRequired ?likelihood ?date ?numberOfEmployees ?companySector ?severity\n" +
+                "WHERE\n" +
+                "  { ?attacks a attacks:Attack;\n" +
+                "   \tattacks:attackName ?attackName;\n" +
+                "   \tattacks:companyName ?companyName;\n" +
+                "   \tattacks:symptom1 ?symptom1;\n" +
+                "   \tattacks:symptom2 ?symptom2;\n" +
+                "   \tattacks:symptom3 ?symptom3;\n" +
+                "   \tattacks:continent ?continent;\n" +
+                "   \tattacks:prerequisites ?prerequisites;\n" +
+                "   \tattacks:skillsRequired ?skillsRequired;\n" +
+                "   \tattacks:likelihood ?likelihood;\n" +
+                "   \tattacks:date ?date;\n" +
+                "   \tattacks:numberOfEmployees ?numberOfEmployees;\n" +
+                "   \tattacks:companySector ?companySector;\n" +
+                "   \tattacks:severity ?severity.}";
+
+        Query query = QueryFactory.create(getAttacks);
+
+        try {
+            QueryExecution queryEx = QueryExecutionFactory.sparqlService(QUERY_URL, query);
+            Continent c;
+            ResultSet results = queryEx.execSelect() ;
+            while (results.hasNext()) {
+                QuerySolution solution = results.nextSolution() ;
+                Resource attack = solution.getResource("attacks");
+                Literal attackName = solution.getLiteral("attackName");
+                Literal companyName = solution.getLiteral("companyName");
+                Literal symptom1 = solution.getLiteral("symptom1");
+                Literal symptom2 = solution.getLiteral("symptom2");
+                Literal symptom3 = solution.getLiteral("symptom3");
+                Literal continent = solution.getLiteral("continent");
+                Literal prerequisites = solution.getLiteral("prerequisites");
+                Literal skillsRequired = solution.getLiteral("skillsRequired");
+                Literal likelihood = solution.getLiteral("likelihood");
+                Literal date = solution.getLiteral("date");
+                Literal numberOfEmployees = solution.getLiteral("numberOfEmployees");
+                Literal companySector = solution.getLiteral("companySector");
+                Literal severity = solution.getLiteral("severity");
+                Date attackDate = new SimpleDateFormat("EEE MMM dd HH:mm:ss zzz yyyy").parse(date.getString());
+                attacks.add(new RdfDTO(UUID.fromString(attack.getURI().substring(33,69)), attackName.getString(),
+                        companyName.getString(), symptom1.getString(), symptom2.getString(), symptom3.getString(),
+                        Continent.valueOf(continent.getString()), prerequisites.getString(),
+                        Scale.valueOf(skillsRequired.getString()), Scale.valueOf(likelihood.getString()),
+                        attackDate, Integer.parseInt(numberOfEmployees.getString()), CompanySector.valueOf(companySector.getString()),
+                        Scale.valueOf(severity.getString())));
+            }
+            return  attacks;
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return  attacks;
     }
 
 }

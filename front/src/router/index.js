@@ -4,6 +4,7 @@ import Home from '../views/Home.vue'
 import Cbr from '../views/Cbr.vue'
 import Bayesian from '../views/Bayesian.vue'
 import Fuzzy from '../views/Fuzzy.vue'
+import Attacks from '../views/Attacks.vue'
 
 Vue.use(VueRouter)
 
@@ -37,6 +38,11 @@ const routes = [
     path: '/fuzzy',
     name: 'Fuzzy',
     component: Fuzzy
+  },
+  {
+    path: '/attacks',
+    name: 'Attacks',
+    component: Attacks
   },
 ]
 
