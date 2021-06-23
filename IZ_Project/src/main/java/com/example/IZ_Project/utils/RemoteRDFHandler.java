@@ -111,4 +111,48 @@ public class RemoteRDFHandler {
         return  attacks;
     }
 
+    public static List<RdfDTO> deleteAttack(RdfDTO rdfDTO) {
+        String deleteString =  "PREFIX attacks: <http://www.ftn.uns.ac.rs/attacks#> "
+                + "DELETE "
+                + "WHERE {"
+                + "    attacks:" + rdfDTO.getId() + " ?x ?y ."
+                + "}";
+        UpdateRequest updateRequest2 = UpdateFactory.create(deleteString);
+        System.setProperty("http.maxConnections", "10000");
+        UpdateProcessor updateProcessor2 = UpdateExecutionFactory.createRemote(updateRequest2, UPDATE_URL);
+        updateProcessor2.execute();
+
+        return getAttacks();
+    }
+
+    public static RdfDTO updateAttack(RdfDTO attack) {
+        String attackData = ""
+                + "PREFIX attacks: <http://www.ftn.uns.ac.rs/attacks#> "
+                + "PREFIX xsd:   <http://w3.org/2001/XMLSchema#> "
+                + "DELETE { attacks:" + attack.getId() + " ?x ?y .} "
+                + "INSERT {"
+                + "    attacks:" + attack.getId() + " a attacks:Attack;" +
+                "	   attacks:attackName \"" + attack.getAttackName() + "\"^^xsd:string;" +
+                "	   attacks:companyName \"" + attack.getCompanyName() + "\"^^xsd:string;" +
+                "	   attacks:symptom1 \"" + attack.getSymptom1() + "\"^^xsd:string;" +
+                "	   attacks:symptom2 \"" + attack.getSymptom2() + "\"^^xsd:string;" +
+                "	   attacks:symptom3 \"" + attack.getSymptom3() +  "\"^^xsd:string;" +
+                "	   attacks:continent \"" + attack.getContinent() +  "\"^^xsd:string;" +
+                "	   attacks:prerequisites \"" + attack.getPrerequisites() + "\"^^xsd:string;" +
+                "	   attacks:skillsRequired \"" + attack.getSkillsRequired() + "\"^^xsd:string;" +
+                "	   attacks:likelihood \"" + attack.getLikelihood() + "\"^^xsd:string;" +
+                "	   attacks:date\"" + attack.getDate() +  "\"^^xsd:date;" +
+                "	   attacks:numberOfEmployees \"" + attack.getNumberOfEmployees() +  "\"^^xsd:string;" +
+                "	   attacks:companySector \"" + attack.getCompanySector() + "\"^^xsd:string;" +
+                "	   attacks:severity \"" + attack.getSeverity() + "\"^^xsd:string;" +
+                "}"
+                + "WHERE {"
+                + "    attacks:" + attack.getId() + " ?x ?y ."
+                + "}";
+        UpdateRequest updateRequest = UpdateFactory.create(attackData);
+        UpdateProcessor updateProcessor = UpdateExecutionFactory.createRemote(updateRequest, UPDATE_URL);
+        updateProcessor.execute();
+
+        return  attack;
+    }
 }

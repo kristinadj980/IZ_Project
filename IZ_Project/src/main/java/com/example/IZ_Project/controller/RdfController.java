@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.text.DecimalFormat;
 import java.util.List;
+import java.util.UUID;
 
 @Controller
 @RequestMapping("/api/rdf")
@@ -32,5 +33,17 @@ public class RdfController {
     public ResponseEntity<List<RdfDTO>> getAttacks() {
 
         return new ResponseEntity<>(RemoteRDFHandler.getAttacks(), HttpStatus.OK);
+    }
+
+    @PostMapping(consumes = "application/json", value = "/update")
+    public ResponseEntity<RdfDTO> updateAttack(@RequestBody RdfDTO rdfDTO) {
+
+        return new ResponseEntity<>(RemoteRDFHandler.updateAttack(rdfDTO), HttpStatus.OK);
+    }
+
+    @PostMapping(consumes = "application/json", value = "/delete")
+    public ResponseEntity<List<RdfDTO>> deleteAttack(@RequestBody RdfDTO rdfDTO) {
+
+        return new ResponseEntity<>(RemoteRDFHandler.deleteAttack(rdfDTO), HttpStatus.OK);
     }
 }
