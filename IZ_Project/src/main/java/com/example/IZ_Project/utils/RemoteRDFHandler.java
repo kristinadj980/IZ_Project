@@ -22,8 +22,10 @@ import java.util.UUID;
 public class RemoteRDFHandler {
     private static final String QUERY_URL = "http://localhost:3030/iz_rdf/sparql";
     private static final String UPDATE_URL = "http://localhost:3030/iz_rdf/update";
+    private static final String UPDATE_URL_CBR = "http://localhost:3030/iz_rdf_cbr/update";
+    private static final String QUERY_URL_CBR = "http://localhost:3030/iz_rdf_cbr/sparql";
 
-    public static RdfDTO attackRegistration(RdfDTO attack) {
+    public static RdfDTO attackRegistration(RdfDTO attack, boolean isCbrCase) {
         attack.setId(UUID.randomUUID());
         String insertAttack = ""
                 + "PREFIX attacks: <http://www.ftn.uns.ac.rs/attacks#> "
@@ -46,13 +48,20 @@ public class RemoteRDFHandler {
                 "}";
 
         UpdateRequest updateRequest = UpdateFactory.create(insertAttack);
-        UpdateProcessor updateProcessor = UpdateExecutionFactory.createRemote(updateRequest, UPDATE_URL);
+        System.setProperty("http.maxConnections", "1000");
+
+        UpdateProcessor updateProcessor;
+        if (isCbrCase)
+            updateProcessor = UpdateExecutionFactory.createRemote(updateRequest, UPDATE_URL_CBR);
+        else
+            updateProcessor = UpdateExecutionFactory.createRemote(updateRequest, UPDATE_URL);
+
         updateProcessor.execute();
 
         return  attack;
     }
 
-    public static List<RdfDTO> getAttacks() {
+    public static List<RdfDTO> getAttacks(boolean isCbrCase) {
         List<RdfDTO> attacks = new ArrayList<>();
         String getAttacks = "PREFIX attacks: <http://www.ftn.uns.ac.rs/attacks#> \n" +
                 "\n" +
@@ -77,7 +86,13 @@ public class RemoteRDFHandler {
         Query query = QueryFactory.create(getAttacks);
 
         try {
-            QueryExecution queryEx = QueryExecutionFactory.sparqlService(QUERY_URL, query);
+            QueryExecution queryEx;
+            System.setProperty("http.maxConnections", "1000");
+
+            if (isCbrCase)
+            queryEx = QueryExecutionFactory.sparqlService(QUERY_URL_CBR, query);
+            else
+            queryEx = QueryExecutionFactory.sparqlService(QUERY_URL, query);
             Continent c;
             ResultSet results = queryEx.execSelect() ;
             while (results.hasNext()) {

@@ -24,15 +24,22 @@ public class RdfController {
 
     @PostMapping(consumes = "application/json", value = "/insert")
     public ResponseEntity<RdfDTO> receiveData(@RequestBody RdfDTO rdfDTO) {
+        return new ResponseEntity<>(RemoteRDFHandler.attackRegistration(rdfDTO, false), HttpStatus.OK);
+    }
 
-
-        return new ResponseEntity<>(RemoteRDFHandler.attackRegistration(rdfDTO), HttpStatus.OK);
+    @PostMapping(consumes = "application/json", value = "/insert-cbr")
+    public ResponseEntity<RdfDTO> receiveDataCbr(@RequestBody RdfDTO rdfDTO) {
+        return new ResponseEntity<>(RemoteRDFHandler.attackRegistration(rdfDTO, true), HttpStatus.OK);
     }
 
     @GetMapping(value = "/getAttacks")
     public ResponseEntity<List<RdfDTO>> getAttacks() {
+        return new ResponseEntity<>(RemoteRDFHandler.getAttacks(false), HttpStatus.OK);
+    }
 
-        return new ResponseEntity<>(RemoteRDFHandler.getAttacks(), HttpStatus.OK);
+    @GetMapping(value = "/getAttacks-cbr")
+    public ResponseEntity<List<RdfDTO>> getAttacksCbr() {
+        return new ResponseEntity<>(RemoteRDFHandler.getAttacks(true), HttpStatus.OK);
     }
 
     @PostMapping(consumes = "application/json", value = "/update")

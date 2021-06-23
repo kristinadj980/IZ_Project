@@ -1,6 +1,8 @@
 <template>
   <div>
-    Enter company name 
+    <b-tabs content-class="mt-3">
+      <b-tab title="Cbr reasoning" active>
+    Enter company name
     <span style="display:inline-block; width: 10px;"></span>
     <input type="text" v-model="companyName"/>
     <br/><br/>
@@ -63,7 +65,7 @@
 
     <span style="display:inline-block; width: 30px;"></span>
 
-    <input type="date" v-model="attackDate" />
+    <input type="date" v-model="attackDate" max="2021-07-01"/>
 
     <span style="display:inline-block; width: 30px;"></span>
 
@@ -123,6 +125,8 @@
       <option v-for="attackName in this.possibleAttacks" v-bind:key="attackName" >
         {{attackName}}</option>
     </select>
+    <span style="margin-left: 30px"></span><button type="button" v-on:click="registerAttack">Register attack</button>
+
     <br/><br/>
 
     <button type="button" v-on:click="findCountermeasures">Countermeasures  </button>
@@ -135,8 +139,15 @@
           {{ item.name }}
         </li>
     </ol>
+
     </div>
-    
+      </b-tab>
+      <b-tab title="Cbr cases">
+        <b-table hover :items="cbrCases"></b-table>
+
+
+      </b-tab>
+    </b-tabs>
 
 </div>
 </template>
@@ -169,9 +180,13 @@ export default {
       countermeasures : [],
       cbrResult : [],
       possibleAttacks : [],
-      selectAttackForCountermeasure : ""
+      selectAttackForCountermeasure : "",
+      cbrCases : [],
 
     }
+  },
+  mounted() {
+    this.getCbrCases();
   },
   methods: {
     sendToAnalysis: function () {
@@ -209,6 +224,15 @@ export default {
             alert("CBR not successful!")
         });
     },
+    getCbrCases : function () {
+      this.axios.get('http://localhost:8090/api/rdf/getAttacks-cbr')
+          .then(response => {
+            this.cbrCases = response.data;
+          }).catch(res => {
+        alert(Error)
+        console.log(res);
+      });
+    },
     findCountermeasures: function () {
       if (this.selectAttackForCountermeasure === "") {
         alert("Please select attack")
@@ -226,6 +250,48 @@ export default {
                 this.countermeasures = res.data
                 console.log(res.data)
                 //alert("Successfully!");
+            }).catch(() => {
+              alert("Countermeasures retrieval fail!")
+        });
+    },
+    registerAttack: function () {
+      if (this.selectAttackForCountermeasure === "") {
+        alert("Please select attack")
+        return;
+      }
+      let symptom1 = "";
+      let symptom2 = "";
+      let symptom3 = "";
+
+      if (this.multipleSelections[0] !== undefined)
+        symptom1 = this.multipleSelections[0];
+      if (this.multipleSelections[1] !== undefined)
+        symptom2 = this.multipleSelections[0];
+      if (this.multipleSelections[2] !== undefined)
+        symptom3 = this.multipleSelections[0];
+      axios
+        .post(("http://localhost:8090/api/rdf/insert-cbr"), {
+                attackName: this.selectAttackForCountermeasure,
+                continent :this.selectedContinent,
+                prerequisites : this.selectedPrerequisites,
+                skillsRequired:this.selectedSkills,
+                date:this.attackDate,
+                symptom1 : symptom1,
+                symptom2 : symptom2,
+                symptom3 : symptom3,
+                numberOfEmployees: this.numberOfEmployees,
+                companySector:this.selectedCompanySector,
+                likelihood:this.selectedLikelihood,
+                severity:this.selectedSeverity,
+                companyName : this.companyName
+            },{
+                headers: {
+                    'Content-Type': 'application/json',
+                }
+            })
+            .then(() => {
+                alert("Successful registration!");
+                this.getCbrCases();
             }).catch(() => {
               alert("Countermeasures retrieval fail!")
         });

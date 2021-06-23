@@ -116,7 +116,6 @@ export default {
   },
   methods: {
     greet: function () {
-      
       axios.post(("http://localhost:8090/api/bayesian/reasoning"), {
                 'symptoms': this.multipleSelections,
                 'continent' :this.selectedContinent,
@@ -138,6 +137,10 @@ export default {
         });
     },
     findCountermeasures: function () {
+      if (this.attackName === "") {
+        alert("Please select attack")
+        return;
+      }
       axios
         .post(("http://localhost:8090/api/temp/countermeasures"), {
                 'attackName': this.attackName,

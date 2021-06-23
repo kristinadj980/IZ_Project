@@ -52,8 +52,6 @@ public class CbrController {
     @PostMapping(consumes = "application/json", value = "/cbr")
     public ResponseEntity<ArrayList<CbrDTO>> cbrReasoning(@RequestBody SymptomsDTO symptomsDTO) {
         Attack attack = new Attack(symptomsDTO);
-        RdfDTO rdf = new RdfDTO(attack);
-        RemoteRDFHandler.attackRegistration(rdf);
         return new ResponseEntity<>(CbrApplication.calculate(attack), HttpStatus.OK);
     }
 }
