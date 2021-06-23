@@ -1,4 +1,4 @@
-package com.example.IZ_Project.utils;
+package com.example.IZ_Project.handlers;
 
 import com.example.IZ_Project.model.Attack;
 import org.apache.jena.rdf.model.Model;

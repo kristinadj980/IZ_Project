@@ -1,4 +1,4 @@
-package com.example.IZ_Project.utils;
+package com.example.IZ_Project.handlers;
 
 import com.example.IZ_Project.dto.RdfDTO;
 import com.example.IZ_Project.model.Attack;
