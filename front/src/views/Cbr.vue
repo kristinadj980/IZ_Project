@@ -1,7 +1,8 @@
 <template>
   <div>
-    <b-tabs content-class="mt-3">
-      <b-tab title="Cbr reasoning" active>
+<!--    <b-tabs content-class="mt-3">-->
+<!--      <b-tab title="Cbr reasoning" active>-->
+    <br/><br/>
     Enter company name
     <span style="display:inline-block; width: 10px;"></span>
     <input type="text" v-model="companyName"/>
@@ -141,13 +142,13 @@
     </ol>
 
     </div>
-      </b-tab>
-      <b-tab title="Cbr cases">
-        <b-table hover :items="cbrCases"></b-table>
+<!--      </b-tab>-->
+<!--      <b-tab title="Cbr cases">-->
+<!--        <b-table hover :items="cbrCases"></b-table>-->
 
 
-      </b-tab>
-    </b-tabs>
+<!--      </b-tab>-->
+<!--    </b-tabs>-->
 
 </div>
 </template>
@@ -225,7 +226,7 @@ export default {
         });
     },
     getCbrCases : function () {
-      this.axios.get('http://localhost:8090/api/rdf/getAttacks-cbr')
+      this.axios.get('http://localhost:8090/api/rdf/getAttacks')
           .then(response => {
             this.cbrCases = response.data;
           }).catch(res => {
@@ -270,7 +271,7 @@ export default {
       if (this.multipleSelections[2] !== undefined)
         symptom3 = this.multipleSelections[0];
       axios
-        .post(("http://localhost:8090/api/rdf/insert-cbr"), {
+        .post(("http://localhost:8090/api/rdf/insert"), {
                 attackName: this.selectAttackForCountermeasure,
                 continent :this.selectedContinent,
                 prerequisites : this.selectedPrerequisites,
