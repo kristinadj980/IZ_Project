@@ -120,7 +120,7 @@
     </ol>
     <br/>
     <select v-model="selectAttackForCountermeasure">
-      <option v-for="attackName in this.possibleAttacks"  >
+      <option v-for="attackName in this.possibleAttacks" v-bind:key="attackName" >
         {{attackName}}</option>
     </select>
     <br/><br/>
