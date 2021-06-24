@@ -106,12 +106,48 @@ RULEBLOCK blok1
     RULE 35 : IF severity IS high AND likelihood IS high AND skills_required IS low AND company_sector IS technology AND continent IS asia AND company_size IS hiljadu_preko THEN risk IS high;
     RULE 36 : IF severity IS medium AND likelihood IS medium AND skills_required IS medium AND company_sector IS technology AND continent IS north_america AND company_size IS hiljadu_preko THEN risk IS medium;
     RULE 37 : IF severity IS high AND likelihood IS medium AND skills_required IS low AND company_sector IS technology AND continent IS north_america AND company_size IS hiljadu_preko THEN risk IS high;
-    RULE 37 : IF severity IS high AND likelihood IS low AND skills_required IS high AND company_sector IS logistics_and_transportation AND continent IS australia AND company_size IS petsto_do_hiljadu THEN risk IS medium;
+    RULE 38 : IF severity IS high AND likelihood IS low AND skills_required IS high AND company_sector IS logistics_and_transportation AND continent IS australia AND company_size IS petsto_do_hiljadu THEN risk IS medium;
     RULE 39 : IF severity IS high AND likelihood IS high AND skills_required IS high AND company_sector IS technology AND continent IS africa AND company_size IS do_dvesto_pedeset THEN risk IS low;
     RULE 40 : IF severity IS high AND likelihood IS high AND skills_required IS high AND company_sector IS retail_and_manufacturing AND continent IS asia AND company_size IS hiljadu_preko THEN risk IS high WITH 0.8;
-
+    RULE 41 : IF severity IS high AND likelihood IS high AND skills_required IS high AND company_sector IS finance AND continent IS asia AND company_size IS hiljadu_preko THEN risk IS high WITH 0.8;
+    RULE 42 : IF severity IS high AND likelihood IS high AND skills_required IS high AND company_sector IS finance AND continent IS north_america AND company_size IS hiljadu_preko THEN risk IS high WITH 0.8;
+    RULE 43 : IF severity IS high AND likelihood IS high AND skills_required IS high AND company_sector IS finance AND continent IS europe AND company_size IS hiljadu_preko THEN risk IS high WITH 0.65;
+    RULE 44 : IF severity IS high AND likelihood IS high AND skills_required IS high AND company_sector IS logistics_and_transportation AND continent IS europe AND company_size IS hiljadu_preko THEN risk IS high WITH 0.3;
+    RULE 45 : IF severity IS high AND likelihood IS high AND skills_required IS high AND company_sector IS logistics_and_transportation AND continent IS north_america AND company_size IS hiljadu_preko THEN risk IS high WITH 0.9;
+    RULE 46 : IF severity IS high AND likelihood IS high AND skills_required IS high AND company_sector IS logistics_and_transportation AND continent IS australia AND company_size IS hiljadu_preko THEN risk IS high WITH 0.67;
+    RULE 47 : IF severity IS high AND likelihood IS high AND skills_required IS high AND company_sector IS logistics_and_transportation AND continent IS asia AND company_size IS hiljadu_preko THEN risk IS high WITH 0.75;
+    RULE 48 : IF severity IS medium AND likelihood IS medium AND skills_required IS medium AND company_sector IS logistics_and_transportation AND continent IS asia AND company_size IS dvesto_pedeset_do_petsto THEN risk IS medium WITH 0.5;
+    RULE 49 : IF severity IS medium AND likelihood IS medium AND skills_required IS medium AND company_sector IS logistics_and_transportation AND continent IS europe AND company_size IS dvesto_pedeset_do_petsto THEN risk IS medium WITH 0.1;
+    RULE 50 : IF severity IS medium AND likelihood IS medium AND skills_required IS medium AND company_sector IS logistics_and_transportation AND continent IS australia AND company_size IS dvesto_pedeset_do_petsto THEN risk IS medium WITH 0.35;
+    RULE 51 : IF severity IS medium AND likelihood IS medium AND skills_required IS medium AND company_sector IS logistics_and_transportation AND continent IS north_america AND company_size IS dvesto_pedeset_do_petsto THEN risk IS medium WITH 0.53;
+    RULE 52 : IF severity IS medium AND likelihood IS medium AND skills_required IS medium AND company_sector IS logistics_and_transportation AND continent IS south_america AND company_size IS dvesto_pedeset_do_petsto THEN risk IS medium WITH 0.11;
+    RULE 53 : IF severity IS medium AND likelihood IS medium AND skills_required IS medium AND company_sector IS logistics_and_transportation AND continent IS africa AND company_size IS dvesto_pedeset_do_petsto THEN risk IS low WITH 0.45;
+    RULE 54 : IF severity IS low AND likelihood IS low AND skills_required IS low AND company_sector IS hospital AND continent IS asia AND company_size IS dvesto_pedeset_do_petsto THEN risk IS medium WITH 0.99;
+    RULE 55 : IF severity IS low AND likelihood IS low AND skills_required IS low AND company_sector IS hospital AND continent IS europe AND company_size IS dvesto_pedeset_do_petsto THEN risk IS medium WITH 0.2;
+    RULE 56 : IF severity IS low AND likelihood IS low AND skills_required IS low AND company_sector IS hospital AND continent IS australia AND company_size IS dvesto_pedeset_do_petsto THEN risk IS medium WITH 0.23;
+    RULE 57 : IF severity IS low AND likelihood IS low AND skills_required IS low AND company_sector IS hospital AND continent IS north_america AND company_size IS dvesto_pedeset_do_petsto THEN risk IS medium WITH 0.52;
+    RULE 58 : IF severity IS low AND likelihood IS low AND skills_required IS low AND company_sector IS hospital AND continent IS south_america AND company_size IS dvesto_pedeset_do_petsto THEN risk IS medium WITH 0.1;
+    RULE 59 : IF severity IS low AND likelihood IS low AND skills_required IS low AND company_sector IS hospital AND continent IS africa AND company_size IS dvesto_pedeset_do_petsto THEN risk IS low WITH 0.53;
+    RULE 60 : IF severity IS high AND likelihood IS high AND skills_required IS high AND company_sector IS business_and_professional_service AND continent IS asia AND company_size IS hiljadu_preko THEN risk IS high WITH 0.8;
+    RULE 61 : IF severity IS high AND likelihood IS high AND skills_required IS high AND company_sector IS business_and_professional_service AND continent IS north_america AND company_size IS hiljadu_preko THEN risk IS high WITH 0.16;
+    RULE 62 : IF severity IS high AND likelihood IS high AND skills_required IS high AND company_sector IS business_and_professional_service AND continent IS europe AND company_size IS hiljadu_preko THEN risk IS high WITH 0.75;
+    RULE 63 : IF severity IS high AND likelihood IS high AND skills_required IS high AND company_sector IS business_and_professional_service AND continent IS europe AND company_size IS hiljadu_preko THEN risk IS high WITH 0.36;
+    RULE 64 : IF severity IS high AND likelihood IS high AND skills_required IS high AND company_sector IS business_and_professional_service AND continent IS north_america AND company_size IS hiljadu_preko THEN risk IS high WITH 0.56;
+    RULE 65 : IF severity IS high AND likelihood IS high AND skills_required IS high AND company_sector IS business_and_professional_service AND continent IS australia AND company_size IS hiljadu_preko THEN risk IS high WITH 0.68;
+    RULE 66 : IF severity IS high AND likelihood IS high AND skills_required IS high AND company_sector IS business_and_professional_service AND continent IS asia AND company_size IS hiljadu_preko THEN risk IS high WITH 0.83;
+    RULE 67 : IF severity IS medium AND likelihood IS medium AND skills_required IS medium AND company_sector IS retail_and_manufacturing AND continent IS asia AND company_size IS dvesto_pedeset_do_petsto THEN risk IS medium WITH 0.35;
+    RULE 68 : IF severity IS medium AND likelihood IS medium AND skills_required IS medium AND company_sector IS retail_and_manufacturing AND continent IS europe AND company_size IS dvesto_pedeset_do_petsto THEN risk IS medium WITH 0.49;
+    RULE 69 : IF severity IS medium AND likelihood IS medium AND skills_required IS medium AND company_sector IS retail_and_manufacturing AND continent IS australia AND company_size IS dvesto_pedeset_do_petsto THEN risk IS medium WITH 0.47;
+    RULE 70 : IF severity IS medium AND likelihood IS medium AND skills_required IS medium AND company_sector IS retail_and_manufacturing AND continent IS north_america AND company_size IS dvesto_pedeset_do_petsto THEN risk IS medium WITH 0.72;
+    RULE 71 : IF severity IS medium AND likelihood IS medium AND skills_required IS medium AND company_sector IS retail_and_manufacturing AND continent IS south_america AND company_size IS dvesto_pedeset_do_petsto THEN risk IS medium WITH 0.65;
+    RULE 72 : IF severity IS medium AND likelihood IS medium AND skills_required IS medium AND company_sector IS retail_and_manufacturing AND continent IS africa AND company_size IS dvesto_pedeset_do_petsto THEN risk IS low WITH 0.77;
+    RULE 73 : IF severity IS low AND likelihood IS low AND skills_required IS low AND company_sector IS retail_and_manufacturing AND continent IS asia AND company_size IS dvesto_pedeset_do_petsto THEN risk IS medium WITH 0.85;
+    RULE 74 : IF severity IS low AND likelihood IS low AND skills_required IS low AND company_sector IS retail_and_manufacturing AND continent IS europe AND company_size IS dvesto_pedeset_do_petsto THEN risk IS medium WITH 0.95;
+    RULE 75 : IF severity IS low AND likelihood IS low AND skills_required IS low AND company_sector IS hospital AND continent IS australia AND company_size IS dvesto_pedeset_do_petsto THEN risk IS medium WITH 0.24;
+    RULE 76 : IF severity IS low AND likelihood IS low AND skills_required IS low AND company_sector IS hospital AND continent IS north_america AND company_size IS dvesto_pedeset_do_petsto THEN risk IS medium WITH 0.75;
+    RULE 77 : IF severity IS low AND likelihood IS low AND skills_required IS low AND company_sector IS business_and_professional_service AND continent IS south_america AND company_size IS dvesto_pedeset_do_petsto THEN risk IS medium WITH 0.75;
+    RULE 78 : IF severity IS low AND likelihood IS low AND skills_required IS low AND company_sector IS retail_and_manufacturing AND continent IS africa AND company_size IS dvesto_pedeset_do_petsto THEN risk IS low WITH 0.75;
 
 END_RULEBLOCK
 
 END_FUNCTION_BLOCK
-
