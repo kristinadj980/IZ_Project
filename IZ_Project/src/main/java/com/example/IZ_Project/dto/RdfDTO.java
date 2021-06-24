@@ -48,6 +48,26 @@ public class RdfDTO {
         this.severity = attack.getSeverity();
     }
 
+    public RdfDTO GenerateRdfDTOFromAttack(Attack attack) {
+        this.id = attack.getId();
+        this.attackName = attack.getName();
+        this.companyName = attack.getCompany().getCompanyName();
+        this.symptom1 = attack.getSymptom1();
+        this.symptom2 = attack.getSymptom2();
+        this.symptom3 = attack.getSymptom3();
+        this.continent = attack.getCompany().getContinent();
+        this.setDateLong(attack.getDateLong());
+        this.prerequisites = attack.getPrerequisiteCBR().getName();
+        this.skillsRequired = attack.getSkillsRequired();
+        this.likelihood = attack.getLikelihood();
+        this.date = attack.getDate();
+        this.numberOfEmployees = attack.getCompany().getNumberOfEmployees();
+        this.companySector = attack.getCompany().getCompanySector();
+        this.severity = attack.getSeverity();
+
+        return this;
+    }
+
 
     public RdfDTO(UUID id, String attackName, String companyName, String symptom1, String symptom2, String symptom3,
                   Continent continent, String prerequisites, Scale skillsRequired, Scale likelihood, Date date,

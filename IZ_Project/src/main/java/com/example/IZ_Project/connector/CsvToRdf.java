@@ -11,6 +11,7 @@ import java.util.*;
 import com.example.IZ_Project.dto.RdfDTO;
 import com.example.IZ_Project.handlers.RemoteRDFHandler;
 import com.example.IZ_Project.model.*;
+import org.apache.jena.shared.uuid.UUID_V4;
 import ucm.gaia.jcolibri.cbrcore.CBRCase;
 import ucm.gaia.jcolibri.cbrcore.CaseBaseFilter;
 import ucm.gaia.jcolibri.cbrcore.Connector;
@@ -38,46 +39,44 @@ public class CsvToRdf {
 
                 Attack attack = new Attack();
                 DateFormat format = new SimpleDateFormat("yyyy-MM-dd", Locale.ENGLISH);
-                Date date = format.parse(values[2]);
+                Date date = format.parse(values[1]);
                 Long dateLong = date.getTime();
                 attack.setDate(date);
                 attack.setDateLong(dateLong);
-                attack.setName(values[3]);
-                attack.setSkillsRequired(Enum.valueOf(Scale.class,values[8]));
-                attack.setSeverity(Enum.valueOf(Scale.class,values[12]));
-                attack.setLikelihood(Enum.valueOf(Scale.class,values[11]));
+                attack.setName(values[2]);
+                attack.setSkillsRequired(Enum.valueOf(Scale.class,values[7]));
+                attack.setSeverity(Enum.valueOf(Scale.class,values[11]));
+                attack.setLikelihood(Enum.valueOf(Scale.class,values[10]));
 
                 //prerequisites 8
-                attack.setPrerequisiteCBR(new Prerequisite(values[9]));
+                attack.setPrerequisiteCBR(new Prerequisite(values[8]));
 
                 //symptoms 3
-                company.setCompanyName(values[1]);
-                company.setCompanySector(Enum.valueOf(CompanySector.class,values[6]));
-                company.setContinent(Enum.valueOf(Continent.class,values[7]));
-                company.setNumberOfEmployees(Integer.parseInt(values[5]));
+                company.setCompanyName(values[0]);
+                company.setCompanySector(Enum.valueOf(CompanySector.class,values[5]));
+                company.setContinent(Enum.valueOf(Continent.class,values[6]));
+                company.setNumberOfEmployees(Integer.parseInt(values[4]));
 
                 attack.setCompany(company);
 
-                extractSymptomsList(attack, values[4]);
-                String lowercase = values[0].toLowerCase();
-                //System.out.println(lowercase.length());
-                System.out.println("5d72f5d2-0e77-48d1-b257-59acb1e89d5c");
-                UUID uuid = UUID.nameUUIDFromBytes(lowercase.getBytes());
-//364c8816-fa4e-3184-99ea-9d6fd1e9cf9c
+                extractSymptomsList(attack, values[3]);
+                String id = values[12].trim();
+                UUID uuid = UUID.fromString(id);
                 attack.setId(uuid);
-                //2ec8a288-07ff-4bb1-ae0f-3f62b0a932f3
-                //5d72f5d2-0e77-48d1-b257-59acb1e89d5c
-                RdfDTO rdfDTO = new RdfDTO(attack);
+                RdfDTO rdfDTO = new RdfDTO();
+                rdfDTO.GenerateRdfDTOFromAttack(attack);
                 cases.add(rdfDTO);
             }
             br.close();
         } catch (Exception e) {
             e.printStackTrace();
+            return;
         }
 
         //ovde radis insert
         for (RdfDTO rdfDTO : cases) {
-            RemoteRDFHandler.attackRegistration(rdfDTO);
+            if (!RemoteRDFHandler.caseExists(rdfDTO))
+                RemoteRDFHandler.fillCsvCases(rdfDTO);
         }
     }
 
