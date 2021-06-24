@@ -8,6 +8,8 @@ import java.text.SimpleDateFormat;
 import java.util.*;
 
 
+import com.example.IZ_Project.dto.RdfDTO;
+import com.example.IZ_Project.handlers.RemoteRDFHandler;
 import com.example.IZ_Project.model.*;
 import ucm.gaia.jcolibri.cbrcore.CBRCase;
 import ucm.gaia.jcolibri.cbrcore.CaseBaseFilter;
@@ -15,11 +17,11 @@ import ucm.gaia.jcolibri.cbrcore.Connector;
 import ucm.gaia.jcolibri.exception.InitializingException;
 import ucm.gaia.jcolibri.util.FileIO;
 
-public class CsvConnector implements Connector {
+//uzima sve iz csv-a i insertuje u rdf
+public class CsvToRdf {
 
-    @Override
-    public Collection<CBRCase> retrieveAllCases() {
-        LinkedList<CBRCase> cases = new LinkedList<CBRCase>();
+    public static void insertCsvCasesToRdfDatabase() {
+        LinkedList<RdfDTO> cases = new LinkedList<RdfDTO>();
 
         try {
             BufferedReader br = new BufferedReader(new InputStreamReader(FileIO.openFile("src\\main\\java\\com\\example\\IZ_Project\\data\\cbrdata.csv")));
@@ -32,46 +34,54 @@ public class CsvConnector implements Connector {
                     continue;
                 String[] values = line.split(",");
 
-                CBRCase cbrCase = new CBRCase();
-
                 Company company = new Company();
 
                 Attack attack = new Attack();
                 DateFormat format = new SimpleDateFormat("yyyy-MM-dd", Locale.ENGLISH);
-                Date date = format.parse(values[1]);
+                Date date = format.parse(values[2]);
                 Long dateLong = date.getTime();
                 attack.setDate(date);
                 attack.setDateLong(dateLong);
-                attack.setName(values[2]);
-                attack.setSkillsRequired(Enum.valueOf(Scale.class,values[7]));
-                attack.setSeverity(Enum.valueOf(Scale.class,values[11]));
-                attack.setLikelihood(Enum.valueOf(Scale.class,values[10]));
+                attack.setName(values[3]);
+                attack.setSkillsRequired(Enum.valueOf(Scale.class,values[8]));
+                attack.setSeverity(Enum.valueOf(Scale.class,values[12]));
+                attack.setLikelihood(Enum.valueOf(Scale.class,values[11]));
 
                 //prerequisites 8
-                attack.setPrerequisiteCBR(new Prerequisite(values[8]));
+                attack.setPrerequisiteCBR(new Prerequisite(values[9]));
 
                 //symptoms 3
-                company.setCompanyName(values[0]);
-                company.setCompanySector(Enum.valueOf(CompanySector.class,values[5]));
-                company.setContinent(Enum.valueOf(Continent.class,values[6]));
-                company.setNumberOfEmployees(Integer.parseInt(values[4]));
+                company.setCompanyName(values[1]);
+                company.setCompanySector(Enum.valueOf(CompanySector.class,values[6]));
+                company.setContinent(Enum.valueOf(Continent.class,values[7]));
+                company.setNumberOfEmployees(Integer.parseInt(values[5]));
 
                 attack.setCompany(company);
 
-                extractSymptomsList(attack, values[3]);
-
-
-                cbrCase.setDescription(attack);
-                cases.add(cbrCase);
+                extractSymptomsList(attack, values[4]);
+                String lowercase = values[0].toLowerCase();
+                //System.out.println(lowercase.length());
+                System.out.println("5d72f5d2-0e77-48d1-b257-59acb1e89d5c");
+                UUID uuid = UUID.nameUUIDFromBytes(lowercase.getBytes());
+//364c8816-fa4e-3184-99ea-9d6fd1e9cf9c
+                attack.setId(uuid);
+                //2ec8a288-07ff-4bb1-ae0f-3f62b0a932f3
+                //5d72f5d2-0e77-48d1-b257-59acb1e89d5c
+                RdfDTO rdfDTO = new RdfDTO(attack);
+                cases.add(rdfDTO);
             }
             br.close();
         } catch (Exception e) {
             e.printStackTrace();
         }
-        return cases;
+
+        //ovde radis insert
+        for (RdfDTO rdfDTO : cases) {
+            RemoteRDFHandler.attackRegistration(rdfDTO);
+        }
     }
 
-    private void extractSymptomsList(Attack attack, String symptomsList) {
+    private static void extractSymptomsList(Attack attack, String symptomsList) {
         //[symptom1;symptom2;symptom3]
         symptomsList = symptomsList.substring(1, symptomsList.length() - 1);
         String[] symptoms = symptomsList.split(";");
@@ -84,27 +94,6 @@ public class CsvConnector implements Connector {
             else if (i==2)
                 attack.setSymptom3(symptoms[i]);
         }
-    }
-
-    @Override
-    public Collection<CBRCase> retrieveSomeCases(CaseBaseFilter arg0) {
-        return null;
-    }
-
-    @Override
-    public void storeCases(Collection<CBRCase> arg0) {
-    }
-
-    @Override
-    public void close() {
-    }
-
-    @Override
-    public void deleteCases(Collection<CBRCase> arg0) {
-    }
-
-    @Override
-    public void initFromXMLfile(URL arg0) throws InitializingException {
     }
 
 }

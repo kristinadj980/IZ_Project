@@ -4,6 +4,8 @@ import com.example.IZ_Project.model.Attack;
 import com.example.IZ_Project.model.CompanySector;
 import com.example.IZ_Project.model.Continent;
 import com.example.IZ_Project.model.Scale;
+import ucm.gaia.jcolibri.cbrcore.Attribute;
+import ucm.gaia.jcolibri.cbrcore.CaseComponent;
 
 import java.util.Date;
 import java.util.UUID;
@@ -20,6 +22,7 @@ public class RdfDTO {
     private Scale skillsRequired;
     private Scale likelihood;
     private Date date;
+    private Long dateLong;
     private int numberOfEmployees;
     private CompanySector companySector;
     private Scale severity;
@@ -35,6 +38,7 @@ public class RdfDTO {
         this.symptom2 = attack.getSymptom2();
         this.symptom3 = attack.getSymptom3();
         this.continent = attack.getCompany().getContinent();
+        this.setDateLong(attack.getDateLong());
         this.prerequisites = attack.getPrerequisiteCBR().getName();
         this.skillsRequired = attack.getSkillsRequired();
         this.likelihood = attack.getLikelihood();
@@ -62,6 +66,14 @@ public class RdfDTO {
         this.numberOfEmployees = numberOfEmployees;
         this.companySector = companySector;
         this.severity = severity;
+    }
+
+    public Long getDateLong() {
+        return dateLong;
+    }
+
+    public void setDateLong(Long dateLong) {
+        this.dateLong = dateLong;
     }
 
     public UUID getId() {
@@ -175,4 +187,5 @@ public class RdfDTO {
     public void setSeverity(Scale severity) {
         this.severity = severity;
     }
+
 }
