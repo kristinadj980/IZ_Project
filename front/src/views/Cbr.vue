@@ -1,22 +1,22 @@
 <template>
   <div>
-    Enter company name 
+<!--    <b-tabs content-class="mt-3">-->
+<!--      <b-tab title="Cbr reasoning" active>-->
+    <br/><br/>
+    Enter company name
     <span style="display:inline-block; width: 10px;"></span>
     <input type="text" v-model="companyName"/>
     <br/><br/>
     Select symptoms (Use ctrl or cmd to select multiple)
+    <b>Max 3 symptoms</b>
     
-    <select
+    <b-form-select
       multiple="true"
       v-bind:class="{ 'fix-height': multiple === 'true' }"
-      v-model="multipleSelections"
+      v-model="multipleSelections" :options="symptoms"
       >
-      <option :key="symptom"
-        v-for="symptom in symptoms"
-        :value="symptom">
-        {{symptom}}
-      </option>
-    </select>
+
+    </b-form-select>
 
     <br/>
     <br/>
@@ -24,8 +24,8 @@
     <!-- {{ multipleSelections }} -->
     <select v-model="selectedContinent">
       <option disabled value="">Select continent</option>
-      <option>north_america</option>
-      <option>south_america</option>
+      <option value="north_america">north america</option>
+      <option value="south_america">south america</option>
       <option>asia</option>
       <option>europe</option>
       <option>australia</option>
@@ -45,25 +45,25 @@
     <select v-model="selectedPrerequisites">
       <option disabled value="">Select prerequisite</option>
       <option>none</option>
-      <option>allow_iFrames</option>
-      <option>knowledge_about_update_processes</option>
-      <option>access_to_the_target_system</option>
-      <option>knowledge_about_deployed_system</option>
-      <option>knowledge_of_popular_domains</option>
-      <option>knowledge_of_how_to_communicate_with_the_target</option>
-      <option>knowledge_of_and_access_to_network_route</option>
-      <option>target_software_is_utilizing_application_framework_APIs</option>
-      <option>vulnerable_DNS</option>
-      <option>mobile_phone_number_of_victim</option>
-      <option>support_invisible_flash</option>
-      <option>previously_installed_malicious_application_on_android_device</option>
-      <option>previously_installed_malicious_application</option>
-      <option>sim-card-that-relies-on-des-cipher</option>
+      <option value="allow_iFrames">allow iFrames</option>
+      <option value="knowledge_about_update_processes">knowledge about update_processes</option>
+      <option value="access_to_the_target_system">access to the target system</option>
+      <option value="knowledge_about_deployed_system">knowledge about deployed system</option>
+      <option value="knowledge_of_popular_domains">knowledge of popular domains</option>
+      <option value="knowledge_of_how_to_communicate_with_the_target">knowledge of how to communicate with the target</option>
+      <option value="knowledge_of_and_access_to_network_route">knowledge of and access to network route</option>
+      <option value="target_software_is_utilizing_application_framework_APIs">target software is utilizing application framework APIs</option>
+      <option value="vulnerable_DNS">vulnerable DNS</option>
+      <option value="mobile_phone_number_of_victim">mobile phone number of victim</option>
+      <option value="support_invisible_flash">support invisible flash</option>
+      <option value="previously_installed_malicious_application_on_android_device">previously installed malicious application on android device</option>
+      <option value="previously_installed_malicious_application">previously installed malicious application</option>
+      <option value="sim-card-that-relies-on-des-cipher">sim card that relies on des cipher</option>
     </select>
 
     <span style="display:inline-block; width: 30px;"></span>
 
-    <input type="date" v-model="attackDate" />
+    <input type="date" v-model="attackDate" max="2021-07-01"/>
 
     <span style="display:inline-block; width: 30px;"></span>
 
@@ -83,10 +83,10 @@
       <option disabled value="">Select company sector</option>
       <option>technology</option>
       <option>finance</option>
-      <option>business_and_professional_service</option>
+      <option value="business_and_professional_service">business and professional service</option>
       <option>hospital</option>
-      <option>retail_and_manufacturing</option>
-      <option>logistics_and_transportation</option>
+      <option value="retail_and_manufacturing">retail and manufacturing</option>
+      <option value="logistics_and_transportation">logistics and transportation</option>
     </select>
 
     <span style="display:inline-block; width: 30px;"></span>
@@ -106,16 +106,29 @@
       <option>MEDIUM</option>
       <option>HIGH</option>
     </select>
-    
+
     <br/><br/>
     <button type="button" v-on:click="sendToAnalysis">Analyze data  </button>
     <br/><br/>
-    Similar attacks are :
+    <b>Similar attacks are :</b>
+      <br/><br/>
     <ol id="example-2">
       <li v-for="attack in cbrResult" :key="attack">
-        {{ attack}}<br/>
-        <b>Evaluation: </b>{{attack.evaluation}}
-        <br/><br/><br/>
+        Attack name : {{attack.attack.name}}<br/>
+        Likelihood : {{attack.attack.likelihood}} <br/>
+        Severity : {{attack.attack.severity}} <br/>
+        Skills required : {{attack.attack.skillsRequired}} <br/>
+        Date : {{attack.attack.date}} <br/>
+        Company name : {{attack.attack.company.companyName}} <br/>
+        Number of employees : {{attack.attack.company.numberOfEmployees}} <br/>
+        Company sector : {{attack.attack.company.companySector}} <br/>
+        Company continent : {{attack.attack.company.continent}} <br/>
+        Prerequisite : {{attack.attack.prerequisiteCBR.name}} <br/>
+        Symptom 1 : {{attack.attack.symptom1}} <br/>
+        Symptom 2 : {{attack.attack.symptom2}} <br/>
+        Symptom 3 : {{attack.attack.symptom3}} <br/>
+        <b>Evaluation</b> : {{attack.evaluation}}
+        <br/><br/>
       </li>
     </ol>
     <br/>
@@ -123,6 +136,8 @@
       <option v-for="attackName in this.possibleAttacks" v-bind:key="attackName" >
         {{attackName}}</option>
     </select>
+    <span style="margin-left: 30px"></span><button type="button" v-on:click="registerAttack">Register attack</button>
+
     <br/><br/>
 
     <button type="button" v-on:click="findCountermeasures">Countermeasures  </button>
@@ -135,8 +150,15 @@
           {{ item.name }}
         </li>
     </ol>
+
     </div>
-    
+<!--      </b-tab>-->
+<!--      <b-tab title="Cbr cases">-->
+<!--        <b-table hover :items="cbrCases"></b-table>-->
+
+
+<!--      </b-tab>-->
+<!--    </b-tabs>-->
 
 </div>
 </template>
@@ -153,10 +175,26 @@ export default {
       multipleSelections: [],
       companyName : "",
       multiple: "true",
-       symptoms:["update", "suspicious_conversation_email", "app_download", "ad_click", "ad_blocker_deactivation",
-       "suspicious_link", "suspicious_website", "pop_up_windows", "credential_re_entering", "services_fail",
-       "credentials_theft", "frequents_spams", "bribery", "virus_detection", "suspicious_code_modifications",
-       "suspicious_conversation_visit", "suspicious_conversasion_phone_call","suspicious_conversasion_phone_message"],
+      symptoms:[
+         {value : "update", text : "update"},
+         {value : "suspicious_conversation_email", text: "suspicious conversation email"},
+         {value : "app_download", text : "app download"},
+         {value : "ad_click", text : "ad click"},
+         {value : "ad_blocker_deactivation", text : "ad blocker deactivation"},
+         {value : "suspicious_link", text : "suspicious link"},
+         {value : "suspicious_website", text : "suspicious website"},
+         {value : "pop_up_windows", text : "pop up windows"},
+         {value : "credential_re_entering", text : "credential re-entering"},
+         {value: "services_fail", text : "services fail"},
+         {value : "credentials_theft", text : "credentials theft"},
+         {value : "frequents_spams", text : "frequents spams"},
+         {value : "bribery", text : "bribery"},
+         {value : "virus_detection", text : "virus detection"},
+         {value : "suspicious_code_modifications", text : "suspicious code modifications"},
+         {value : "suspicious_conversation_visit", text : "suspicious conversation visit"},
+         {value : "suspicious_conversasion_phone_call", text : "suspicious conversation phone call"},
+         {value : "suspicious_conversasion_phone_message", text : "suspicious conversation phone message"}
+       ],
       selectedContinent : '',
       selectedPrerequisites : '',
       selectedSkills : '',
@@ -169,9 +207,13 @@ export default {
       countermeasures : [],
       cbrResult : [],
       possibleAttacks : [],
-      selectAttackForCountermeasure : ""
+      selectAttackForCountermeasure : "",
+      cbrCases : [],
 
     }
+  },
+  mounted() {
+    this.getCbrCases();
   },
   methods: {
     sendToAnalysis: function () {
@@ -209,6 +251,15 @@ export default {
             alert("CBR not successful!")
         });
     },
+    getCbrCases : function () {
+      this.axios.get('http://localhost:8090/api/rdf/getAttacks')
+          .then(response => {
+            this.cbrCases = response.data;
+          }).catch(res => {
+        alert(Error)
+        console.log(res);
+      });
+    },
     findCountermeasures: function () {
       if (this.selectAttackForCountermeasure === "") {
         alert("Please select attack")
@@ -226,6 +277,48 @@ export default {
                 this.countermeasures = res.data
                 console.log(res.data)
                 //alert("Successfully!");
+            }).catch(() => {
+              alert("Countermeasures retrieval fail!")
+        });
+    },
+    registerAttack: function () {
+      if (this.selectAttackForCountermeasure === "") {
+        alert("Please select attack")
+        return;
+      }
+      let symptom1 = "";
+      let symptom2 = "";
+      let symptom3 = "";
+
+      if (this.multipleSelections[0] !== undefined)
+        symptom1 = this.multipleSelections[0];
+      if (this.multipleSelections[1] !== undefined)
+        symptom2 = this.multipleSelections[0];
+      if (this.multipleSelections[2] !== undefined)
+        symptom3 = this.multipleSelections[0];
+      axios
+        .post(("http://localhost:8090/api/rdf/insert"), {
+                attackName: this.selectAttackForCountermeasure,
+                continent :this.selectedContinent,
+                prerequisites : this.selectedPrerequisites,
+                skillsRequired:this.selectedSkills,
+                date:this.attackDate,
+                symptom1 : symptom1,
+                symptom2 : symptom2,
+                symptom3 : symptom3,
+                numberOfEmployees: this.numberOfEmployees,
+                companySector:this.selectedCompanySector,
+                likelihood:this.selectedLikelihood,
+                severity:this.selectedSeverity,
+                companyName : this.companyName
+            },{
+                headers: {
+                    'Content-Type': 'application/json',
+                }
+            })
+            .then(() => {
+                alert("Successful registration!");
+                this.getCbrCases();
             }).catch(() => {
               alert("Countermeasures retrieval fail!")
         });

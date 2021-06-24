@@ -1,4 +1,4 @@
-package com.example.IZ_Project.utils;
+package com.example.IZ_Project.handlers;
 
 import com.example.IZ_Project.dto.RdfDTO;
 import com.example.IZ_Project.model.Attack;
@@ -23,6 +23,7 @@ public class RemoteRDFHandler {
     private static final String QUERY_URL = "http://localhost:3030/iz_rdf/sparql";
     private static final String UPDATE_URL = "http://localhost:3030/iz_rdf/update";
 
+
     public static RdfDTO attackRegistration(RdfDTO attack) {
         attack.setId(UUID.randomUUID());
         String insertAttack = ""
@@ -46,7 +47,10 @@ public class RemoteRDFHandler {
                 "}";
 
         UpdateRequest updateRequest = UpdateFactory.create(insertAttack);
+        System.setProperty("http.maxConnections", "1000");
+
         UpdateProcessor updateProcessor = UpdateExecutionFactory.createRemote(updateRequest, UPDATE_URL);
+
         updateProcessor.execute();
 
         return  attack;
@@ -77,7 +81,10 @@ public class RemoteRDFHandler {
         Query query = QueryFactory.create(getAttacks);
 
         try {
-            QueryExecution queryEx = QueryExecutionFactory.sparqlService(QUERY_URL, query);
+            QueryExecution queryEx;
+            System.setProperty("http.maxConnections", "1000");
+
+            queryEx = QueryExecutionFactory.sparqlService(QUERY_URL, query);
             Continent c;
             ResultSet results = queryEx.execSelect() ;
             while (results.hasNext()) {

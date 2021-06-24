@@ -1,7 +1,5 @@
 <template>
   <div id="app">
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link> |
     <router-link to="/cbr">Cbr</router-link> |
     <router-link to="/bayesian">Bayesian</router-link> | 
     <router-link to="/fuzzy">Vulnerability calculator</router-link> | 

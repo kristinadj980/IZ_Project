@@ -6,9 +6,6 @@ import com.example.IZ_Project.model.Attack;
 import com.example.IZ_Project.model.Countermeasure;
 import com.example.IZ_Project.cbr.CbrApplication;
 import com.example.IZ_Project.dto.SymptomsDTO;
-import com.example.IZ_Project.model.Attack;
-import com.example.IZ_Project.model.Symptom;
-import com.example.IZ_Project.utils.RemoteRDFHandler;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
@@ -52,8 +49,6 @@ public class CbrController {
     @PostMapping(consumes = "application/json", value = "/cbr")
     public ResponseEntity<ArrayList<CbrDTO>> cbrReasoning(@RequestBody SymptomsDTO symptomsDTO) {
         Attack attack = new Attack(symptomsDTO);
-        RdfDTO rdf = new RdfDTO(attack);
-        RemoteRDFHandler.attackRegistration(rdf);
         return new ResponseEntity<>(CbrApplication.calculate(attack), HttpStatus.OK);
     }
 }

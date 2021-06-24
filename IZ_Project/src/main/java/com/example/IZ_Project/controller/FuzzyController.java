@@ -43,7 +43,6 @@ public class FuzzyController {
         jFuzzyLogic.run();
         FIS fis = jFuzzyLogic.getFis();  // Fuzzy Inference System
 
-        // output rizik
         double risk = fis.getVariable("risk").getValue();
         DecimalFormat f = new DecimalFormat("##.00");
 
