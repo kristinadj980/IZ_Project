@@ -2,9 +2,9 @@
 ## _Uputstvo za pokretanje aplikacije_
 
 Pokretanje backend-a:
-- Folder iz_project pokrenuti kao Maven projekat u IntelliJ Idea IDE-u
+- Folder IZ_Project pokrenuti kao Maven projekat u IntelliJ Idea IDE-u
 - Importovati biblioteke iz lib foldera
-- Pokrenuti Apache Fuseki server i kreirati šeme pod nazivom **iz** i **iz_rdf_cbr**
+- Pokrenuti Apache Fuseki server i kreirati šeme pod nazivom **iz**
 - Backend treba da se pokrene na port-u 8090
 
 Pokretanje frontend-a:
