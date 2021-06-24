@@ -4,17 +4,12 @@
     <br/><br/>
     Select symptoms (Use ctrl or cmd to select multiple)
     
-    <select
+    <b-form-select
       multiple="true"
       v-bind:class="{ 'fix-height': multiple === 'true' }"
-      v-model="multipleSelections"
+      v-model="multipleSelections" :options="symptoms"
       >
-      <option :key="symptom"
-        v-for="symptom in symptoms"
-        :value="symptom">
-        {{symptom}}
-      </option>
-    </select>
+    </b-form-select>
     
     <br/>
     <br/>
@@ -22,8 +17,8 @@
     <!-- {{ multipleSelections }} -->
     <select v-model="selectedContinent">
       <option disabled value="">Select continent</option>
-      <option>north_america</option>
-      <option>south_america</option>
+      <option value="north_america">north america</option>
+      <option value="south_america">south america</option>
       <option>asia</option>
       <option>europe</option>
       <option>australia</option>
@@ -100,10 +95,26 @@ export default {
     return {
       multipleSelections: [],
       multiple: "true",
-      symptoms:["update", "suspicious_conversation_email", "app_download", "ad_click", "ad_blocker_deactivation",
-       "suspicious_link", "suspicious_website", "pop_up_windows", "credential_re_entering", "services_fail", 
-       "credentials_theft", "frequents_spams", "bribery", "virus_detection", "suspicious_code_modifications", 
-       "suspicious_conversation_visit", "suspicious_conversasion_phone_call","suspicious_conversasion_phone_message"],
+      symptoms:[
+        {value : "update", text : "update"},
+        {value : "suspicious_conversation_email", text: "suspicious conversation email"},
+        {value : "app_download", text : "app download"},
+        {value : "ad_click", text : "ad click"},
+        {value : "ad_blocker_deactivation", text : "ad blocker deactivation"},
+        {value : "suspicious_link", text : "suspicious link"},
+        {value : "suspicious_website", text : "suspicious website"},
+        {value : "pop_up_windows", text : "pop up windows"},
+        {value : "credential_re_entering", text : "credential re-entering"},
+        {value: "services_fail", text : "services fail"},
+        {value : "credentials_theft", text : "credentials theft"},
+        {value : "frequents_spams", text : "frequents spams"},
+        {value : "bribery", text : "bribery"},
+        {value : "virus_detection", text : "virus detection"},
+        {value : "suspicious_code_modifications", text : "suspicious code modifications"},
+        {value : "suspicious_conversation_visit", text : "suspicious conversation visit"},
+        {value : "suspicious_conversasion_phone_call", text : "suspicious conversation phone call"},
+        {value : "suspicious_conversasion_phone_message", text : "suspicious conversation phone message"}
+      ],
       selectedContinent : '',
       selectedSkills : '',
       numberOfEmployees : '',

@@ -1,11 +1,10 @@
 <template>
   <div>
-    <h1>Vulnerability calculator</h1>
-    
+    <br/><br/>
     <select v-model="selectedContinent">
       <option disabled value="">Select continent</option>
-      <option>north_america</option>
-      <option>south_america</option>
+      <option value="north_america">north america</option>
+      <option value="south_america">south america</option>
       <option>asia</option>
       <option>europe</option>
       <option>australia</option>
@@ -30,10 +29,10 @@
       <option disabled value="">Select company sector</option>
       <option>technology</option>
       <option>finance</option>
-      <option>business_and_professional_service</option>
+      <option value="business_and_professional_service">business and professional service</option>
       <option>hospital</option>
-      <option>retail_and_manufacturing</option>
-      <option>logistics_and_transportation</option>
+      <option value="retail_and_manufacturing">retail and manufacturing</option>
+      <option value="logistics_and_transportation">logistics and transportation</option>
     </select>
 
     <span style="display:inline-block; width: 30px;"></span>

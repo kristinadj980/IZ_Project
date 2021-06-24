@@ -1,5 +1,6 @@
 <template>
     <div id="attacks">
+      <br/><br/>
         <b-card class="card_look" >
             <b-row v-for="(attack, index) in attacks" v-bind:key="index"  style="background: #f5f1f4;" >
                 <b-col
@@ -37,7 +38,7 @@
                         <h5 class ="text-justify top-buffer"> Attack name: </h5>
                     </b-col>
                     <b-col sm="2" align-self="center">
-                        <b-form-input v-model="selectedAttack.attackName" label="First Name" filled placeholder="Enter your name"></b-form-input>
+                        <b-form-input disabled style="width: 300px" v-model="selectedAttack.attackName" label="First Name" filled placeholder="Enter your name"></b-form-input>
                     </b-col>
                 </b-row>
                 <b-row style="margin-top:5px;">
@@ -99,13 +100,16 @@
                     <b-col sm="2" align-self="center">
                         <b-form-input v-model="selectedAttack.date" filled placeholder="Enter date"></b-form-input>
                     </b-col>
+                  <b-col sm="2" align-self="center">
+                    YYYY-MM-DD
+                  </b-col>
                 </b-row>
                 <b-row style="margin-top:5px;">
                     <b-col sm="4" align-self="center">
                         <h5 class ="text-justify top-buffer"> Number Of employees:   </h5>
                     </b-col>
                     <b-col sm="2" align-self="center">
-                        <b-form-input v-model="selectedAttack.numberOfEmployees" filled placeholder="Enter number Of employees"></b-form-input>
+                        <b-form-input type="number" v-model="selectedAttack.numberOfEmployees" filled placeholder="Enter number Of employees"></b-form-input>
                     </b-col>
                 </b-row>
                 <b-row style="margin-top:5px;">
@@ -206,6 +210,10 @@ export default {
             this.$refs['modal-ref1'].hide();
         },
         updateAttack: function(attack){
+          if (this.selectedAttack.numberOfEmployees < 0) {
+            alert("Number of employees cannot be negative.")
+            return;
+          }
             this.axios.post("http://localhost:8090/api/rdf/update",attack,{
                 }).then(res => {
                     this.selectedAttack = res.data;
