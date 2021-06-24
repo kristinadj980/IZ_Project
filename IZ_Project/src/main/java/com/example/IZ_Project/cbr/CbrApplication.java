@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 
 
-import com.example.IZ_Project.connector.CsvConnector;
+import com.example.IZ_Project.connector.RdfConnector;
 import com.example.IZ_Project.dto.CbrDTO;
 import com.example.IZ_Project.model.Attack;
 import com.example.IZ_Project.model.Company;
@@ -36,7 +36,7 @@ public class CbrApplication implements StandardCBRApplication {
     private static ArrayList<CbrDTO> attacks = new ArrayList<CbrDTO>();
 
     public void configure() throws ExecutionException {
-        _connector =  new CsvConnector();
+        _connector =  new RdfConnector();
 
         _caseBase = new LinealCaseBase();  // Create a Lineal case base for in-memory organization
 

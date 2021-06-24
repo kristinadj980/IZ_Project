@@ -1,7 +1,5 @@
 <template>
   <div>
-<!--    <b-tabs content-class="mt-3">-->
-<!--      <b-tab title="Cbr reasoning" active>-->
     <br/><br/>
     Enter company name
     <span style="display:inline-block; width: 10px;"></span>
@@ -152,13 +150,6 @@
     </ol>
 
     </div>
-<!--      </b-tab>-->
-<!--      <b-tab title="Cbr cases">-->
-<!--        <b-table hover :items="cbrCases"></b-table>-->
-
-
-<!--      </b-tab>-->
-<!--    </b-tabs>-->
 
 </div>
 </template>
@@ -213,7 +204,6 @@ export default {
     }
   },
   mounted() {
-    this.getCbrCases();
   },
   methods: {
     sendToAnalysis: function () {
@@ -250,15 +240,6 @@ export default {
             }).catch(() => {
             alert("CBR not successful!")
         });
-    },
-    getCbrCases : function () {
-      this.axios.get('http://localhost:8090/api/rdf/getAttacks')
-          .then(response => {
-            this.cbrCases = response.data;
-          }).catch(res => {
-        alert(Error)
-        console.log(res);
-      });
     },
     findCountermeasures: function () {
       if (this.selectAttackForCountermeasure === "") {
@@ -318,7 +299,7 @@ export default {
             })
             .then(() => {
                 alert("Successful registration!");
-                this.getCbrCases();
+                //this.getCbrCases();
             }).catch(() => {
               alert("Countermeasures retrieval fail!")
         });

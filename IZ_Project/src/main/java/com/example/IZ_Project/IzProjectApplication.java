@@ -1,5 +1,6 @@
 package com.example.IZ_Project;
 
+import com.example.IZ_Project.connector.CsvToRdf;
 import com.example.IZ_Project.handlers.PrologHandler;
 import com.example.IZ_Project.model.Attack;
 import com.example.IZ_Project.model.Countermeasure;
@@ -23,6 +24,7 @@ import java.util.Iterator;
 public class IzProjectApplication {
 
 	public static void main(String[] args) throws Exception {
+		CsvToRdf.insertCsvCasesToRdfDatabase();
 		SpringApplication.run(IzProjectApplication.class, args);
 
 	}

@@ -1,15 +1,15 @@
 package com.example.IZ_Project.model;
 
+import com.example.IZ_Project.dto.RdfDTO;
 import com.example.IZ_Project.dto.SymptomsDTO;
+import org.apache.jena.riot.RDFDataMgr;
 import ucm.gaia.jcolibri.cbrcore.Attribute;
 import ucm.gaia.jcolibri.cbrcore.CaseComponent;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.Date;
+import java.util.*;
 
 public class Attack implements CaseComponent {
+    private UUID id;
     private String name;
     private Scale likelihood;
     private Scale severity;
@@ -27,6 +27,25 @@ public class Attack implements CaseComponent {
     private String symptom3;
 
     public Attack() {
+    }
+
+    public Attack(RdfDTO rdfDTO) {
+        this.setName(rdfDTO.getAttackName());
+        this.setLikelihood(rdfDTO.getLikelihood());
+        this.setSeverity(rdfDTO.getSeverity());
+        this.setSkillsRequired(rdfDTO.getSkillsRequired());
+        this.setDate(rdfDTO.getDate());
+        this.setSymptom1(rdfDTO.getSymptom1());
+        this.setSymptom2(rdfDTO.getSymptom2());
+        this.setSymptom3(rdfDTO.getSymptom3());
+        this.setDateLong(rdfDTO.getDate().getTime());
+        Company company = new Company();
+        company.setCompanyName(rdfDTO.getCompanyName());
+        company.setNumberOfEmployees(rdfDTO.getNumberOfEmployees());
+        company.setCompanySector(rdfDTO.getCompanySector());
+        company.setContinent(rdfDTO.getContinent());
+        this.setCompany(company);
+        this.setPrerequisiteCBR(new Prerequisite(rdfDTO.getPrerequisites()));
     }
 
     public Attack(String name) {
@@ -82,7 +101,14 @@ public class Attack implements CaseComponent {
             else if (i==2)
                 this.setSymptom3(symptomsDTO.getSymptoms().get(i));
         }
+    }
 
+    public UUID getId() {
+        return id;
+    }
+
+    public void setId(UUID id) {
+        this.id = id;
     }
 
     public String getSymptom1() {

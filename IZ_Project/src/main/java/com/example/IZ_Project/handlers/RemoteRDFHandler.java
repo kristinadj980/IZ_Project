@@ -47,7 +47,38 @@ public class RemoteRDFHandler {
                 "}";
 
         UpdateRequest updateRequest = UpdateFactory.create(insertAttack);
-        System.setProperty("http.maxConnections", "1000");
+        System.setProperty("http.maxConnections", "100000");
+
+        UpdateProcessor updateProcessor = UpdateExecutionFactory.createRemote(updateRequest, UPDATE_URL);
+
+        updateProcessor.execute();
+
+        return  attack;
+    }
+
+    public static RdfDTO fillCsvCases(RdfDTO attack) {
+        String insertAttack = ""
+                + "PREFIX attacks: <http://www.ftn.uns.ac.rs/attacks#> "
+                + "PREFIX xsd:   <http://w3.org/2001/XMLSchema#> "
+                + "INSERT DATA {"
+                + "    attacks:" + attack.getId() + " a attacks:Attack;" +
+                "	   attacks:attackName \"" + attack.getAttackName() + "\"^^xsd:string;" +
+                "	   attacks:companyName \"" + attack.getCompanyName() + "\"^^xsd:string;" +
+                "	   attacks:symptom1 \"" + attack.getSymptom1() + "\"^^xsd:string;" +
+                "	   attacks:symptom2 \"" + attack.getSymptom2() + "\"^^xsd:string;" +
+                "	   attacks:symptom3 \"" + attack.getSymptom3() +  "\"^^xsd:string;" +
+                "	   attacks:continent \"" + attack.getContinent() +  "\"^^xsd:string;" +
+                "	   attacks:prerequisites \"" + attack.getPrerequisites() + "\"^^xsd:string;" +
+                "	   attacks:skillsRequired \"" + attack.getSkillsRequired() + "\"^^xsd:string;" +
+                "	   attacks:likelihood \"" + attack.getLikelihood() + "\"^^xsd:string;" +
+                "	   attacks:date\"" + attack.getDate() +  "\"^^xsd:date;" +
+                "	   attacks:numberOfEmployees \"" + attack.getNumberOfEmployees() +  "\"^^xsd:string;" +
+                "	   attacks:companySector \"" + attack.getCompanySector() + "\"^^xsd:string;" +
+                "	   attacks:severity \"" + attack.getSeverity() + "\"^^xsd:string;" +
+                "}";
+
+        UpdateRequest updateRequest = UpdateFactory.create(insertAttack);
+        System.setProperty("http.maxConnections", "100000");
 
         UpdateProcessor updateProcessor = UpdateExecutionFactory.createRemote(updateRequest, UPDATE_URL);
 
@@ -82,7 +113,7 @@ public class RemoteRDFHandler {
 
         try {
             QueryExecution queryEx;
-            System.setProperty("http.maxConnections", "1000");
+            System.setProperty("http.maxConnections", "100000");
 
             queryEx = QueryExecutionFactory.sparqlService(QUERY_URL, query);
             Continent c;
@@ -103,7 +134,13 @@ public class RemoteRDFHandler {
                 Literal numberOfEmployees = solution.getLiteral("numberOfEmployees");
                 Literal companySector = solution.getLiteral("companySector");
                 Literal severity = solution.getLiteral("severity");
-                Date attackDate = new SimpleDateFormat("EEE MMM dd HH:mm:ss zzz yyyy").parse(date.getString());
+                Date attackDate;
+                try {
+                    attackDate = new SimpleDateFormat("EEE MMM dd HH:mm:ss zzz yyyy").parse(date.getString());
+                }
+                catch  (Exception e) {
+                    continue;
+                }
                 attacks.add(new RdfDTO(UUID.fromString(attack.getURI().substring(33,69)), attackName.getString(),
                         companyName.getString(), symptom1.getString(), symptom2.getString(), symptom3.getString(),
                         Continent.valueOf(continent.getString()), prerequisites.getString(),
@@ -125,7 +162,7 @@ public class RemoteRDFHandler {
                 + "    attacks:" + rdfDTO.getId() + " ?x ?y ."
                 + "}";
         UpdateRequest updateRequest2 = UpdateFactory.create(deleteString);
-        System.setProperty("http.maxConnections", "10000");
+        System.setProperty("http.maxConnections", "100000");
         UpdateProcessor updateProcessor2 = UpdateExecutionFactory.createRemote(updateRequest2, UPDATE_URL);
         updateProcessor2.execute();
 
@@ -162,4 +199,13 @@ public class RemoteRDFHandler {
 
         return  attack;
     }
+
+    public static boolean caseExists(RdfDTO rdfDTO) {
+        List<RdfDTO> attacks = getAttacks();
+        for (RdfDTO a: attacks)
+            if(a.getId().toString().equals(rdfDTO.getId().toString()))
+                return true;
+        return false;
+    }
+
 }

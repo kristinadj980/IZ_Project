@@ -8,18 +8,21 @@ import java.text.SimpleDateFormat;
 import java.util.*;
 
 
+import com.example.IZ_Project.dto.RdfDTO;
+import com.example.IZ_Project.handlers.RemoteRDFHandler;
 import com.example.IZ_Project.model.*;
+import org.apache.jena.shared.uuid.UUID_V4;
 import ucm.gaia.jcolibri.cbrcore.CBRCase;
 import ucm.gaia.jcolibri.cbrcore.CaseBaseFilter;
 import ucm.gaia.jcolibri.cbrcore.Connector;
 import ucm.gaia.jcolibri.exception.InitializingException;
 import ucm.gaia.jcolibri.util.FileIO;
 
-public class CsvConnector implements Connector {
+//uzima sve iz csv-a i insertuje u rdf
+public class CsvToRdf {
 
-    @Override
-    public Collection<CBRCase> retrieveAllCases() {
-        LinkedList<CBRCase> cases = new LinkedList<CBRCase>();
+    public static void insertCsvCasesToRdfDatabase() {
+        LinkedList<RdfDTO> cases = new LinkedList<RdfDTO>();
 
         try {
             BufferedReader br = new BufferedReader(new InputStreamReader(FileIO.openFile("src\\main\\java\\com\\example\\IZ_Project\\data\\cbrdata.csv")));
@@ -31,8 +34,6 @@ public class CsvConnector implements Connector {
                 if (line.startsWith("#") || (line.length() == 0))
                     continue;
                 String[] values = line.split(",");
-
-                CBRCase cbrCase = new CBRCase();
 
                 Company company = new Company();
 
@@ -59,19 +60,27 @@ public class CsvConnector implements Connector {
                 attack.setCompany(company);
 
                 extractSymptomsList(attack, values[3]);
-
-
-                cbrCase.setDescription(attack);
-                cases.add(cbrCase);
+                String id = values[12].trim();
+                UUID uuid = UUID.fromString(id);
+                attack.setId(uuid);
+                RdfDTO rdfDTO = new RdfDTO();
+                rdfDTO.GenerateRdfDTOFromAttack(attack);
+                cases.add(rdfDTO);
             }
             br.close();
         } catch (Exception e) {
             e.printStackTrace();
+            return;
         }
-        return cases;
+
+        //ovde radis insert
+        for (RdfDTO rdfDTO : cases) {
+            if (!RemoteRDFHandler.caseExists(rdfDTO))
+                RemoteRDFHandler.fillCsvCases(rdfDTO);
+        }
     }
 
-    private void extractSymptomsList(Attack attack, String symptomsList) {
+    private static void extractSymptomsList(Attack attack, String symptomsList) {
         //[symptom1;symptom2;symptom3]
         symptomsList = symptomsList.substring(1, symptomsList.length() - 1);
         String[] symptoms = symptomsList.split(";");
@@ -84,27 +93,6 @@ public class CsvConnector implements Connector {
             else if (i==2)
                 attack.setSymptom3(symptoms[i]);
         }
-    }
-
-    @Override
-    public Collection<CBRCase> retrieveSomeCases(CaseBaseFilter arg0) {
-        return null;
-    }
-
-    @Override
-    public void storeCases(Collection<CBRCase> arg0) {
-    }
-
-    @Override
-    public void close() {
-    }
-
-    @Override
-    public void deleteCases(Collection<CBRCase> arg0) {
-    }
-
-    @Override
-    public void initFromXMLfile(URL arg0) throws InitializingException {
     }
 
 }
