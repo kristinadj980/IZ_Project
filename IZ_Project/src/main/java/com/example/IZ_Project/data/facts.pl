@@ -806,30 +806,30 @@ attack(influence_perception_of_liking, africa, 7).
 
 
 %influence-perception-of-consensus-or-social-proof
-attacksymptomslist(influence_perception_of_consensus_or_social_proof, [suspicious_conversation_phone_call,suspicious_conversation_phone_message,suspicious_conversation_email,ad_click,pop_up_windows,credentials_theft]).
+attacksymptomslist(influence_perception_of_concensus_or_social_proof, [suspicious_conversation_phone_call,suspicious_conversation_phone_message,suspicious_conversation_email,ad_click,pop_up_windows,credentials_theft]).
 
-attack(influence_perception_of_consensus_or_social_proof,suspicious_conversation_phone_call, 77).
-attack(influence_perception_of_consensus_or_social_proof,suspicious_conversation_phone_message, 78).
-attack(influence_perception_of_consensus_or_social_proof,suspicious_conversation_email, 86).
-attack(influence_perception_of_consensus_or_social_proof,ad_click, 71).
-attack(influence_perception_of_consensus_or_social_proof,pop_up_windows, 82).
-attack(influence_perception_of_consensus_or_social_proof,credentials_theft, 83).
-attack(influence_perception_of_consensus_or_social_proof, company-size-1-250,92).
-attack(influence_perception_of_consensus_or_social_proof, company-size-250-500,87).
-attack(influence_perception_of_consensus_or_social_proof, company-size-500-1000,57).
-attack(influence_perception_of_consensus_or_social_proof, company-size-1000,75).
-attack(influence_perception_of_consensus_or_social_proof, company-sector-hospital,52).
-attack(influence_perception_of_consensus_or_social_proof, company-sector-finance,2).
-attack(influence_perception_of_consensus_or_social_proof, company-sector-technology,23).
-attack(influence_perception_of_consensus_or_social_proof, company-sector-business-and-professional-service,53).
-attack(influence_perception_of_consensus_or_social_proof, company-sector-retail-and-manifacturing,76).
-attack(influence_perception_of_consensus_or_social_proof, company-sector-logistics-and-transportation,23).
-attack(influence_perception_of_consensus_or_social_proof, europe, 35).
-attack(influence_perception_of_consensus_or_social_proof, north-america, 87).
-attack(influence_perception_of_consensus_or_social_proof, south-america, 12).
-attack(influence_perception_of_consensus_or_social_proof, australia, 93).
-attack(influence_perception_of_consensus_or_social_proof, asia, 75).
-attack(influence_perception_of_consensus_or_social_proof, africa, 7).
+attack(influence_perception_of_concensus_or_social_proof,suspicious_conversation_phone_call, 77).
+attack(influence_perception_of_concensus_or_social_proof,suspicious_conversation_phone_message, 78).
+attack(influence_perception_of_concensus_or_social_proof,suspicious_conversation_email, 86).
+attack(influence_perception_of_concensus_or_social_proof,ad_click, 71).
+attack(influence_perception_of_concensus_or_social_proof,pop_up_windows, 82).
+attack(influence_perception_of_concensus_or_social_proof,credentials_theft, 83).
+attack(influence_perception_of_concensus_or_social_proof, company-size-1-250,92).
+attack(influence_perception_of_concensus_or_social_proof, company-size-250-500,87).
+attack(influence_perception_of_concensus_or_social_proof, company-size-500-1000,57).
+attack(influence_perception_of_concensus_or_social_proof, company-size-1000,75).
+attack(influence_perception_of_concensus_or_social_proof, company-sector-hospital,52).
+attack(influence_perception_of_concensus_or_social_proof, company-sector-finance,2).
+attack(influence_perception_of_concensus_or_social_proof, company-sector-technology,23).
+attack(influence_perception_of_concensus_or_social_proof, company-sector-business-and-professional-service,53).
+attack(influence_perception_of_concensus_or_social_proof, company-sector-retail-and-manifacturing,76).
+attack(influence_perception_of_concensus_or_social_proof, company-sector-logistics-and-transportation,23).
+attack(influence_perception_of_concensus_or_social_proof, europe, 35).
+attack(influence_perception_of_concensus_or_social_proof, north-america, 87).
+attack(influence_perception_of_concensus_or_social_proof, south-america, 12).
+attack(influence_perception_of_concensus_or_social_proof, australia, 93).
+attack(influence_perception_of_concensus_or_social_proof, asia, 75).
+attack(influence_perception_of_concensus_or_social_proof, africa, 7).
 
 
 %target-influence-via-framing
@@ -1016,7 +1016,7 @@ countermeasure(android_activity_hijack, ah_detecor, 94).
 countermeasure(android_activity_hijack, use_explicit_intents, 88).
 
 %tapjacking
-countermeasure(tapjacking, turn_on_filterTouchesWhenObscured, 100).
+countermeasure(tapjacking, turn_on_filter, 100).
 countermeasure(tapjacking, employee_education, 75).
 
 %malicious-manual-software-update
@@ -1039,7 +1039,7 @@ countermeasure(target_influence_via_framing, employee_education,81).
 countermeasure(target_influence_via_framing, give_only_required_information, 93).
 
 %influence-perception-of-consensus-or-social-proof
-countermeasure(influence_perception_of_consensus_or_social_proof, employee_education,90).
+countermeasure(influence_perception_of_concensus_or_social_proof, employee_education,90).
 
 %influence-perception-of-liking
 countermeasure(influence_perception_of_liking, employee_education,75).
